@@ -57,11 +57,11 @@ const values = [
 
 const leadership = [
   {
-    name: "Founder & Senior Pastor",
+    name: "Founder & Director",
     role: "Senior Leadership",
     placeholder: true,
   },
-  { name: "Associate Pastor", role: "Pastoral Team", placeholder: true },
+  { name: "Associate Director", role: "Ministry Team", placeholder: true },
   {
     name: "Director of Ministries",
     role: "Ministry Leadership",
@@ -303,8 +303,8 @@ export default function AboutWBM() {
               <div className="h-px w-16 bg-amber-400" />
             </div>
             <p className="text-stone-500 max-w-xl mx-auto">
-              Led by God-called, Spirit-filled servants committed to shepherding
-              the flock of Christ with humility, integrity, and love.
+              Led by God-called, Spirit-filled servants committed to equipping
+              the body of Christ with humility, integrity, and love.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -341,8 +341,8 @@ export default function AboutWBM() {
           Ready to Be Part of Something Greater?
         </h2>
         <p className="text-amber-100 mb-8 max-w-xl mx-auto">
-          Join us this Sunday and experience the life-transforming power of
-          God's Word in a warm, welcoming community.
+          Partner with us as we advance the Great Commission by strengthening
+          the global Church through prayer and the Word.
         </p>
         <Link
           to="/contact"

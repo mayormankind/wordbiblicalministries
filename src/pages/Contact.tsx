@@ -200,7 +200,7 @@ export default function Contact() {
               )}
             </div>
 
-            {/* Map + Service Times */}
+            {/* Map + Contact Info */}
             <div>
               <p className="text-amber-700 text-xs uppercase tracking-widest font-bold mb-3">
                 Find Us

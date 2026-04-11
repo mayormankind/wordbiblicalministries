@@ -31,33 +31,6 @@ const highlights = [
   },
 ];
 
-const services = [
-  {
-    day: "Sunday",
-    title: "Sunday Worship Service",
-    time: "9:00 AM & 11:00 AM",
-    desc: "Our main weekly gathering for worship, the Word, and fellowship.",
-  },
-  {
-    day: "Wed",
-    title: "Midweek Bible Study",
-    time: "Wednesday · 6:30 PM",
-    desc: "A deep dive into the Scriptures to build faith and understanding.",
-  },
-  {
-    day: "Fri",
-    title: "Prayer & Intercession",
-    time: "Friday · 6:00 PM",
-    desc: "Corporate prayer and intercession for our community and the nations.",
-  },
-  {
-    day: "Sat",
-    title: "Youth & Young Adults",
-    time: "Saturday · 5:00 PM",
-    desc: "Dynamic gatherings designed to inspire and disciple the next generation.",
-  },
-];
-
 const ministries = [
   {
     name: "Bible Translation (AFINT)",
@@ -207,64 +180,6 @@ export default function Home() {
               className="inline-flex items-center gap-2 text-amber-700 hover:text-amber-600 font-bold text-sm uppercase tracking-widest border-b-2 border-amber-600 pb-1 transition-colors"
             >
               Learn More About WBM <ChevronRight size={16} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── SERVICE TIMES ─── */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-amber-600 text-xs uppercase tracking-widest font-bold mb-3">
-              Join Us
-            </p>
-            <h2
-              className="text-4xl md:text-5xl font-bold text-stone-800 mb-4"
-              style={{ fontFamily: "Playfair Display, serif" }}
-            >
-              Service Times & Gatherings
-            </h2>
-            <div className="flex items-center justify-center gap-3 my-5">
-              <div className="h-px w-16 bg-amber-400" />
-              <div className="w-2 h-2 bg-amber-600 rotate-45" />
-              <div className="h-px w-16 bg-amber-400" />
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {services.map((s, i) => (
-              <div
-                key={i}
-                className="flex gap-5 p-6 border border-stone-200 hover:border-amber-400 rounded-sm transition-all duration-300 group bg-stone-50 hover:bg-white"
-              >
-                <div className="w-14 h-14 bg-amber-600 group-hover:bg-amber-700 text-white rounded-sm flex flex-col items-center justify-center shrink-0 transition-colors">
-                  <span className="text-xs font-bold uppercase tracking-wide">
-                    {s.day}
-                  </span>
-                </div>
-                <div>
-                  <h3
-                    className="font-bold text-stone-800 text-base mb-1"
-                    style={{ fontFamily: "Playfair Display, serif" }}
-                  >
-                    {s.title}
-                  </h3>
-                  <p className="text-amber-600 text-xs font-semibold uppercase tracking-wide mb-2">
-                    {s.time}
-                  </p>
-                  <p className="text-stone-500 text-sm leading-relaxed">
-                    {s.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            <Link
-              to="/contact"
-              className="bg-amber-700 hover:bg-amber-600 text-white font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-sm transition-all duration-200 inline-flex items-center gap-2"
-            >
-              Get Directions <ChevronRight size={16} />
             </Link>
           </div>
         </div>
