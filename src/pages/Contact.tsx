@@ -226,45 +226,6 @@ export default function Contact() {
                   </p>
                 </div>
               </div>
-
-              {/* Service Times */}
-              <div className="bg-amber-50 border border-amber-200 rounded-sm p-6">
-                <h3
-                  className="font-bold text-stone-800 mb-4 text-lg"
-                  style={{ fontFamily: "Playfair Display, serif" }}
-                >
-                  Service Schedule
-                </h3>
-                <ul className="space-y-3">
-                  {[
-                    {
-                      service: "Sunday Worship Service",
-                      time: "9:00 AM & 11:00 AM",
-                    },
-                    {
-                      service: "Midweek Bible Study",
-                      time: "Wednesday · 6:30 PM",
-                    },
-                    {
-                      service: "Prayer & Intercession",
-                      time: "Friday · 6:00 PM",
-                    },
-                    { service: "Youth Service", time: "Saturday · 5:00 PM" },
-                  ].map((s, i) => (
-                    <li
-                      key={i}
-                      className="flex justify-between items-center text-sm border-b border-amber-200 pb-2 last:border-0 last:pb-0"
-                    >
-                      <span className="text-stone-700 font-medium">
-                        {s.service}
-                      </span>
-                      <span className="text-amber-700 font-bold text-xs uppercase tracking-wide">
-                        {s.time}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
           </div>
         </div>
