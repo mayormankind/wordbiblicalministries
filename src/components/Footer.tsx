@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { FaFacebookF, FaYoutube, FaInstagram, FaXTwitter } from "react-icons/fa6";
 
 const footerLinks = [
   { label: "Our Theology", path: "/our-theology" },
@@ -78,17 +79,18 @@ export default function Footer() {
           {/* Social Icons */}
           <div className="flex gap-3">
             {[
-              { label: "FB", href: "#" },
-              { label: "YT", href: "#" },
-              { label: "IG", href: "#" },
-              { label: "TW", href: "#" },
+              { label: "Facebook", href: "#", icon: <FaFacebookF /> },
+              { label: "YouTube", href: "#", icon: <FaYoutube size={16} /> },
+              { label: "Instagram", href: "#", icon: <FaInstagram size={16} /> },
+              { label: "X", href: "#", icon: <FaXTwitter size={14} /> },
             ].map((s, i) => (
               <a
                 key={i}
                 href={s.href}
-                className="w-8 h-8 rounded-sm bg-stone-800 hover:bg-amber-600 flex items-center justify-center text-stone-300 hover:text-white transition-all text-xs font-bold"
+                aria-label={s.label}
+                className="w-9 h-9 rounded-sm bg-stone-800 hover:bg-amber-600 flex items-center justify-center text-stone-300 hover:text-white transition-all text-xs"
               >
-                {s.label}
+                {s.icon}
               </a>
             ))}
           </div>

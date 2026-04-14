@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import PageHero from "../components/PageHero";
 import { ChevronDown, BookOpen } from "lucide-react";
+import AnimateOnScroll from "../components/AnimateOnScroll";
 
 interface Doctrine {
   title: string;
@@ -513,90 +514,99 @@ export default function OurTheology() {
       />
 
       {/* ── Intro ── */}
-      <section className="py-20 px-6 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-amber-700 text-xs uppercase tracking-widest font-bold mb-4">
-            Our Foundation
-          </p>
-          <h2
-            className="text-3xl md:text-4xl font-bold text-stone-800 mb-6"
-            style={{ fontFamily: "Playfair Display, serif" }}
-          >
-            Standing on the Truth of God's Word
-          </h2>
-          <div className="flex items-center justify-center gap-3 my-5">
-            <div className="h-px w-16 bg-amber-400" />
-            <div className="w-2 h-2 bg-amber-600 rotate-45" />
-            <div className="h-px w-16 bg-amber-400" />
+      <AnimateOnScroll animation="fade-up">
+        <section className="py-20 px-6 bg-white">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-amber-700 text-xs uppercase tracking-widest font-bold mb-4">
+              Our Foundation
+            </p>
+            <h2
+              className="text-3xl md:text-4xl font-bold text-stone-800 mb-6"
+              style={{ fontFamily: "Playfair Display, serif" }}
+            >
+              Standing on the Truth of God's Word
+            </h2>
+            <div className="flex items-center justify-center gap-3 my-5">
+              <div className="h-px w-16 bg-amber-400" />
+              <div className="w-2 h-2 bg-amber-600 rotate-45" />
+              <div className="h-px w-16 bg-amber-400" />
+            </div>
+            <p className="text-stone-600 leading-relaxed text-lg">
+              At WBM, theology is not merely academic — it is the living breath of
+              who we are and how we minister. Our doctrinal convictions shape our
+              worship, our preaching, our discipleship, and our engagement with
+              the world. Below are the core beliefs that define us as a ministry.
+            </p>
           </div>
-          <p className="text-stone-600 leading-relaxed text-lg">
-            At WBM, theology is not merely academic — it is the living breath of
-            who we are and how we minister. Our doctrinal convictions shape our
-            worship, our preaching, our discipleship, and our engagement with
-            the world. Below are the core beliefs that define us as a ministry.
-          </p>
-        </div>
-      </section>
+        </section>
+      </AnimateOnScroll>
 
       {/* ── Core Doctrine Cards ── */}
       <section className="py-10 pb-24 px-6 bg-stone-50">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {doctrines.map((d, i) => (
-              <div
+              <AnimateOnScroll
                 key={i}
-                className="bg-white rounded-sm p-8 shadow-sm hover:shadow-md transition-all duration-300 border-l-4 border-amber-600"
+                animation="fade-up"
+                delay={(i * 50) as any}
               >
-                <div className="flex items-start justify-between mb-3">
-                  <span
-                    className="text-4xl font-black text-amber-100 select-none"
+                <div
+                  className="bg-white rounded-sm p-8 shadow-sm hover:shadow-md transition-all duration-300 border-l-4 border-amber-600 h-full"
+                >
+                  <div className="flex items-start justify-between mb-3">
+                    <span
+                      className="text-4xl font-black text-amber-100 select-none"
+                      style={{ fontFamily: "Playfair Display, serif" }}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <h3
+                    className="text-xl font-bold text-stone-800 mb-1"
                     style={{ fontFamily: "Playfair Display, serif" }}
                   >
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
+                    {d.title}
+                  </h3>
+                  <p className="text-amber-600 text-xs font-semibold uppercase tracking-wide mb-4">
+                    {d.ref}
+                  </p>
+                  <p className="text-stone-600 text-sm leading-relaxed">
+                    {d.body}
+                  </p>
                 </div>
-                <h3
-                  className="text-xl font-bold text-stone-800 mb-1"
-                  style={{ fontFamily: "Playfair Display, serif" }}
-                >
-                  {d.title}
-                </h3>
-                <p className="text-amber-600 text-xs font-semibold uppercase tracking-wide mb-4">
-                  {d.ref}
-                </p>
-                <p className="text-stone-600 text-sm leading-relaxed">
-                  {d.body}
-                </p>
-              </div>
+              </AnimateOnScroll>
             ))}
           </div>
         </div>
       </section>
 
       {/* ── Gospel Exposition Divider ── */}
-      <div className="bg-stone-900 py-16 px-6 text-center">
-        <div className="max-w-3xl mx-auto">
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="h-px flex-1 bg-stone-700" />
-            <BookOpen className="text-amber-500" size={22} />
-            <div className="h-px flex-1 bg-stone-700" />
+      <AnimateOnScroll animation="zoom-in">
+        <div className="bg-stone-900 py-16 px-6 text-center">
+          <div className="max-w-3xl mx-auto">
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="h-px flex-1 bg-stone-700" />
+              <BookOpen className="text-amber-500" size={22} />
+              <div className="h-px flex-1 bg-stone-700" />
+            </div>
+            <p className="text-amber-500 text-xs uppercase tracking-widest font-bold mb-3">
+              A Full Exposition
+            </p>
+            <h2
+              className="text-2xl md:text-3xl font-bold text-white mb-4"
+              style={{ fontFamily: "Playfair Display, serif" }}
+            >
+              The Gospel: Content, Results & Scope
+            </h2>
+            <p className="text-stone-400 leading-relaxed">
+              An in-depth theological exposition of the Gospel of Jesus Christ —
+              its substance, its saving effects, and its cosmic reach. Explore
+              each section at your own pace.
+            </p>
           </div>
-          <p className="text-amber-500 text-xs uppercase tracking-widest font-bold mb-3">
-            A Full Exposition
-          </p>
-          <h2
-            className="text-2xl md:text-3xl font-bold text-white mb-4"
-            style={{ fontFamily: "Playfair Display, serif" }}
-          >
-            The Gospel: Content, Results & Scope
-          </h2>
-          <p className="text-stone-400 leading-relaxed">
-            An in-depth theological exposition of the Gospel of Jesus Christ —
-            its substance, its saving effects, and its cosmic reach. Explore
-            each section at your own pace.
-          </p>
         </div>
-      </div>
+      </AnimateOnScroll>
 
       {/* ── Tabbed Gospel Exposition ── */}
       <section className="bg-white px-6 pb-24">
@@ -643,33 +653,40 @@ export default function OurTheology() {
 
           {/* Accordion list */}
           <div>
-            {activeTabData?.sections.map((section) => (
-              <AccordionItem
+            {activeTabData?.sections.map((section, idx) => (
+              <AnimateOnScroll
                 key={section.number}
-                section={section}
-                isOpen={isSectionOpen(activeTab, section.number)}
-                onToggle={() => toggleSection(activeTab, section.number)}
-              />
+                animation="fade-in"
+                delay={(idx * 50) as any}
+              >
+                <AccordionItem
+                  section={section}
+                  isOpen={isSectionOpen(activeTab, section.number)}
+                  onToggle={() => toggleSection(activeTab, section.number)}
+                />
+              </AnimateOnScroll>
             ))}
           </div>
         </div>
       </section>
 
       {/* ── Scripture CTA ── */}
-      <section className="bg-amber-700 py-16 px-6 text-center">
-        <p className="text-amber-100 text-xs uppercase tracking-widest font-bold mb-3">
-          Rooted & Grounded
-        </p>
-        <blockquote
-          className="text-white text-2xl md:text-3xl italic max-w-3xl mx-auto mb-3"
-          style={{ fontFamily: "Playfair Display, serif" }}
-        >
-          "Sanctify them through thy truth: thy word is truth."
-        </blockquote>
-        <p className="text-amber-200 tracking-widest text-sm uppercase">
-          — John 17:17
-        </p>
-      </section>
+      <AnimateOnScroll animation="zoom-in">
+        <section className="bg-amber-700 py-16 px-6 text-center">
+          <p className="text-amber-100 text-xs uppercase tracking-widest font-bold mb-3">
+            Rooted & Grounded
+          </p>
+          <blockquote
+            className="text-white text-2xl md:text-3xl italic max-w-3xl mx-auto mb-3"
+            style={{ fontFamily: "Playfair Display, serif" }}
+          >
+            "Sanctify them through thy truth: thy word is truth."
+          </blockquote>
+          <p className="text-amber-200 tracking-widest text-sm uppercase">
+            — John 17:17
+          </p>
+        </section>
+      </AnimateOnScroll>
     </main>
   );
 }

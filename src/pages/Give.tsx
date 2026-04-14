@@ -1,6 +1,7 @@
 import PageHero from '../components/PageHero';
 import { useState } from 'react';
-import { Heart, Shield, Globe, ChevronRight } from 'lucide-react';
+import { Heart, Shield, Globe, ChevronRight, CreditCard, Landmark, Mail, Smartphone } from 'lucide-react';
+import AnimateOnScroll from '../components/AnimateOnScroll';
 
 const amounts = [25, 50, 100, 250, 500, 1000];
 
@@ -14,10 +15,10 @@ const givingPurposes = [
 ];
 
 const methods = [
-  { icon: '💳', title: 'Online Giving', desc: 'Give securely online using your debit or credit card through our payment portal.' },
-  { icon: '🏦', title: 'Bank Transfer', desc: 'Make a direct bank transfer to our official ministry account. Contact us for details.' },
-  { icon: '✉️', title: 'Mail a Check', desc: 'Send your check payable to "Word Biblical Ministries" to our church address.' },
-  { icon: '📱', title: 'Mobile Money', desc: 'Give easily via mobile money platforms available in your region.' },
+  { icon: <CreditCard size={36} className="text-stone-800 flex-shrink-0" />, title: 'Online Giving', desc: 'Give securely online using your debit or credit card through our payment portal.' },
+  { icon: <Landmark size={36} className="text-stone-800 flex-shrink-0" />, title: 'Bank Transfer', desc: 'Make a direct bank transfer to our official ministry account. Contact us for details.' },
+  { icon: <Mail size={36} className="text-stone-800 flex-shrink-0" />, title: 'Mail a Check', desc: 'Send your check payable to "Word Biblical Ministries" to our church address.' },
+  { icon: <Smartphone size={36} className="text-stone-800 flex-shrink-0" />, title: 'Mobile Money', desc: 'Give easily via mobile money platforms available in your region.' },
 ];
 
 export default function Give() {
@@ -35,12 +36,14 @@ export default function Give() {
       />
 
       {/* Scripture */}
-      <section className="bg-amber-700 py-10 px-6 text-center">
-        <p className="text-amber-50 text-xl italic max-w-3xl mx-auto" style={{ fontFamily: 'Playfair Display, serif' }}>
-          "Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver."
-        </p>
-        <p className="text-amber-200 text-sm mt-2 uppercase tracking-widest">— 2 Corinthians 9:7</p>
-      </section>
+      <AnimateOnScroll animation="fade-in">
+        <section className="bg-amber-700 py-10 px-6 text-center">
+          <p className="text-amber-50 text-xl italic max-w-3xl mx-auto" style={{ fontFamily: 'Playfair Display, serif' }}>
+            "Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver."
+          </p>
+          <p className="text-amber-200 text-sm mt-2 uppercase tracking-widest">— 2 Corinthians 9:7</p>
+        </section>
+      </AnimateOnScroll>
 
       {/* Why Give */}
       <section className="py-20 px-6 bg-white">
@@ -65,11 +68,13 @@ export default function Give() {
               { icon: <Globe size={28} className="text-amber-600" />, title: 'Translating the Word', desc: 'Through AFINT, your generosity sends the Gospel to the nations in accurate, readable translations.' },
               { icon: <Shield size={28} className="text-amber-600" />, title: 'Faithful Stewardship', desc: 'We are committed to transparent, accountable, and Spirit-led management of every resource entrusted to us.' },
             ].map((w, i) => (
-              <div key={i} className="text-center p-6 bg-stone-50 rounded-sm border border-stone-200 hover:border-amber-300 transition-all">
-                <div className="flex justify-center mb-4">{w.icon}</div>
-                <h3 className="font-bold text-stone-800 text-lg mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>{w.title}</h3>
-                <p className="text-stone-500 text-sm leading-relaxed">{w.desc}</p>
-              </div>
+              <AnimateOnScroll key={i} animation="fade-up" delay={i === 0 ? 0 : i === 1 ? 100 : 200}>
+                <div className="text-center p-6 bg-stone-50 rounded-sm border border-stone-200 hover:border-amber-300 transition-all h-full">
+                  <div className="flex justify-center mb-4">{w.icon}</div>
+                  <h3 className="font-bold text-stone-800 text-lg mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>{w.title}</h3>
+                  <p className="text-stone-500 text-sm leading-relaxed">{w.desc}</p>
+                </div>
+              </AnimateOnScroll>
             ))}
           </div>
         </div>
@@ -78,15 +83,16 @@ export default function Give() {
       {/* Giving Form */}
       <section className="py-20 px-6 bg-stone-50">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-10">
-            <p className="text-amber-700 text-xs uppercase tracking-widest font-bold mb-3">Make a Gift</p>
-            <h2 className="text-3xl font-bold text-stone-800 mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>
-              Give Securely Online
-            </h2>
-            <div className="h-1 w-12 bg-amber-600 mx-auto mt-5" />
-          </div>
+          <AnimateOnScroll animation="zoom-in">
+            <div className="text-center mb-10">
+              <p className="text-amber-700 text-xs uppercase tracking-widest font-bold mb-3">Make a Gift</p>
+              <h2 className="text-3xl font-bold text-stone-800 mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>
+                Give Securely Online
+              </h2>
+              <div className="h-1 w-12 bg-amber-600 mx-auto mt-5" />
+            </div>
 
-          <div className="bg-white rounded-sm shadow-lg p-8 md:p-10">
+            <div className="bg-white rounded-sm shadow-lg p-8 md:p-10">
 
             {/* Frequency */}
             <div className="mb-8">
@@ -140,24 +146,35 @@ export default function Give() {
             <div className="mb-8">
               <label className="block text-xs uppercase tracking-widest font-bold text-stone-600 mb-3">Giving Purpose</label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {givingPurposes.map((p) => (
-                  <label
+                {givingPurposes.map((p, idx) => (
+                  <AnimateOnScroll
                     key={p.label}
-                    className={`flex items-start gap-3 p-4 border-2 rounded-sm cursor-pointer transition-all ${
-                      purpose === p.label ? 'border-amber-600 bg-amber-50' : 'border-stone-200 hover:border-amber-300'
-                    }`}
+                    animation="fade-in"
+                    delay={(idx * 50) as any}
                   >
-                    <input
-                      type="radio" name="purpose" value={p.label}
-                      checked={purpose === p.label}
-                      onChange={() => setPurpose(p.label)}
-                      className="mt-1 accent-amber-600"
-                    />
-                    <div>
-                      <p className="font-bold text-stone-800 text-sm">{p.label}</p>
-                      <p className="text-stone-500 text-xs">{p.desc}</p>
-                    </div>
-                  </label>
+                    <label
+                      className={`flex items-start gap-3 p-4 border-2 rounded-sm cursor-pointer transition-all h-full ${
+                        purpose === p.label
+                          ? "border-amber-600 bg-amber-50"
+                          : "border-stone-200 hover:border-amber-300"
+                      }`}
+                    >
+                      <input
+                        type="radio"
+                        name="purpose"
+                        value={p.label}
+                        checked={purpose === p.label}
+                        onChange={() => setPurpose(p.label)}
+                        className="mt-1 accent-amber-600"
+                      />
+                      <div>
+                        <p className="font-bold text-stone-800 text-sm">
+                          {p.label}
+                        </p>
+                        <p className="text-stone-500 text-xs">{p.desc}</p>
+                      </div>
+                    </label>
+                  </AnimateOnScroll>
                 ))}
               </div>
             </div>
@@ -167,26 +184,31 @@ export default function Give() {
               Proceed to Secure Checkout <ChevronRight size={16} />
             </button>
             <p className="text-center text-stone-400 text-xs mt-4">🔒 All transactions are secure and encrypted</p>
-          </div>
+            </div>
+          </AnimateOnScroll>
         </div>
       </section>
 
       {/* Other Ways to Give */}
       <section className="py-20 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-amber-700 text-xs uppercase tracking-widest font-bold mb-3">More Ways to Give</p>
-            <h2 className="text-3xl font-bold text-stone-800 mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
-              Give in the Way That Works for You
-            </h2>
-          </div>
+          <AnimateOnScroll animation="fade-up">
+            <div className="text-center mb-12">
+              <p className="text-amber-700 text-xs uppercase tracking-widest font-bold mb-3">More Ways to Give</p>
+              <h2 className="text-3xl font-bold text-stone-800 mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
+                Give in the Way That Works for You
+              </h2>
+            </div>
+          </AnimateOnScroll>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {methods.map((m, i) => (
-              <div key={i} className="bg-stone-50 border border-stone-200 rounded-sm p-6 text-center hover:border-amber-400 transition-all">
-                <div className="text-4xl mb-3">{m.icon}</div>
-                <h3 className="font-bold text-stone-800 mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>{m.title}</h3>
-                <p className="text-stone-500 text-sm leading-relaxed">{m.desc}</p>
-              </div>
+              <AnimateOnScroll key={i} animation="fade-up" delay={(i % 4) * 100 as 0 | 100 | 200 | 300}>
+                <div className="bg-stone-50 border border-stone-200 rounded-sm p-6 text-center hover:border-amber-400 transition-all h-full">
+                  <div className="flex justify-center mb-3 text-amber-600">{m.icon}</div>
+                  <h3 className="font-bold text-stone-800 mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>{m.title}</h3>
+                  <p className="text-stone-500 text-sm leading-relaxed">{m.desc}</p>
+                </div>
+              </AnimateOnScroll>
             ))}
           </div>
         </div>

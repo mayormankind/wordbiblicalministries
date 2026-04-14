@@ -1,6 +1,7 @@
 import PageHero from "../components/PageHero";
 import { useState } from "react";
-import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle, Heart } from "lucide-react";
+import AnimateOnScroll from "../components/AnimateOnScroll";
 
 const contactDetails = [
   {
@@ -56,31 +57,31 @@ export default function Contact() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
             {contactDetails.map((c, i) => (
-              <div
-                key={i}
-                className="bg-stone-50 border border-stone-200 rounded-sm p-7 text-center hover:border-amber-400 hover:shadow-md transition-all duration-300"
-              >
-                <div className="flex justify-center mb-4">{c.icon}</div>
+              <AnimateOnScroll key={i} animation="fade-up" delay={(i % 4) * 100 as 0 | 100 | 200 | 300}>
+                <div className="bg-stone-50 border border-stone-200 rounded-sm p-7 text-center hover:border-amber-400 hover:shadow-md transition-all duration-300 h-full">
+                  <div className="flex justify-center mb-4">{c.icon}</div>
                 <h3
                   className="font-bold text-stone-800 mb-3 text-lg"
                   style={{ fontFamily: "Playfair Display, serif" }}
                 >
                   {c.title}
                 </h3>
-                {c.lines.map((l, j) => (
-                  <p key={j} className="text-stone-500 text-sm">
-                    {l}
-                  </p>
-                ))}
-              </div>
+                  {c.lines.map((l, j) => (
+                    <p key={j} className="text-stone-500 text-sm">
+                      {l}
+                    </p>
+                  ))}
+                </div>
+              </AnimateOnScroll>
             ))}
           </div>
 
           {/* Form + Map */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div>
-              <p className="text-amber-700 text-xs uppercase tracking-widest font-bold mb-3">
+            <AnimateOnScroll animation="fade-right">
+              <div>
+                <p className="text-amber-700 text-xs uppercase tracking-widest font-bold mb-3">
                 Send a Message
               </p>
               <h2
@@ -93,7 +94,7 @@ export default function Contact() {
 
               {sent ? (
                 <div className="bg-green-50 border border-green-300 text-green-700 rounded-sm p-8 text-center">
-                  <div className="text-4xl mb-3">🙌</div>
+                  <div className="flex justify-center mb-4"><CheckCircle size={40} className="text-green-600" /></div>
                   <h3
                     className="font-bold text-xl mb-2"
                     style={{ fontFamily: "Playfair Display, serif" }}
@@ -198,10 +199,12 @@ export default function Contact() {
                   </button>
                 </form>
               )}
-            </div>
+              </div>
+            </AnimateOnScroll>
 
             {/* Map + Contact Info */}
-            <div>
+            <AnimateOnScroll animation="fade-left">
+              <div>
               <p className="text-amber-700 text-xs uppercase tracking-widest font-bold mb-3">
                 Find Us
               </p>
@@ -226,15 +229,17 @@ export default function Contact() {
                   </p>
                 </div>
               </div>
-            </div>
+              </div>
+            </AnimateOnScroll>
           </div>
         </div>
       </section>
 
       {/* Prayer Banner */}
-      <section className="py-16 px-6 bg-stone-900 text-white text-center">
-        <div className="text-4xl mb-4">🙏</div>
-        <h2
+      <AnimateOnScroll animation="zoom-in">
+        <section className="py-16 px-6 bg-stone-900 text-white text-center">
+          <div className="flex justify-center mb-6"><Heart size={48} className="text-amber-500" /></div>
+          <h2
           className="text-3xl font-bold mb-4"
           style={{ fontFamily: "Playfair Display, serif" }}
         >
@@ -247,7 +252,8 @@ export default function Contact() {
         <button className="bg-amber-600 hover:bg-amber-500 text-white font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-sm transition-all">
           Submit a Prayer Request
         </button>
-      </section>
+        </section>
+      </AnimateOnScroll>
     </main>
   );
 }
