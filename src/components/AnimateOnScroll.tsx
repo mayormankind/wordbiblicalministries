@@ -5,8 +5,8 @@ type AnimationType = 'fade-up' | 'fade-in' | 'fade-left' | 'fade-right' | 'zoom-
 interface AnimateOnScrollProps {
   children: React.ReactNode;
   animation?: AnimationType;
-  duration?: 700 | 1000 | 1500;
-  delay?: 0 | 100 | 200 | 300 | 400 | 500;
+  duration?: number;
+  delay?: number;
   className?: string;
   once?: boolean;
 }

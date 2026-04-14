@@ -549,7 +549,7 @@ export default function OurTheology() {
               <AnimateOnScroll
                 key={i}
                 animation="fade-up"
-                delay={(i * 50) as any}
+                delay={i * 50}
               >
                 <div
                   className="bg-white rounded-sm p-8 shadow-sm hover:shadow-md transition-all duration-300 border-l-4 border-amber-600 h-full"
@@ -657,7 +657,7 @@ export default function OurTheology() {
               <AnimateOnScroll
                 key={section.number}
                 animation="fade-in"
-                delay={(idx * 50) as any}
+                delay={idx * 50}
               >
                 <AccordionItem
                   section={section}
