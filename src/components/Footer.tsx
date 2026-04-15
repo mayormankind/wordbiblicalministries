@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { FaFacebookF, FaYoutube, FaInstagram, FaXTwitter } from "react-icons/fa6";
+import {
+  FaFacebookF,
+  FaYoutube,
+  FaInstagram,
+  FaXTwitter,
+} from "react-icons/fa6";
 
 const footerLinks = [
   { label: "Our Theology", path: "/our-theology" },
@@ -29,12 +34,6 @@ export default function Footer() {
             Be part of a community rooted in the Word, empowered by the Spirit.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="bg-white text-amber-800 hover:bg-amber-50 font-bold text-xs uppercase tracking-widest px-7 py-3 rounded-sm transition-all"
-            >
-              Find Us
-            </Link>
             <Link
               href="/give"
               className="border-2 border-white text-white hover:bg-white hover:text-amber-800 font-bold text-xs uppercase tracking-widest px-7 py-3 rounded-sm transition-all"
@@ -82,7 +81,11 @@ export default function Footer() {
             {[
               { label: "Facebook", href: "#", icon: <FaFacebookF /> },
               { label: "YouTube", href: "#", icon: <FaYoutube size={16} /> },
-              { label: "Instagram", href: "#", icon: <FaInstagram size={16} /> },
+              {
+                label: "Instagram",
+                href: "#",
+                icon: <FaInstagram size={16} />,
+              },
               { label: "X", href: "#", icon: <FaXTwitter size={14} /> },
             ].map((s, i) => (
               <a
@@ -123,10 +126,6 @@ export default function Footer() {
             Contact Us
           </h4>
           <ul className="space-y-4 text-sm">
-            <li className="flex gap-3 items-start">
-              <MapPin size={16} className="text-amber-500 mt-0.5 shrink-0" />
-              <span className="text-stone-400">Akure, Ondo State, Nigeria</span>
-            </li>
             <li className="flex gap-3 items-center">
               <Mail size={16} className="text-amber-500 shrink-0" />
               <a

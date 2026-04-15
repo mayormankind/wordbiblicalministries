@@ -33,24 +33,24 @@ const doctrines: Doctrine[] = [
     body: `We believe the Bible — both the Old and New Testaments — is the inspired, infallible, and authoritative Word of God. It is the supreme standard for all Christian faith, doctrine, and practice. Scripture is God-breathed and profitable for doctrine, reproof, correction, and instruction in righteousness.`,
   },
   {
-    title: "The Holy Trinity",
+    title: "The Trinity",
     ref: "Matthew 28:19 · 2 Corinthians 13:14",
     body: `We believe in one God, eternally existent in three Persons: God the Father, God the Son (Jesus Christ), and God the Holy Spirit. Each Person is fully God, co-equal, co-eternal, and co-existent — one in essence, distinct in Person and function.`,
   },
   {
-    title: "The Lord Jesus Christ",
+    title: "The Son",
     ref: "John 1:1–14 · Philippians 2:5–11",
     body: `We believe in the deity of our Lord Jesus Christ — His virgin birth, His sinless life, His miracles, His atoning death on the cross, His bodily resurrection, His ascension to the right hand of the Father, and His personal, visible return in power and glory.`,
-  },
-  {
-    title: "Salvation by Grace Through Faith",
-    ref: "Ephesians 2:8–9 · Romans 10:9–10",
-    body: `We believe that humanity, fallen in sin, can only be reconciled to God through repentance and faith in the Lord Jesus Christ. Salvation is not earned by works but is a gift of God's grace, received through faith. Every born-again believer is justified, regenerated, and sealed by the Holy Spirit.`,
   },
   {
     title: "The Holy Spirit",
     ref: "Acts 2:1–4 · John 14:16–17",
     body: `We believe in the present-day ministry of the Holy Spirit, who indwells every believer at salvation and empowers them for holy living and effective service. We affirm the gifts of the Holy Spirit as active and available to the Church today for the edification of the Body of Christ.`,
+  },
+  {
+    title: "Salvation by Grace Through Faith",
+    ref: "Ephesians 2:8–9 · Romans 10:9–10",
+    body: `We believe that humanity, fallen in sin, can only be reconciled to God through repentance and faith in the Lord Jesus Christ. Salvation is not earned by works but is a gift of God's grace, received through faith. Every born-again believer is justified, regenerated, and sealed by the Holy Spirit.`,
   },
   {
     title: "The Church",
@@ -534,10 +534,11 @@ export default function OurTheology() {
               <div className="h-px w-16 bg-amber-400" />
             </div>
             <p className="text-stone-600 leading-relaxed text-lg">
-              At WBM, theology is not merely academic — it is the living breath of
-              who we are and how we minister. Our doctrinal convictions shape our
-              worship, our preaching, our discipleship, and our engagement with
-              the world. Below are the core beliefs that define us as a ministry.
+              At WBM, theology is not merely academic — it is the living breath
+              of who we are and how we minister. Our doctrinal convictions shape
+              our worship, our preaching, our discipleship, and our engagement
+              with the world. Below are the core beliefs that define us as a
+              ministry.
             </p>
           </div>
         </section>
@@ -548,14 +549,8 @@ export default function OurTheology() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {doctrines.map((d, i) => (
-              <AnimateOnScroll
-                key={i}
-                animation="fade-up"
-                delay={i * 50}
-              >
-                <div
-                  className="bg-white rounded-sm p-8 shadow-sm hover:shadow-md transition-all duration-300 border-l-4 border-amber-600 h-full"
-                >
+              <AnimateOnScroll key={i} animation="fade-up" delay={i * 50}>
+                <div className="bg-white rounded-sm p-8 shadow-sm hover:shadow-md transition-all duration-300 border-l-4 border-amber-600 h-full">
                   <div className="flex items-start justify-between mb-3">
                     <span
                       className="text-4xl font-black text-amber-100 select-none"

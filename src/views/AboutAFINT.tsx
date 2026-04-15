@@ -99,7 +99,7 @@ export default function AboutAFINT() {
                   className="text-xs font-bold uppercase tracking-widest text-amber-700"
                   style={{ letterSpacing: "0.14em" }}
                 >
-                  Our Vision
+                  Our Vision Statement
                 </span>
                 <div className="w-9 h-0.5 bg-amber-600" />
               </div>
@@ -124,7 +124,7 @@ export default function AboutAFINT() {
                 className="text-3xl font-bold text-stone-900 shrink-0"
                 style={{ fontFamily: "Playfair Display, serif" }}
               >
-                Our Mission
+                Our Mission Statement
               </h3>
               <p className="text-stone-500 text-base leading-relaxed max-w-xl md:text-right">
                 To honor Christ and strengthen the Church by producing a
