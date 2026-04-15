@@ -1,5 +1,5 @@
 import PageHero from "../components/PageHero";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import {
   ChevronRight,
   Globe,
@@ -554,7 +554,7 @@ export default function AboutAFINT() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
-                to="/digital-availability"
+                href="/digital-availability"
                 className="bg-white text-stone-900 hover:bg-stone-100 font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-sm transition-all inline-flex items-center gap-2 shadow-lg"
               >
                 Digital Platforms <ChevronRight size={16} />

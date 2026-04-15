@@ -1,3 +1,5 @@
+"use client";
+
 import PageHero from "../components/PageHero";
 import { useState } from "react";
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle, Heart } from "lucide-react";

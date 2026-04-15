@@ -1,5 +1,8 @@
+"use client";
+
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
 const navLinks = [
@@ -8,14 +11,15 @@ const navLinks = [
   { label: 'About AFINT', path: '/about-afint' },
   { label: 'Ministries of WBM', path: '/ministries' },
   { label: 'Digital Availability', path: '/digital-availability' },
+  { label: 'Blog', path: '/blog' },
   { label: 'Contact', path: '/contact' },
 ];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
-  const isHome = location.pathname === '/';
+  const pathname = usePathname();
+  const isHome = pathname === '/';
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -25,7 +29,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setMenuOpen(false);
-  }, [location.pathname]);
+  }, [pathname]);
 
   const navBg = isHome && !scrolled
     ? 'bg-transparent'
@@ -40,7 +44,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
 
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 bg-amber-600 flex items-center justify-center rounded-sm group-hover:bg-amber-500 transition-colors">
               <svg viewBox="0 0 24 24" className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M12 2v20M2 12h20" strokeLinecap="round"/>
@@ -61,16 +65,16 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <Link
                 key={link.path}
-                to={link.path}
+                href={link.path}
                 className={`text-xs font-semibold tracking-widest uppercase transition-colors duration-200 ${textColor} ${hoverColor} ${
-                  location.pathname === link.path ? 'text-amber-400 border-b border-amber-400 pb-0.5' : ''
+                  pathname === link.path ? 'text-amber-400 border-b border-amber-400 pb-0.5' : ''
                 }`}
               >
                 {link.label}
               </Link>
             ))}
             <Link
-              to="/give"
+              href="/give"
               className="ml-2 bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold tracking-widest uppercase px-5 py-2.5 rounded-sm transition-all duration-200"
             >
               Give
@@ -94,16 +98,16 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <Link
               key={link.path}
-              to={link.path}
+              href={link.path}
               className={`block text-sm font-semibold tracking-widest uppercase text-stone-200 hover:text-amber-400 transition-colors py-2 border-b border-stone-700 ${
-                location.pathname === link.path ? 'text-amber-400' : ''
+                pathname === link.path ? 'text-amber-400' : ''
               }`}
             >
               {link.label}
             </Link>
           ))}
           <Link
-            to="/give"
+            href="/give"
             className="block w-full text-center bg-amber-600 hover:bg-amber-500 text-white text-sm font-bold tracking-widest uppercase px-5 py-3 rounded-sm transition-all mt-4"
           >
             Give

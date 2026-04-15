@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { FaFacebookF, FaYoutube, FaInstagram, FaXTwitter } from "react-icons/fa6";
 
@@ -8,6 +8,7 @@ const footerLinks = [
   { label: "About AFINT", path: "/about-afint" },
   { label: "Ministries of WBM", path: "/ministries" },
   { label: "Digital Availability of AFINT", path: "/digital-availability" },
+  { label: "Blog", path: "/blog" },
   { label: "Contact", path: "/contact" },
   { label: "Give", path: "/give" },
 ];
@@ -29,13 +30,13 @@ export default function Footer() {
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link
-              to="/contact"
+              href="/contact"
               className="bg-white text-amber-800 hover:bg-amber-50 font-bold text-xs uppercase tracking-widest px-7 py-3 rounded-sm transition-all"
             >
               Find Us
             </Link>
             <Link
-              to="/give"
+              href="/give"
               className="border-2 border-white text-white hover:bg-white hover:text-amber-800 font-bold text-xs uppercase tracking-widest px-7 py-3 rounded-sm transition-all"
             >
               Support the Ministry
@@ -105,7 +106,7 @@ export default function Footer() {
             {footerLinks.map((link) => (
               <li key={link.path}>
                 <Link
-                  to={link.path}
+                  href={link.path}
                   className="text-stone-400 hover:text-amber-400 text-sm transition-colors flex items-center gap-2"
                 >
                   <span className="text-amber-600 text-xs">›</span>
@@ -155,10 +156,10 @@ export default function Footer() {
           rights reserved.
         </p>
         <p className="flex gap-4">
-          <Link to="#" className="hover:text-amber-400 transition-colors">
+          <Link href="#" className="hover:text-amber-400 transition-colors">
             Privacy Policy
           </Link>
-          <Link to="#" className="hover:text-amber-400 transition-colors">
+          <Link href="#" className="hover:text-amber-400 transition-colors">
             Terms of Use
           </Link>
         </p>

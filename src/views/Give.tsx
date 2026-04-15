@@ -1,3 +1,5 @@
+"use client";
+
 import PageHero from '../components/PageHero';
 import { useState } from 'react';
 import { Heart, Shield, Globe, ChevronRight, CreditCard, Landmark, Mail, Smartphone } from 'lucide-react';

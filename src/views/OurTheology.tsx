@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useRef, useEffect } from "react";
 import PageHero from "../components/PageHero";
 import { ChevronDown, BookOpen } from "lucide-react";

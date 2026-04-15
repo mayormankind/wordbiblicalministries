@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ChevronRight, Play, ChevronLeft } from "lucide-react";
 
 const slides = [
@@ -107,13 +109,13 @@ export default function HeroCarousel() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
-                to={slide.link1.to}
+                href={slide.link1.to}
                 className="bg-amber-600 hover:bg-amber-500 text-white font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-sm transition-all duration-200 inline-flex items-center gap-2"
               >
                 {slide.link1.text} <ChevronRight size={16} />
               </Link>
               <Link
-                to={slide.link2.to}
+                href={slide.link2.to}
                 className="border-2 border-white/50 hover:border-white text-white hover:bg-white/10 font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-sm transition-all duration-200 inline-flex items-center gap-2"
               >
                 <Play size={14} /> {slide.link2.text}

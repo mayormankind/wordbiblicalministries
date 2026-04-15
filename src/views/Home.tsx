@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import {
   BookOpen,
   Users,
@@ -140,7 +140,7 @@ export default function Home() {
           </div>
           <AnimateOnScroll animation="fade-in" delay={400} className="text-center mt-12">
             <Link
-              to="/about-wbm"
+              href="/about-wbm"
               className="inline-flex items-center gap-2 text-amber-700 hover:text-amber-600 font-bold text-sm uppercase tracking-widest border-b-2 border-amber-600 pb-1 transition-colors"
             >
               Learn More About WBM <ChevronRight size={16} />
@@ -177,7 +177,7 @@ export default function Home() {
             precise English rendering of the Greek text.
           </p>
           <Link
-            to="/about-afint"
+            href="/about-afint"
             className="border-2 border-amber-500 hover:bg-amber-600 hover:border-amber-600 text-white font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-sm transition-all duration-200 inline-flex items-center gap-2"
           >
             Discover AFINT <ChevronRight size={16} />
@@ -235,7 +235,7 @@ export default function Home() {
           <AnimateOnScroll animation="fade-up" delay={300}>
             <div className="text-center mt-12">
               <Link
-                to="/ministries"
+                href="/ministries"
                 className="bg-amber-700 hover:bg-amber-600 text-white font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-sm transition-all inline-flex items-center gap-2"
               >
                 All Ministries <ChevronRight size={16} />
@@ -266,7 +266,7 @@ export default function Home() {
             nations.
           </p>
           <Link
-            to="/give"
+            href="/give"
             className="bg-amber-600 hover:bg-amber-500 hover:-translate-y-1 shadow-lg text-white font-bold text-sm uppercase tracking-widest px-10 py-4 rounded-sm transition-all duration-300 inline-flex items-center gap-2"
           >
             Give Today <ChevronRight size={16} />

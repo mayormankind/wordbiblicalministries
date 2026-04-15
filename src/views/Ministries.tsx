@@ -1,6 +1,8 @@
+"use client";
+
 import { useState } from "react";
 import PageHero from "../components/PageHero";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import {
   ChevronRight,
   ChevronDown,
@@ -555,7 +557,7 @@ export default function Ministries() {
               doctrinal defense. Let's build the Kingdom together.
             </p>
             <Link
-              to="/contact"
+              href="/contact"
               className="bg-white text-amber-800 hover:bg-amber-50 font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-sm transition-all inline-flex items-center gap-2 shadow-lg"
             >
               Get in Touch <ChevronRight size={16} />
