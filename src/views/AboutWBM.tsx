@@ -697,7 +697,7 @@ export default function AboutWBM() {
       </section> */}
 
       {/* ── CTA ── */}
-      <section className="py-16 px-6 bg-amber-700 text-white text-center">
+      {/* <section className="py-16 px-6 bg-amber-700 text-white text-center">
         <AnimateOnScroll animation="zoom-in">
           <h2
             className="text-3xl font-bold mb-4"
@@ -716,7 +716,7 @@ export default function AboutWBM() {
             Find Us <ChevronRight size={16} />
           </Link>
         </AnimateOnScroll>
-      </section>
+      </section> */}
     </main>
   );
 }

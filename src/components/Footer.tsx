@@ -1,11 +1,6 @@
 import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
-import {
-  FaFacebookF,
-  FaYoutube,
-  FaInstagram,
-  FaXTwitter,
-} from "react-icons/fa6";
+import { FaFacebookF, FaYoutube, FaInstagram } from "react-icons/fa6";
 
 const footerLinks = [
   { label: "Our Theology", path: "/our-theology" },
@@ -86,7 +81,6 @@ export default function Footer() {
                 href: "#",
                 icon: <FaInstagram size={16} />,
               },
-              { label: "X", href: "#", icon: <FaXTwitter size={14} /> },
             ].map((s, i) => (
               <a
                 key={i}
