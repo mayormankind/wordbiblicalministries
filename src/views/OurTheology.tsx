@@ -38,6 +38,11 @@ const doctrines: Doctrine[] = [
     body: `We believe in one God, eternally existent in three Persons: God the Father, God the Son (Jesus Christ), and God the Holy Spirit. Each Person is fully God, co-equal, co-eternal, and co-existent — one in essence, distinct in Person and function.`,
   },
   {
+    title: "The Father",
+    ref: "Ephesians 1:3 · Romans 8:15",
+    body: `We believe in God the Father, the eternal, sovereign Creator and Sustainer of all things. He is infinitely holy, just, and merciful, and He rightly governs the universe with perfect wisdom. Through faith in Christ, He graciously adopts believers as His children, granting them intimate fellowship, divine provision, and an eternal inheritance.`,
+  },
+  {
     title: "The Son",
     ref: "John 1:1–14 · Philippians 2:5–11",
     body: `We believe in the deity of our Lord Jesus Christ — His virgin birth, His sinless life, His miracles, His atoning death on the cross, His bodily resurrection, His ascension to the right hand of the Father, and His personal, visible return in power and glory.`,
