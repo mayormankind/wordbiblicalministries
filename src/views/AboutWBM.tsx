@@ -640,7 +640,7 @@ export default function AboutWBM() {
       </section>
 
       {/* ── Leadership ── */}
-      <section className="py-24 px-6 bg-stone-50">
+      {/* <section className="py-24 px-6 bg-stone-50">
         <div className="max-w-5xl mx-auto">
           <AnimateOnScroll animation="zoom-in">
             <div className="text-center mb-16">
@@ -694,7 +694,7 @@ export default function AboutWBM() {
             content.
           </p>
         </div>
-      </section>
+      </section> */}
 
       {/* ── CTA ── */}
       <section className="py-16 px-6 bg-amber-700 text-white text-center">

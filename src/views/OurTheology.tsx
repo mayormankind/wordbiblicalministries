@@ -447,7 +447,7 @@ function AccordionItem({ section, isOpen, onToggle }: AccordionItemProps) {
             {section.title}
           </h4>
           {/* Scripture ref badges */}
-          <div className="flex flex-wrap gap-1.5 mt-2">
+          {/* <div className="flex flex-wrap gap-1.5 mt-2">
             {section.refs.map((ref, i) => (
               <span
                 key={i}
@@ -456,7 +456,7 @@ function AccordionItem({ section, isOpen, onToggle }: AccordionItemProps) {
                 {ref}
               </span>
             ))}
-          </div>
+          </div> */}
         </div>
 
         {/* Chevron */}
