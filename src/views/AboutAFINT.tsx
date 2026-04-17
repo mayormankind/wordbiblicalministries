@@ -96,7 +96,7 @@ export default function AboutAFINT() {
               {/* Left label col */}
               <div className="md:col-span-3 flex flex-col gap-3 pt-1">
                 <span
-                  className="text-xs font-bold uppercase tracking-widest text-amber-700"
+                  className="text-3xl font-bold uppercase tracking-widest text-amber-700"
                   style={{ letterSpacing: "0.14em" }}
                 >
                   Our Vision Statement
@@ -107,7 +107,7 @@ export default function AboutAFINT() {
               {/* Right quote col */}
               <div className="md:col-span-9">
                 <h2
-                  className="text-2xl md:text-4xl font-bold text-stone-900 leading-snug"
+                  className="text-sm md:text-xl font-bold text-stone-900 leading-snug"
                   style={{ fontFamily: "Playfair Display, serif" }}
                 >
                   To provide a biblically faithful, academically rigorous, and
