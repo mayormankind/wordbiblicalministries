@@ -95,7 +95,7 @@ export default function AboutAFINT() {
           <div className="max-w-6xl mx-auto space-y-16">
             {/* Vision */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
-              <div className="md:col-span-3">
+              <div className="md:col-span-4">
                 <h3
                   className="text-2xl md:text-3xl font-bold text-stone-900"
                   style={serif}
@@ -103,8 +103,8 @@ export default function AboutAFINT() {
                   Our Vision Statement
                 </h3>
               </div>
-              <div className="md:col-span-9">
-                <p className="text-stone-600 text-base md:text-lg leading-relaxed">
+              <div className="md:col-span-8">
+                <p className="text-stone-600 text-sm md:text-base leading-relaxed md:text-right">
                   To provide a biblically faithful, academically rigorous, and
                   spiritually transformative English translation of the New
                   Testament that serves the global Church and reflects Africa's
