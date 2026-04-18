@@ -3,11 +3,17 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
 const navLinks = [
   { label: 'Our Theology', path: '/our-theology' },
-  { label: 'About WBM', path: '/about-wbm' },
+  { 
+    label: 'About WBM', 
+    dropdown: [
+      { label: 'Our Story', path: '/our-story' },
+      { label: 'About WBM', path: '/about-wbm' },
+    ]
+  },
   { label: 'About AFINT', path: '/about-afint' },
   { label: 'Ministries of WBM', path: '/ministries' },
   { label: 'Digital Availability', path: '/digital-availability' },
@@ -18,6 +24,7 @@ const navLinks = [
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState<{ [key: string]: boolean }>({});
   const pathname = usePathname();
   const isHome = pathname === '/';
 
@@ -37,6 +44,10 @@ export default function Navbar() {
 
   const textColor = isHome && !scrolled ? 'text-white' : 'text-stone-100';
   const hoverColor = 'hover:text-amber-400';
+
+  const toggleMobileDropdown = (label: string) => {
+    setMobileDropdownOpen(prev => ({ ...prev, [label]: !prev[label] }));
+  };
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${navBg}`}>
@@ -63,15 +74,37 @@ export default function Navbar() {
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                href={link.path}
-                className={`text-xs font-semibold tracking-widest uppercase transition-colors duration-200 ${textColor} ${hoverColor} ${
-                  pathname === link.path ? 'text-amber-400 border-b border-amber-400 pb-0.5' : ''
-                }`}
-              >
-                {link.label}
-              </Link>
+              link.dropdown ? (
+                <div key={link.label} className="relative group h-20 flex items-center">
+                  <button className={`flex items-center gap-1 text-xs font-semibold tracking-widest uppercase transition-colors duration-200 ${textColor} ${hoverColor}`}>
+                    {link.label}
+                    <ChevronDown size={14} className="transition-transform duration-300 group-hover:rotate-180" />
+                  </button>
+                  <div className="absolute top-20 left-1/2 -translate-x-1/2 w-48 bg-stone-900 shadow-xl border-t-2 border-amber-500 rounded-b-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col pointer-events-none group-hover:pointer-events-auto overflow-hidden">
+                    {link.dropdown.map((sublink) => (
+                      <Link
+                        key={sublink.path}
+                        href={sublink.path}
+                        className={`text-[11px] font-semibold tracking-widest uppercase px-5 py-3.5 text-stone-200 hover:text-white hover:bg-stone-800 border-b border-stone-800 last:border-0 transition-colors ${
+                          pathname === sublink.path ? 'text-amber-400 bg-stone-800' : ''
+                        }`}
+                      >
+                        {sublink.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={link.path}
+                  href={link.path!}
+                  className={`text-xs font-semibold tracking-widest uppercase transition-colors duration-200 ${textColor} ${hoverColor} ${
+                    pathname === link.path ? 'text-amber-400 border-b border-amber-400 pb-0.5' : ''
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              )
             ))}
             <Link
               href="/give"
@@ -94,21 +127,46 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="lg:hidden bg-stone-900 border-t border-stone-700 px-6 pb-6 pt-4 space-y-4">
+        <div className="lg:hidden bg-stone-900 border-t border-stone-700 px-6 pb-6 pt-4 space-y-2">
           {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              href={link.path}
-              className={`block text-sm font-semibold tracking-widest uppercase text-stone-200 hover:text-amber-400 transition-colors py-2 border-b border-stone-700 ${
-                pathname === link.path ? 'text-amber-400' : ''
-              }`}
-            >
-              {link.label}
-            </Link>
+            link.dropdown ? (
+              <div key={link.label} className="border-b border-stone-700 last:border-0">
+                <button
+                  onClick={() => toggleMobileDropdown(link.label)}
+                  className={`w-full flex items-center justify-between text-sm font-semibold tracking-widest uppercase text-stone-200 hover:text-amber-400 transition-colors py-3`}
+                >
+                  {link.label}
+                  <ChevronDown size={18} className={`transition-transform duration-300 ${mobileDropdownOpen[link.label] ? 'rotate-180' : ''}`} />
+                </button>
+                <div className={`space-y-1 overflow-hidden transition-all duration-300 ${mobileDropdownOpen[link.label] ? 'max-h-40 pb-2' : 'max-h-0'}`}>
+                  {link.dropdown.map((sublink) => (
+                    <Link
+                      key={sublink.path}
+                      href={sublink.path}
+                      className={`block text-xs font-semibold tracking-widest uppercase text-stone-400 hover:text-amber-400 transition-colors py-2 pl-4 ${
+                        pathname === sublink.path ? 'text-amber-400' : ''
+                      }`}
+                    >
+                      {sublink.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <Link
+                key={link.path}
+                href={link.path!}
+                className={`block text-sm font-semibold tracking-widest uppercase text-stone-200 hover:text-amber-400 transition-colors py-3 border-b border-stone-700 last:border-0 ${
+                  pathname === link.path ? 'text-amber-400' : ''
+                }`}
+              >
+                {link.label}
+              </Link>
+            )
           ))}
           <Link
             href="/give"
-            className="block w-full text-center bg-amber-600 hover:bg-amber-500 text-white text-sm font-bold tracking-widest uppercase px-5 py-3 rounded-sm transition-all mt-4"
+            className="block w-full text-center bg-amber-600 hover:bg-amber-500 text-white text-sm font-bold tracking-widest uppercase px-5 py-3 rounded-sm transition-all mt-6"
           >
             Give
           </Link>
