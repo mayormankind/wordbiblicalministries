@@ -556,14 +556,6 @@ export default function OurTheology() {
             {doctrines.map((d, i) => (
               <AnimateOnScroll key={i} animation="fade-up" delay={i * 50}>
                 <div className="bg-white rounded-sm p-8 shadow-sm hover:shadow-md transition-all duration-300 border-l-4 border-amber-600 h-full">
-                  <div className="flex items-start justify-between mb-3">
-                    <span
-                      className="text-4xl font-black text-amber-100 select-none"
-                      style={{ fontFamily: "Playfair Display, serif" }}
-                    >
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                  </div>
                   <h3
                     className="text-xl font-bold text-stone-800 mb-1"
                     style={{ fontFamily: "Playfair Display, serif" }}
