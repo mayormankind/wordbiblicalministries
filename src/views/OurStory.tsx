@@ -23,8 +23,8 @@ const timeline = [
     desc: "The ministry was first established as FCGIM — a foundational phase emphasizing the nurturing of believers through sound teaching and fostering a deeper experiential knowledge of Christ.",
     accent: "bg-stone-700",
     ringAccent: "ring-stone-700/30",
-    textAccent: "text-stone-800",
-    borderAccent: "border-stone-700",
+    textAccent: "text-on-surface",
+    borderAccent: "border-outline-variant",
     icon: <Compass size={24} className="text-white" />,
   },
   {
@@ -34,7 +34,7 @@ const timeline = [
     abbr: "WVIM",
     location: "Ibadan, Oyo State, Nigeria",
     desc: "Officially registered with the Corporate Affairs Commission (CAC) of Nigeria, this transition marked a clearer articulation of the vision — to bring the transforming power of God's Word to individuals, churches, and communities.",
-    accent: "bg-amber-700",
+    accent: "bg-surface-tint",
     ringAccent: "ring-amber-700/30",
     textAccent: "text-amber-800",
     borderAccent: "border-amber-700",
@@ -49,7 +49,7 @@ const timeline = [
     desc: "The present name reflects a sharpened identity and renewed commitment — to uphold the authority, sufficiency, and centrality of Scripture in all aspects of ministry and Christian life.",
     accent: "bg-amber-500",
     ringAccent: "ring-amber-500/30",
-    textAccent: "text-amber-700",
+    textAccent: "text-surface-tint",
     borderAccent: "border-amber-500",
     icon: <BookHeart size={24} className="text-white" />,
   },
@@ -116,21 +116,18 @@ export default function OurStory() {
         <div className="max-w-5xl mx-auto">
           <AnimateOnScroll animation="fade-up">
             <div className="text-center mb-20 relative z-10">
-              <p className="text-amber-700 text-xs uppercase tracking-widest font-bold mb-4">
+              <p className="text-surface-tint text-xs uppercase tracking-widest font-bold mb-4">
                 Our History
               </p>
-              <h2
-                className="text-3xl md:text-5xl font-bold text-stone-800 mb-6"
-                style={{ fontFamily: "Playfair Display, serif" }}
-              >
+              <h2 className="text-3xl md:text-5xl font-bold text-on-surface mb-6 font-headline italic">
                 A Ministry Born Out of Divine Calling
               </h2>
               <div className="flex items-center justify-center gap-3 my-8">
                 <div className="h-px w-20 bg-amber-400" />
-                <div className="w-3 h-3 bg-amber-600 rotate-45" />
+                <div className="w-3 h-3 bg-primary rotate-45" />
                 <div className="h-px w-20 bg-amber-400" />
               </div>
-              <p className="text-stone-600 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
+              <p className="text-on-surface-variant text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
                 Word Biblical Ministries is the product of a journey shaped by
                 divine calling, theological conviction, and a steadfast
                 commitment to the proclamation of God's Word. What began as a
@@ -167,7 +164,7 @@ export default function OurStory() {
                       {/* Content Mobile */}
                       <div className="pl-24 w-full md:hidden">
                         <div
-                          className={`bg-stone-50 border-t-4 ${item.borderAccent} rounded-xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 relative`}
+                          className={`bg-surface-container-low border-t-4 ${item.borderAccent} rounded-xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 relative`}
                         >
                           <div
                             className={`inline-flex items-center gap-2 mb-4 bg-white px-3 py-1.5 rounded-full shadow-sm border border-stone-100`}
@@ -177,7 +174,7 @@ export default function OurStory() {
                             >
                               {item.year}
                             </span>
-                            <span className="text-xs text-stone-400 font-medium tracking-wider uppercase">
+                            <span className="text-xs text-outline-variant font-medium tracking-wider uppercase">
                               — {item.endYear}
                             </span>
                           </div>
@@ -187,17 +184,14 @@ export default function OurStory() {
                           >
                             {item.abbr}
                           </p>
-                          <h4
-                            className="font-bold text-stone-800 text-xl mb-3 leading-snug"
-                            style={{ fontFamily: "Playfair Display, serif" }}
-                          >
+                          <h4 className="font-bold text-on-surface text-xl mb-3 leading-snug font-headline italic">
                             {item.name}
                           </h4>
-                          <div className="flex items-center gap-2 text-stone-500 text-xs mb-4 uppercase tracking-wider font-semibold">
+                          <div className="flex items-center gap-2 text-outline text-xs mb-4 uppercase tracking-wider font-semibold">
                             <MapPin size={12} className={item.textAccent} />
                             {item.location}
                           </div>
-                          <p className="text-stone-600 text-[15px] leading-relaxed relative z-10">
+                          <p className="text-on-surface-variant text-[15px] leading-relaxed relative z-10">
                             {item.desc}
                           </p>
                         </div>
@@ -209,26 +203,23 @@ export default function OurStory() {
                       >
                         {isLeft ? (
                           <div
-                            className={`bg-white border text-left ${item.borderAccent} border-r-4 rounded-xl p-8 shadow-xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 relative group-hover:border-amber-400 z-10 before:content-[''] before:absolute before:top-1/2 before:-right-[9px] before:-translate-y-1/2 before:w-4 before:h-4 before:rotate-45 before:bg-white before:border-t before:border-r before:${item.borderAccent}`}
+                            className={`bg-white border text-left ${item.borderAccent} border-r-4 rounded-xl p-8 shadow-xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 relative group-hover:border-primary-fixed z-10 before:content-[''] before:absolute before:top-1/2 before:-right-[9px] before:-translate-y-1/2 before:w-4 before:h-4 before:rotate-45 before:bg-white before:border-t before:border-r before:${item.borderAccent}`}
                           >
                             <div className="flex justify-between items-start mb-4">
                               <p
-                                className={`text-xs font-bold uppercase tracking-widest ${item.textAccent} bg-stone-50 px-3 py-1 rounded border border-stone-100`}
+                                className={`text-xs font-bold uppercase tracking-widest ${item.textAccent} bg-surface-container-low px-3 py-1 rounded border border-stone-100`}
                               >
                                 {item.abbr}
                               </p>
                             </div>
-                            <h4
-                              className="font-bold text-stone-800 text-2xl mb-3 leading-tight"
-                              style={{ fontFamily: "Playfair Display, serif" }}
-                            >
+                            <h4 className="font-bold text-on-surface text-2xl mb-3 leading-tight font-headline italic">
                               {item.name}
                             </h4>
-                            <div className="flex items-center gap-2 text-stone-500 text-xs mb-5 uppercase tracking-wider font-semibold">
+                            <div className="flex items-center gap-2 text-outline text-xs mb-5 uppercase tracking-wider font-semibold">
                               <MapPin size={14} className={item.textAccent} />
                               {item.location}
                             </div>
-                            <p className="text-stone-600 text-base leading-relaxed">
+                            <p className="text-on-surface-variant text-base leading-relaxed">
                               {item.desc}
                             </p>
                           </div>
@@ -237,14 +228,11 @@ export default function OurStory() {
                           <div className="w-full flex justify-end items-center pr-12 opacity-80 group-hover:opacity-100 transition-opacity">
                             <div className="text-right">
                               <span
-                                className={`block text-6xl font-black mb-1 ${item.textAccent}`}
-                                style={{
-                                  fontFamily: "Playfair Display, serif",
-                                }}
+                                className={`block text-6xl font-black mb-1 ${item.textAccent} font-headline`}
                               >
                                 {item.year}
                               </span>
-                              <span className="text-stone-500 font-bold tracking-[0.2em] uppercase text-sm">
+                              <span className="text-outline font-bold tracking-[0.2em] uppercase text-sm">
                                 {item.endYear}
                               </span>
                             </div>
@@ -258,26 +246,23 @@ export default function OurStory() {
                       >
                         {!isLeft ? (
                           <div
-                            className={`bg-white border ${item.borderAccent} border-l-4 rounded-xl p-8 shadow-xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 relative group-hover:border-amber-400 z-10 before:content-[''] before:absolute before:top-1/2 before:-left-[9px] before:-translate-y-1/2 before:w-4 before:h-4 before:rotate-45 before:bg-white before:border-b before:border-l before:${item.borderAccent}`}
+                            className={`bg-white border ${item.borderAccent} border-l-4 rounded-xl p-8 shadow-xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 relative group-hover:border-primary-fixed z-10 before:content-[''] before:absolute before:top-1/2 before:-left-[9px] before:-translate-y-1/2 before:w-4 before:h-4 before:rotate-45 before:bg-white before:border-b before:border-l before:${item.borderAccent}`}
                           >
                             <div className="flex justify-between items-start mb-4">
                               <p
-                                className={`text-xs font-bold uppercase tracking-widest ${item.textAccent} bg-stone-50 px-3 py-1 rounded border border-stone-100`}
+                                className={`text-xs font-bold uppercase tracking-widest ${item.textAccent} bg-surface-container-low px-3 py-1 rounded border border-stone-100`}
                               >
                                 {item.abbr}
                               </p>
                             </div>
-                            <h4
-                              className="font-bold text-stone-800 text-2xl mb-3 leading-tight"
-                              style={{ fontFamily: "Playfair Display, serif" }}
-                            >
+                            <h4 className="font-bold text-on-surface text-2xl mb-3 leading-tight font-headline italic">
                               {item.name}
                             </h4>
-                            <div className="flex items-center gap-2 text-stone-500 text-xs mb-5 uppercase tracking-wider font-semibold">
+                            <div className="flex items-center gap-2 text-outline text-xs mb-5 uppercase tracking-wider font-semibold">
                               <MapPin size={14} className={item.textAccent} />
                               {item.location}
                             </div>
-                            <p className="text-stone-600 text-base leading-relaxed">
+                            <p className="text-on-surface-variant text-base leading-relaxed">
                               {item.desc}
                             </p>
                           </div>
@@ -286,14 +271,11 @@ export default function OurStory() {
                           <div className="w-full flex justify-start items-center pl-12 opacity-80 group-hover:opacity-100 transition-opacity">
                             <div className="text-left">
                               <span
-                                className={`block text-6xl font-black mb-1 ${item.textAccent}`}
-                                style={{
-                                  fontFamily: "Playfair Display, serif",
-                                }}
+                                className={`block text-6xl font-black mb-1 ${item.textAccent} font-headline`}
                               >
                                 {item.year}
                               </span>
-                              <span className="text-stone-500 font-bold tracking-[0.2em] uppercase text-sm">
+                              <span className="text-outline font-bold tracking-[0.2em] uppercase text-sm">
                                 {item.endYear}
                               </span>
                             </div>
@@ -314,25 +296,25 @@ export default function OurStory() {
           <div className="container max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
               <div>
-                <h2 className="font-headline text-5xl md:text-7xl italic mb-12 text-amber-500 leading-tight">
+                <h2 className="font-headline text-5xl md:text-7xl italic mb-12 text-primary-container leading-tight">
                   Anchored in the Sacred.
                 </h2>
                 <div className="space-y-12">
                   <div className="flex gap-6">
                     <span
-                      className="text-amber-500 text-4xl shrink-0"
+                      className="text-primary-container text-4xl shrink-0"
                       data-icon="prayer_times"
                     >
                       <HandHeart
                         size={24}
-                        className="text-amber-400 group-hover:text-white transition-colors"
+                        className="text-primary-fixed group-hover:text-white transition-colors"
                       />
                     </span>
                     <div>
                       <h4 className="font-headline text-2xl mb-2">
                         The Foundation of Prayer
                       </h4>
-                      <p className="text-stone-400 leading-relaxed">
+                      <p className="text-outline-variant leading-relaxed">
                         Prayer is not treated as a mere activity but as the
                         spiritual foundation upon which all ministry
                         flows—seeking divine direction, empowerment, and
@@ -342,19 +324,19 @@ export default function OurStory() {
                   </div>
                   <div className="flex gap-6">
                     <span
-                      className="text-amber-500 text-4xl shrink-0"
+                      className="text-primary-container text-4xl shrink-0"
                       data-icon="menu_book"
                     >
                       <BookOpen
                         size={24}
-                        className="text-amber-400 group-hover:text-white transition-colors"
+                        className="text-primary-fixed group-hover:text-white transition-colors"
                       />
                     </span>
                     <div>
                       <h4 className="font-headline text-2xl mb-2">
                         The Ministry of the Word
                       </h4>
-                      <p className="text-stone-400 leading-relaxed">
+                      <p className="text-outline-variant leading-relaxed">
                         An unwavering dedication to the teaching and preaching
                         of the whole counsel of God, ensuring that Scripture is
                         rightly interpreted, faithfully taught, and practically

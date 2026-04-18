@@ -83,20 +83,19 @@ export default function HeroCarousel() {
                 : "opacity-0 translate-y-10 absolute pointer-events-none"
             }`}
           >
-            <div className="inline-flex items-center gap-2 bg-amber-600/20 border border-amber-500/40 text-amber-300 text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-8">
+            <div className="inline-flex items-center gap-2 bg-primary/20 border border-primary/40 text-amber-300 text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-8">
               <span className="w-1.5 h-1.5 bg-amber-400 rounded-full animate-pulse" />
               {slide.badge}
             </div>
             <h1
-              className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
-              style={{ fontFamily: "Playfair Display, serif" }}
+              className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight font-headline italic"
             >
               {slide.title.split(" ").map((word, i) => (
                 <span
                   key={i}
                   className={
                     ["Body", "Christ", "Nations", "Project"].includes(word)
-                      ? "text-amber-400"
+                      ? "text-primary-fixed"
                       : ""
                   }
                 >
@@ -104,13 +103,13 @@ export default function HeroCarousel() {
                 </span>
               ))}
             </h1>
-            <p className="text-stone-300 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
+            <p className="text-inverse-on-surface text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
               {slide.subtitle}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 href={slide.link1.to}
-                className="bg-amber-600 hover:bg-amber-500 text-white font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-sm transition-all duration-200 inline-flex items-center gap-2"
+                className="bg-primary hover:bg-primary-container hover:text-on-primary-container text-white font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-sm transition-all duration-200 inline-flex items-center gap-2"
               >
                 {slide.link1.text} <ChevronRight size={16} />
               </Link>

@@ -79,10 +79,10 @@ const purposes: Purpose[] = [
 ];
 
 export default function AboutAFINT() {
-  const serif = { fontFamily: "Playfair Display, serif" };
+  const serif = {};
 
   return (
-    <main className="bg-stone-50">
+    <main className="bg-surface-container-low">
       <PageHero
         tag="International Outreach"
         title="About AFINT"
@@ -91,20 +91,17 @@ export default function AboutAFINT() {
 
       {/* ── Vision & Mission ── */}
       <AnimateOnScroll animation="fade-up">
-        <section className="py-20 md:py-24 px-6 bg-white border-b border-stone-200">
+        <section className="py-20 md:py-24 px-6 bg-white border-b border-surface-dim">
           <div className="max-w-6xl mx-auto space-y-16">
             {/* Vision */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
               <div className="md:col-span-4">
-                <h3
-                  className="text-2xl md:text-3xl font-bold text-stone-900"
-                  style={serif}
-                >
+                <h3 className="text-2xl md:text-3xl font-bold text-on-background font-headline italic">
                   Our Vision Statement
                 </h3>
               </div>
               <div className="md:col-span-8">
-                <p className="text-stone-600 text-sm md:text-base leading-relaxed md:text-right">
+                <p className="text-on-surface-variant text-sm md:text-base leading-relaxed md:text-right">
                   To provide a biblically faithful, academically rigorous, and
                   spiritually transformative English translation of the New
                   Testament that serves the global Church and reflects Africa's
@@ -116,13 +113,10 @@ export default function AboutAFINT() {
             {/* Mission */}
             <div>
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-10">
-                <h3
-                  className="text-2xl md:text-3xl font-bold text-stone-900 shrink-0"
-                  style={serif}
-                >
+                <h3 className="text-2xl md:text-3xl font-bold text-on-background shrink-0 font-headline italic">
                   Our Mission Statement
                 </h3>
-                <p className="text-stone-500 text-sm md:text-base leading-relaxed max-w-xl md:text-right">
+                <p className="text-outline text-sm md:text-base leading-relaxed max-w-xl md:text-right">
                   To honor Christ and strengthen the Church by producing a
                   reliable, accurate, and readable English translation of the
                   Greek New Testament, designed for study, teaching, preaching,
@@ -130,7 +124,7 @@ export default function AboutAFINT() {
                 </p>
               </div>
 
-              <p className="text-xs font-semibold uppercase tracking-widest text-stone-400 pb-4 mb-6 border-b border-stone-200">
+              <p className="text-xs font-semibold uppercase tracking-widest text-outline-variant pb-4 mb-6 border-b border-surface-dim">
                 This mission is achieved through
               </p>
 
@@ -142,17 +136,17 @@ export default function AboutAFINT() {
                     delay={idx * 100}
                     className={point.wide ? "lg:col-span-2" : ""}
                   >
-                    <div className="bg-stone-50 border border-stone-200 rounded-lg p-6 h-full hover:border-amber-400 hover:bg-white transition-all duration-200 relative group">
-                      <span className="absolute top-4 right-4 text-xs font-medium text-stone-300 select-none">
+                    <div className="bg-surface-container-low border border-surface-dim rounded-lg p-6 h-full hover:border-primary-fixed hover:bg-white transition-all duration-200 relative group">
+                      <span className="absolute top-4 right-4 text-xs font-medium text-inverse-on-surface select-none">
                         {point.number}
                       </span>
-                      <div className="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center mb-4 text-amber-700">
+                      <div className="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center mb-4 text-surface-tint">
                         {point.icon}
                       </div>
-                      <h4 className="text-base font-semibold text-stone-800 mb-2 pr-6 group-hover:text-amber-700 transition-colors">
+                      <h4 className="text-base font-semibold text-on-surface mb-2 pr-6 group-hover:text-surface-tint transition-colors">
                         {point.title}
                       </h4>
-                      <p className="text-stone-600 text-sm leading-relaxed">
+                      <p className="text-on-surface-variant text-sm leading-relaxed">
                         {point.desc}
                       </p>
                     </div>
@@ -169,13 +163,10 @@ export default function AboutAFINT() {
         <section className="py-20 md:py-24 px-6 bg-stone-100">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             <div className="lg:col-span-7 space-y-6 text-stone-700 leading-relaxed">
-              <p className="text-amber-700 text-xs font-bold uppercase tracking-widest mb-4">
+              <p className="text-surface-tint text-xs font-bold uppercase tracking-widest mb-4">
                 Product Description
               </p>
-              <h2
-                className="text-3xl md:text-4xl font-bold text-stone-900"
-                style={serif}
-              >
+              <h2 className="text-3xl md:text-4xl font-bold text-on-background font-headline italic">
                 A Groundbreaking Initiative
               </h2>
               <p className="text-stone-700">
@@ -205,9 +196,9 @@ export default function AboutAFINT() {
             </div>
 
             <div className="lg:col-span-5">
-              <div className="sticky top-20 bg-amber-700 text-white p-8 md:p-10 rounded-lg shadow-lg">
+              <div className="sticky top-20 bg-surface-tint text-white p-8 md:p-10 rounded-lg shadow-lg">
                 <Layers className="text-amber-300 mb-6" size={40} />
-                <h4 className="text-2xl font-bold mb-4" style={serif}>
+                <h4 className="text-2xl font-bold mb-4 font-headline italic">
                   Defining "African"
                 </h4>
                 <p className="mb-4 leading-relaxed text-amber-50">
@@ -232,16 +223,13 @@ export default function AboutAFINT() {
       </AnimateOnScroll>
 
       {/* ── Translation Philosophy ── */}
-      <section className="py-20 md:py-24 px-6 bg-white border-y border-stone-200">
+      <section className="py-20 md:py-24 px-6 bg-white border-y border-surface-dim">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
-            <h2
-              className="text-3xl md:text-4xl font-bold text-stone-900 mb-6"
-              style={serif}
-            >
+            <h2 className="text-3xl md:text-4xl font-bold text-on-background mb-6 font-headline italic">
               Translation Philosophy: Literal & Explanatory Paraphrase
             </h2>
-            <p className="text-stone-600 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
+            <p className="text-on-surface-variant max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
               The AFINT is a carefully structured translation project built on a
               dual-layer philosophy. These two components function in deliberate
               relationship: the Explanatory Paraphrase is consistently based on,
@@ -251,23 +239,20 @@ export default function AboutAFINT() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 border border-stone-200 rounded-lg overflow-hidden shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 border border-surface-dim rounded-lg overflow-hidden shadow-sm">
             {/* Layer 1: Literal */}
             <AnimateOnScroll animation="zoom-in" delay={100}>
-              <div className="bg-stone-50 p-8 md:p-10 lg:border-r border-stone-200 h-full">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-stone-200 text-stone-600 font-bold mb-6">
+              <div className="bg-surface-container-low p-8 md:p-10 lg:border-r border-surface-dim h-full">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-stone-200 text-on-surface-variant font-bold mb-6">
                   1
                 </div>
-                <h3
-                  className="text-2xl font-bold text-stone-900 mb-2"
-                  style={serif}
-                >
+                <h3 className="text-2xl font-bold text-on-background mb-2 font-headline italic">
                   AFINT: Literal Translation
                 </h3>
-                <p className="text-amber-700 font-semibold mb-6">
+                <p className="text-surface-tint font-semibold mb-6">
                   The Foundation of Accuracy and Integrity
                 </p>
-                <p className="text-stone-600 mb-8 text-base leading-relaxed">
+                <p className="text-on-surface-variant mb-8 text-base leading-relaxed">
                   Serves as the textual anchor of the entire project. Its
                   primary goal is to represent the Greek New Testament with a
                   high degree of formal fidelity, while remaining intelligible
@@ -276,7 +261,7 @@ export default function AboutAFINT() {
                 <ul className="space-y-4 text-stone-700 text-sm">
                   <li className="flex gap-3">
                     <ChevronRight
-                      className="text-amber-600 shrink-0 mt-0.5"
+                      className="text-primary shrink-0 mt-0.5"
                       size={18}
                     />
                     <span>
@@ -286,7 +271,7 @@ export default function AboutAFINT() {
                   </li>
                   <li className="flex gap-3">
                     <ChevronRight
-                      className="text-amber-600 shrink-0 mt-0.5"
+                      className="text-primary shrink-0 mt-0.5"
                       size={18}
                     />
                     <span>
@@ -296,7 +281,7 @@ export default function AboutAFINT() {
                   </li>
                   <li className="flex gap-3">
                     <ChevronRight
-                      className="text-amber-600 shrink-0 mt-0.5"
+                      className="text-primary shrink-0 mt-0.5"
                       size={18}
                     />
                     <span>
@@ -306,7 +291,7 @@ export default function AboutAFINT() {
                   </li>
                   <li className="flex gap-3">
                     <ChevronRight
-                      className="text-amber-600 shrink-0 mt-0.5"
+                      className="text-primary shrink-0 mt-0.5"
                       size={18}
                     />
                     <span>
@@ -315,8 +300,8 @@ export default function AboutAFINT() {
                     </span>
                   </li>
                 </ul>
-                <div className="mt-8 p-4 bg-white border border-stone-200 rounded-md">
-                  <p className="text-sm text-stone-600 font-semibold italic">
+                <div className="mt-8 p-4 bg-white border border-surface-dim rounded-md">
+                  <p className="text-sm text-on-surface-variant font-semibold italic">
                     Function: Establishes the definitive textual boundary for
                     meaning, providing the standard of accuracy.
                   </p>
@@ -327,19 +312,16 @@ export default function AboutAFINT() {
             {/* Layer 2: Paraphrase */}
             <AnimateOnScroll animation="fade-left" delay={200}>
               <div className="bg-white p-8 md:p-10 h-full">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-100 text-amber-700 font-bold mb-6">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-100 text-surface-tint font-bold mb-6">
                   2
                 </div>
-                <h3
-                  className="text-2xl font-bold text-stone-900 mb-2"
-                  style={serif}
-                >
+                <h3 className="text-2xl font-bold text-on-background mb-2 font-headline italic">
                   AFINT: Explanatory Paraphrase
                 </h3>
-                <p className="text-amber-700 font-semibold mb-6">
+                <p className="text-surface-tint font-semibold mb-6">
                   Clarity Built on the Literal Text
                 </p>
-                <p className="text-stone-600 mb-8 text-base leading-relaxed">
+                <p className="text-on-surface-variant mb-8 text-base leading-relaxed">
                   Not an independent rendering but a carefully controlled
                   expansion. Its purpose is to make the meaning of the text
                   clear, explicit, and accessible, especially where the Greek
@@ -348,7 +330,7 @@ export default function AboutAFINT() {
                 <ul className="space-y-4 text-stone-700 text-sm">
                   <li className="flex gap-3">
                     <ChevronRight
-                      className="text-amber-600 shrink-0 mt-0.5"
+                      className="text-primary shrink-0 mt-0.5"
                       size={18}
                     />
                     <span>
@@ -358,7 +340,7 @@ export default function AboutAFINT() {
                   </li>
                   <li className="flex gap-3">
                     <ChevronRight
-                      className="text-amber-600 shrink-0 mt-0.5"
+                      className="text-primary shrink-0 mt-0.5"
                       size={18}
                     />
                     <span>
@@ -368,7 +350,7 @@ export default function AboutAFINT() {
                   </li>
                   <li className="flex gap-3">
                     <ChevronRight
-                      className="text-amber-600 shrink-0 mt-0.5"
+                      className="text-primary shrink-0 mt-0.5"
                       size={18}
                     />
                     <span>
@@ -378,7 +360,7 @@ export default function AboutAFINT() {
                   </li>
                   <li className="flex gap-3">
                     <ChevronRight
-                      className="text-amber-600 shrink-0 mt-0.5"
+                      className="text-primary shrink-0 mt-0.5"
                       size={18}
                     />
                     <span>
@@ -387,8 +369,8 @@ export default function AboutAFINT() {
                     </span>
                   </li>
                 </ul>
-                <div className="mt-8 p-4 bg-stone-50 border border-stone-200 rounded-md">
-                  <p className="text-sm text-stone-600 font-semibold italic">
+                <div className="mt-8 p-4 bg-surface-container-low border border-surface-dim rounded-md">
+                  <p className="text-sm text-on-surface-variant font-semibold italic">
                     Function: Articulates clearly what is already present in the
                     text... extending meaning in an accountable way.
                   </p>
@@ -401,14 +383,11 @@ export default function AboutAFINT() {
 
       {/* ── Governing Principles & Justification ── */}
       <AnimateOnScroll animation="fade-up">
-        <section className="py-20 md:py-24 px-6 bg-stone-900 text-stone-300">
+        <section className="py-20 md:py-24 px-6 bg-stone-900 text-inverse-on-surface">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-16 lg:mb-20 pb-12 lg:pb-16 border-b border-stone-700">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-16 lg:mb-20 pb-12 lg:pb-16 border-b border-outline-variant">
               <div>
-                <h3
-                  className="text-2xl font-bold text-white mb-6"
-                  style={serif}
-                >
+                <h3 className="text-2xl font-bold text-white mb-6 font-headline italic">
                   The Governing Principle
                 </h3>
                 <p className="mb-4 leading-relaxed">
@@ -418,26 +397,28 @@ export default function AboutAFINT() {
                 </p>
                 <ul className="space-y-3 mb-8">
                   <li>
-                    <strong className="text-amber-400">Accuracy</strong> –
+                    <strong className="text-primary-fixed">Accuracy</strong> –
                     Interpretation remains anchored in a formally controlled
                     base.
                   </li>
                   <li>
-                    <strong className="text-amber-400">Integrity</strong> – The
-                    meaning is not altered or detached from the original
+                    <strong className="text-primary-fixed">Integrity</strong> –
+                    The meaning is not altered or detached from the original
                     wording.
                   </li>
                   <li>
-                    <strong className="text-amber-400">Accountability</strong> –
-                    Every expansion can be traced back to the literal text.
+                    <strong className="text-primary-fixed">
+                      Accountability
+                    </strong>{" "}
+                    – Every expansion can be traced back to the literal text.
                   </li>
                 </ul>
                 <div className="border-l-4 border-amber-600 pl-5 py-4 bg-stone-800/60 rounded-r-md">
                   <p className="font-semibold text-white leading-relaxed">
                     The Literal Translation determines what the text{" "}
-                    <em className="text-amber-400">says</em>; the Explanatory
-                    Paraphrase explains what the text{" "}
-                    <em className="text-amber-400">means</em> — without
+                    <em className="text-primary-fixed">says</em>; the
+                    Explanatory Paraphrase explains what the text{" "}
+                    <em className="text-primary-fixed">means</em> — without
                     contradiction or independence. This prevents interpretive
                     drift and preserves the faithfulness of the translation as a
                     whole.
@@ -446,10 +427,7 @@ export default function AboutAFINT() {
               </div>
 
               <div>
-                <h3
-                  className="text-2xl font-bold text-white mb-6"
-                  style={serif}
-                >
+                <h3 className="text-2xl font-bold text-white mb-6 font-headline italic">
                   Theological & Textual Basis
                 </h3>
                 <p className="mb-4 leading-relaxed">
@@ -465,19 +443,19 @@ export default function AboutAFINT() {
                   transparency under the authority of the text.
                 </p>
 
-                <div className="bg-stone-800 p-6 rounded-lg border border-stone-700 flex items-start gap-4">
+                <div className="bg-stone-800 p-6 rounded-lg border border-outline-variant flex items-start gap-4">
                   <FileText
-                    className="text-amber-500 shrink-0 mt-1"
+                    className="text-primary-container shrink-0 mt-1"
                     size={24}
                   />
                   <div>
                     <h4 className="text-white font-bold mb-2">Textual Basis</h4>
-                    <p className="text-sm text-stone-400 mb-2">
+                    <p className="text-sm text-outline-variant mb-2">
                       The translation draws on the two most authoritative and
                       widely accepted critical editions of the Greek New
                       Testament:
                     </p>
-                    <ul className="text-sm text-stone-300 list-disc ml-4 space-y-1">
+                    <ul className="text-sm text-inverse-on-surface list-disc ml-4 space-y-1">
                       <li>Novum Testamentum Graece, 28th Edition (NA28)</li>
                       <li>
                         The Greek New Testament, 5th Revised Edition (UBS5)
@@ -489,10 +467,10 @@ export default function AboutAFINT() {
             </div>
 
             <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold text-white mb-4" style={serif}>
+              <h3 className="text-3xl font-bold text-white mb-4 font-headline italic">
                 Purpose & Justification
               </h3>
-              <p className="max-w-2xl mx-auto text-stone-400 leading-relaxed">
+              <p className="max-w-2xl mx-auto text-outline-variant leading-relaxed">
                 The AFINT emerges from both theological conviction and missional
                 necessity, with four primary purposes:
               </p>
@@ -505,11 +483,11 @@ export default function AboutAFINT() {
                   animation="fade-up"
                   delay={idx * 100}
                 >
-                  <div className="bg-stone-800 border border-stone-700 p-6 rounded-lg hover:border-amber-500 transition-colors duration-200 h-full">
+                  <div className="bg-stone-800 border border-outline-variant p-6 rounded-lg hover:border-amber-500 transition-colors duration-200 h-full">
                     <h4 className="text-lg font-bold text-white mb-3">
                       {purpose.title}
                     </h4>
-                    <p className="text-sm leading-relaxed text-stone-400">
+                    <p className="text-sm leading-relaxed text-outline-variant">
                       {purpose.desc}
                     </p>
                   </div>
@@ -522,9 +500,9 @@ export default function AboutAFINT() {
 
       {/* ── CTA Footer ── */}
       <AnimateOnScroll animation="zoom-in">
-        <section className="bg-amber-700 text-white py-16 md:py-20 px-6 text-center">
+        <section className="bg-surface-tint text-white py-16 md:py-20 px-6 text-center">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6" style={serif}>
+            <h2 className="text-3xl font-bold mb-6 font-headline italic">
               Experience the Translation
             </h2>
             <p className="text-amber-100 leading-relaxed mb-8 text-lg">
@@ -535,7 +513,7 @@ export default function AboutAFINT() {
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 href="/digital-availability"
-                className="bg-white text-stone-900 hover:bg-stone-100 font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-md transition-all inline-flex items-center gap-2 shadow-lg"
+                className="bg-white text-on-background hover:bg-stone-100 font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-md transition-all inline-flex items-center gap-2 shadow-lg"
               >
                 Digital Platforms <ChevronRight size={16} />
               </Link>

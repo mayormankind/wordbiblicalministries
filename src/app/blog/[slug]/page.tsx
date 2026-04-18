@@ -44,11 +44,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     <main className="bg-white">
       <section className="bg-stone-950 text-white px-6 pt-40 pb-20">
         <div className="max-w-3xl mx-auto">
-          <p className="text-amber-400 text-xs uppercase tracking-widest font-bold mb-4">
+          <p className="text-primary-fixed text-xs uppercase tracking-widest font-bold mb-4">
             {post.category}
           </p>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">{post.title}</h1>
-          <div className="flex flex-wrap gap-4 text-sm text-stone-300">
+          <div className="flex flex-wrap gap-4 text-sm text-inverse-on-surface">
             <span>{post.author}</span>
             <span>{post.publishedAt}</span>
             <span>{post.readTime}</span>
@@ -58,7 +58,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       <article className="px-6 py-16">
         <div className="max-w-3xl mx-auto">
-          <p className="text-lg text-stone-600 leading-relaxed mb-10">
+          <p className="text-lg text-on-surface-variant leading-relaxed mb-10">
             {post.excerpt}
           </p>
           <div className="space-y-6 text-stone-700 leading-8">

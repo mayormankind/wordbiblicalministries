@@ -431,24 +431,21 @@ function AccordionItem({ section, isOpen, onToggle }: AccordionItemProps) {
   }, [isOpen]);
 
   return (
-    <div className="border-b border-stone-200 last:border-b-0">
+    <div className="border-b border-surface-dim last:border-b-0">
       <button
         onClick={onToggle}
         className="w-full flex items-start gap-5 py-6 px-0 text-left group focus:outline-none"
       >
         {/* Section number */}
         <span
-          className="text-2xl font-black text-stone-200 shrink-0 leading-none mt-0.5 group-hover:text-amber-200 transition-colors duration-200 select-none"
-          style={{ fontFamily: "Playfair Display, serif", minWidth: "2.5rem" }}
+          className="text-2xl font-black text-stone-200 shrink-0 leading-none mt-0.5 group-hover:text-amber-200 transition-colors duration-200 select-none font-headline"
+          style={{ minWidth: "2.5rem" }}
         >
           {section.number}
         </span>
 
         <div className="flex-1 min-w-0">
-          <h4
-            className="text-lg font-bold text-stone-800 group-hover:text-amber-700 transition-colors duration-200 leading-snug"
-            style={{ fontFamily: "Playfair Display, serif" }}
-          >
+          <h4 className="text-lg font-bold text-on-surface group-hover:text-surface-tint transition-colors duration-200 leading-snug font-headline italic">
             {section.title}
           </h4>
           {/* Scripture ref badges */}
@@ -456,7 +453,7 @@ function AccordionItem({ section, isOpen, onToggle }: AccordionItemProps) {
             {section.refs.map((ref, i) => (
               <span
                 key={i}
-                className="text-xs font-medium text-amber-700 bg-amber-50 border border-amber-100 px-2 py-0.5 rounded-sm"
+                className="text-xs font-medium text-surface-tint bg-amber-50 border border-amber-100 px-2 py-0.5 rounded-sm"
               >
                 {ref}
               </span>
@@ -467,8 +464,8 @@ function AccordionItem({ section, isOpen, onToggle }: AccordionItemProps) {
         {/* Chevron */}
         <ChevronDown
           size={18}
-          className={`shrink-0 mt-1 text-stone-400 transition-transform duration-300 ${
-            isOpen ? "rotate-180 text-amber-600" : ""
+          className={`shrink-0 mt-1 text-outline-variant transition-transform duration-300 ${
+            isOpen ? "rotate-180 text-primary" : ""
           }`}
         />
       </button>
@@ -485,7 +482,7 @@ function AccordionItem({ section, isOpen, onToggle }: AccordionItemProps) {
           {section.body.split("\n\n").map((para: string, i: number) => (
             <p
               key={i}
-              className="text-stone-600 leading-relaxed text-sm mb-4 last:mb-0"
+              className="text-on-surface-variant leading-relaxed text-sm mb-4 last:mb-0"
             >
               {para.trim()}
             </p>
@@ -524,21 +521,18 @@ export default function OurTheology() {
       <AnimateOnScroll animation="fade-up">
         <section className="py-20 px-6 bg-white">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-amber-700 text-xs uppercase tracking-widest font-bold mb-4">
+            <p className="text-surface-tint text-xs uppercase tracking-widest font-bold mb-4">
               Our Foundation
             </p>
-            <h2
-              className="text-3xl md:text-4xl font-bold text-stone-800 mb-6"
-              style={{ fontFamily: "Playfair Display, serif" }}
-            >
+            <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-6 font-headline italic">
               Standing on the Truth of God's Word
             </h2>
             <div className="flex items-center justify-center gap-3 my-5">
               <div className="h-px w-16 bg-amber-400" />
-              <div className="w-2 h-2 bg-amber-600 rotate-45" />
+              <div className="w-2 h-2 bg-primary rotate-45" />
               <div className="h-px w-16 bg-amber-400" />
             </div>
-            <p className="text-stone-600 leading-relaxed text-lg">
+            <p className="text-on-surface-variant leading-relaxed text-lg">
               At WBM, theology is not merely academic — it is the living breath
               of who we are and how we minister. Our doctrinal convictions shape
               our worship, our preaching, our discipleship, and our engagement
@@ -550,22 +544,19 @@ export default function OurTheology() {
       </AnimateOnScroll>
 
       {/* ── Core Doctrine Cards ── */}
-      <section className="py-10 pb-24 px-6 bg-stone-50">
+      <section className="py-10 pb-24 px-6 bg-surface-container-low">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {doctrines.map((d, i) => (
               <AnimateOnScroll key={i} animation="fade-up" delay={i * 50}>
                 <div className="bg-white rounded-sm p-8 shadow-sm hover:shadow-md transition-all duration-300 border-l-4 border-amber-600 h-full">
-                  <h3
-                    className="text-xl font-bold text-stone-800 mb-1"
-                    style={{ fontFamily: "Playfair Display, serif" }}
-                  >
+                  <h3 className="text-xl font-bold text-on-surface mb-1 font-headline italic">
                     {d.title}
                   </h3>
-                  <p className="text-amber-600 text-xs font-semibold uppercase tracking-wide mb-4">
+                  <p className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">
                     {d.ref}
                   </p>
-                  <p className="text-stone-600 text-sm leading-relaxed">
+                  <p className="text-on-surface-variant text-sm leading-relaxed">
                     {d.body}
                   </p>
                 </div>
@@ -581,19 +572,16 @@ export default function OurTheology() {
           <div className="max-w-3xl mx-auto">
             <div className="flex items-center justify-center gap-4 mb-6">
               <div className="h-px flex-1 bg-stone-700" />
-              <BookOpen className="text-amber-500" size={22} />
+              <BookOpen className="text-primary-container" size={22} />
               <div className="h-px flex-1 bg-stone-700" />
             </div>
-            <p className="text-amber-500 text-xs uppercase tracking-widest font-bold mb-3">
+            <p className="text-primary-container text-xs uppercase tracking-widest font-bold mb-3">
               A Full Exposition
             </p>
-            <h2
-              className="text-2xl md:text-3xl font-bold text-white mb-4"
-              style={{ fontFamily: "Playfair Display, serif" }}
-            >
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 font-headline italic">
               The Gospel: Content, Results & Scope
             </h2>
-            <p className="text-stone-400 leading-relaxed">
+            <p className="text-outline-variant leading-relaxed">
               An in-depth theological exposition of the Gospel of Jesus Christ —
               its substance, its saving effects, and its cosmic reach. Explore
               each section at your own pace.
@@ -606,7 +594,7 @@ export default function OurTheology() {
       <section className="bg-white px-6 pb-24">
         <div className="max-w-5xl mx-auto">
           {/* Sticky Tab Bar */}
-          <div className="sticky top-0 z-20 bg-white border-b border-stone-200 -mx-6 px-6">
+          <div className="sticky top-0 z-20 bg-white border-b border-surface-dim -mx-6 px-6">
             <div className="max-w-5xl mx-auto flex gap-0 overflow-x-auto">
               {gospelTabs.map((tab) => (
                 <button
@@ -614,8 +602,8 @@ export default function OurTheology() {
                   onClick={() => setActiveTab(tab.id)}
                   className={`shrink-0 py-5 px-6 text-sm font-semibold border-b-2 transition-all duration-200 focus:outline-none ${
                     activeTab === tab.id
-                      ? "border-amber-600 text-amber-700"
-                      : "border-transparent text-stone-400 hover:text-stone-700 hover:border-stone-300"
+                      ? "border-amber-600 text-surface-tint"
+                      : "border-transparent text-outline-variant hover:text-stone-700 hover:border-stone-300"
                   }`}
                 >
                   {/* Short label on mobile, full on desktop */}
@@ -629,18 +617,15 @@ export default function OurTheology() {
           {/* Tab content header */}
           <div className="pt-12 pb-6 border-b border-stone-100 mb-2">
             <div className="flex items-baseline gap-4">
-              <p className="text-amber-700 text-xs uppercase tracking-widest font-bold">
+              <p className="text-surface-tint text-xs uppercase tracking-widest font-bold">
                 {activeTabData?.shortLabel}
               </p>
               <div className="h-px flex-1 bg-stone-100" />
-              <p className="text-stone-400 text-xs">
+              <p className="text-outline-variant text-xs">
                 {activeTabData?.sections.length} sections
               </p>
             </div>
-            <h3
-              className="text-2xl md:text-3xl font-bold text-stone-900 mt-3"
-              style={{ fontFamily: "Playfair Display, serif" }}
-            >
+            <h3 className="text-2xl md:text-3xl font-bold text-on-background mt-3 font-headline italic">
               {activeTabData?.label}
             </h3>
           </div>
@@ -666,14 +651,11 @@ export default function OurTheology() {
 
       {/* ── Scripture CTA ── */}
       <AnimateOnScroll animation="zoom-in">
-        <section className="bg-amber-700 py-16 px-6 text-center">
+        <section className="bg-surface-tint py-16 px-6 text-center">
           <p className="text-amber-100 text-xs uppercase tracking-widest font-bold mb-3">
             Rooted & Grounded
           </p>
-          <blockquote
-            className="text-white text-2xl md:text-3xl italic max-w-3xl mx-auto mb-3"
-            style={{ fontFamily: "Playfair Display, serif" }}
-          >
+          <blockquote className="text-white text-2xl md:text-3xl italic max-w-3xl mx-auto mb-3 font-headline italic">
             "Sanctify them through thy truth: thy word is truth."
           </blockquote>
           <p className="text-amber-200 tracking-widest text-sm uppercase">

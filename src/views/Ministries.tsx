@@ -224,30 +224,29 @@ interface PillarItemProps {
 // ── Pillar accordion ──────────────────────────────────────────────────────────
 function PillarItem({ pillar, isOpen, onToggle }: PillarItemProps) {
   return (
-    <div className="border-b border-stone-200 last:border-b-0">
+    <div className="border-b border-surface-dim last:border-b-0">
       <button
         onClick={onToggle}
         className="w-full flex items-start gap-5 py-6 text-left group focus:outline-none"
       >
         <span
-          className="text-xl font-black text-stone-200 shrink-0 leading-none mt-0.5 group-hover:text-amber-200 transition-colors duration-200 select-none"
-          style={{ fontFamily: "Playfair Display, serif", minWidth: "2.5rem" }}
+          className="text-xl font-black text-stone-200 shrink-0 leading-none mt-0.5 group-hover:text-amber-200 transition-colors duration-200 select-none font-headline"
+          style={{ minWidth: "2.5rem" }}
         >
           {pillar.number}
         </span>
         <div className="flex-1 min-w-0">
-          <h4
-            className="text-base font-bold text-stone-800 group-hover:text-amber-700 transition-colors duration-200 leading-snug"
-            style={{ fontFamily: "Playfair Display, serif" }}
-          >
+          <h4 className="text-base font-bold text-on-surface group-hover:text-surface-tint transition-colors duration-200 leading-snug font-headline italic">
             {pillar.title}
           </h4>
-          <p className="text-xs text-stone-400 mt-0.5">{pillar.subtitle}</p>
+          <p className="text-xs text-outline-variant mt-0.5">
+            {pillar.subtitle}
+          </p>
         </div>
         <ChevronDown
           size={16}
-          className={`shrink-0 mt-1 text-stone-400 transition-transform duration-300 ${
-            isOpen ? "rotate-180 text-amber-600" : ""
+          className={`shrink-0 mt-1 text-outline-variant transition-transform duration-300 ${
+            isOpen ? "rotate-180 text-primary" : ""
           }`}
         />
       </button>
@@ -260,7 +259,7 @@ function PillarItem({ pillar, isOpen, onToggle }: PillarItemProps) {
         }}
       >
         <div className="pb-7 pl-14 pr-2">
-          <p className="text-stone-600 leading-relaxed text-sm mb-5">
+          <p className="text-on-surface-variant leading-relaxed text-sm mb-5">
             {pillar.body}
           </p>
           <ul className="space-y-2">
@@ -271,7 +270,7 @@ function PillarItem({ pillar, isOpen, onToggle }: PillarItemProps) {
               >
                 <ChevronRight
                   size={14}
-                  className="text-amber-600 shrink-0 mt-0.5"
+                  className="text-primary shrink-0 mt-0.5"
                 />
                 {pt}
               </li>
@@ -310,25 +309,22 @@ export default function Ministries() {
       <AnimateOnScroll animation="fade-in">
         <section className="py-20 px-6 bg-white">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-amber-700 text-xs uppercase tracking-widest font-bold mb-4">
+            <p className="text-surface-tint text-xs uppercase tracking-widest font-bold mb-4">
               Three Pillars of Ministry
             </p>
-            <h2
-              className="text-3xl md:text-4xl font-bold text-stone-800 mb-6"
-              style={{ fontFamily: "Playfair Display, serif" }}
-            >
+            <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-6 font-headline italic">
               Translation. Commentary. Defense.
             </h2>
             <div className="flex items-center justify-center gap-3 my-5">
               <div className="h-px w-16 bg-amber-400" />
-              <div className="w-2 h-2 bg-amber-600 rotate-45" />
+              <div className="w-2 h-2 bg-primary rotate-45" />
               <div className="h-px w-16 bg-amber-400" />
             </div>
-            <p className="text-stone-600 text-lg leading-relaxed">
-              These three emphases form the backbone of everything WBM does. They
-              are not isolated programs but a unified strategy — each one
-              strengthening the others — for building churches, training scholars,
-              and grounding students in the Word of God.
+            <p className="text-on-surface-variant text-lg leading-relaxed">
+              These three emphases form the backbone of everything WBM does.
+              They are not isolated programs but a unified strategy — each one
+              strengthening the others — for building churches, training
+              scholars, and grounding students in the Word of God.
             </p>
           </div>
         </section>
@@ -337,7 +333,7 @@ export default function Ministries() {
       {/* ── Three Pillars Summary ── */}
       <section className="pb-20 px-6 bg-white">
         <div
-          className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-0 border border-stone-200 rounded-lg overflow-hidden"
+          className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-0 border border-surface-dim rounded-lg overflow-hidden"
           style={{ gap: "1px", background: "rgb(231 229 228)" }}
         >
           {[
@@ -389,20 +385,19 @@ export default function Ministries() {
               body: "A stalwart, reasoned defense of historic evangelical doctrine — equipping churches, institutions, and students to stand firm against false teaching, theological drift, and the intellectual pressures of a post-Christian age.",
             },
           ].map((pillar, i) => (
-            <AnimateOnScroll key={i} animation="fade-up" delay={(i * 100) as 0 | 100 | 200}>
-              <div
-                className="bg-white p-8 group hover:bg-stone-50 transition-colors duration-200 h-full"
-              >
-                <div className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center text-amber-700 mb-5">
+            <AnimateOnScroll
+              key={i}
+              animation="fade-up"
+              delay={(i * 100) as 0 | 100 | 200}
+            >
+              <div className="bg-white p-8 group hover:bg-surface-container-low transition-colors duration-200 h-full">
+                <div className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center text-surface-tint mb-5">
                   {pillar.icon}
                 </div>
-                <h3
-                  className="text-lg font-bold text-stone-900 mb-3"
-                  style={{ fontFamily: "Playfair Display, serif" }}
-                >
+                <h3 className="text-lg font-bold text-on-background mb-3 font-headline italic">
                   {pillar.title}
                 </h3>
-                <p className="text-stone-500 text-sm leading-relaxed">
+                <p className="text-outline text-sm leading-relaxed">
                   {pillar.body}
                 </p>
               </div>
@@ -417,19 +412,16 @@ export default function Ministries() {
           <div className="max-w-3xl mx-auto">
             <div className="flex items-center justify-center gap-4 mb-6">
               <div className="h-px flex-1 bg-stone-700" />
-              <ChevronRight className="text-amber-500" size={18} />
+              <ChevronRight className="text-primary-container" size={18} />
               <div className="h-px flex-1 bg-stone-700" />
             </div>
-            <p className="text-amber-500 text-xs uppercase tracking-widest font-bold mb-3">
+            <p className="text-primary-container text-xs uppercase tracking-widest font-bold mb-3">
               Our Reach
             </p>
-            <h2
-              className="text-2xl md:text-3xl font-bold text-white mb-4"
-              style={{ fontFamily: "Playfair Display, serif" }}
-            >
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 font-headline italic">
               Who We Serve
             </h2>
-            <p className="text-stone-400 leading-relaxed max-w-xl mx-auto">
+            <p className="text-outline-variant leading-relaxed max-w-xl mx-auto">
               WBM's three ministry pillars are deployed across three strategic
               spheres of Christian life and formation. Select your context below
               to see how WBM serves you.
@@ -442,7 +434,7 @@ export default function Ministries() {
       <section className="bg-white px-6 pb-24">
         <div className="max-w-5xl mx-auto">
           {/* Sticky tab bar */}
-          <div className="sticky top-0 z-20 bg-white border-b border-stone-200 -mx-6 px-6">
+          <div className="sticky top-0 z-20 bg-white border-b border-surface-dim -mx-6 px-6">
             <div className="max-w-5xl mx-auto flex gap-0 overflow-x-auto">
               {audiences.map((a) => (
                 <button
@@ -450,15 +442,15 @@ export default function Ministries() {
                   onClick={() => setActiveAudience(a.id)}
                   className={`shrink-0 py-5 px-5 md:px-8 text-sm font-semibold border-b-2 transition-all duration-200 focus:outline-none flex items-center gap-2 ${
                     activeAudience === a.id
-                      ? "border-amber-600 text-amber-700"
-                      : "border-transparent text-stone-400 hover:text-stone-700 hover:border-stone-300"
+                      ? "border-amber-600 text-surface-tint"
+                      : "border-transparent text-outline-variant hover:text-stone-700 hover:border-stone-300"
                   }`}
                 >
                   <span
                     className={`${
                       activeAudience === a.id
-                        ? "text-amber-600"
-                        : "text-stone-400"
+                        ? "text-primary"
+                        : "text-outline-variant"
                     } transition-colors`}
                   >
                     {a.icon}
@@ -472,16 +464,13 @@ export default function Ministries() {
 
           {/* Active audience header */}
           <div className="pt-12 pb-8 border-b border-stone-100">
-            <p className="text-amber-700 text-xs uppercase tracking-widest font-bold mb-2">
+            <p className="text-surface-tint text-xs uppercase tracking-widest font-bold mb-2">
               Ministry to {active?.shortLabel}
             </p>
-            <h3
-              className="text-2xl md:text-3xl font-bold text-stone-900 mb-4"
-              style={{ fontFamily: "Playfair Display, serif" }}
-            >
+            <h3 className="text-2xl md:text-3xl font-bold text-on-background mb-4 font-headline italic">
               {active?.label}
             </h3>
-            <p className="text-stone-500 text-base leading-relaxed max-w-3xl">
+            <p className="text-outline text-base leading-relaxed max-w-3xl">
               {active?.intro}
             </p>
           </div>
@@ -504,19 +493,16 @@ export default function Ministries() {
           </div>
 
           {/* Partnership benefits */}
-          <div className="bg-stone-50 border border-stone-200 rounded-lg p-8">
+          <div className="bg-surface-container-low border border-surface-dim rounded-lg p-8">
             <div className="flex items-start gap-4 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center text-amber-700 shrink-0">
+              <div className="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center text-surface-tint shrink-0">
                 <ChevronRight size={18} />
               </div>
               <div>
-                <p className="text-amber-700 text-xs uppercase tracking-widest font-bold mb-1">
+                <p className="text-surface-tint text-xs uppercase tracking-widest font-bold mb-1">
                   Partnership Benefits
                 </p>
-                <h4
-                  className="text-xl font-bold text-stone-800"
-                  style={{ fontFamily: "Playfair Display, serif" }}
-                >
+                <h4 className="text-xl font-bold text-on-surface font-headline italic">
                   How {active?.shortLabel} Can Partner with WBM
                 </h4>
               </div>
@@ -528,8 +514,8 @@ export default function Ministries() {
                   animation="fade-in"
                   delay={(i * 50) as any}
                 >
-                  <li className="flex items-start gap-3 text-stone-600 text-sm leading-relaxed">
-                    <span className="w-5 h-5 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
+                  <li className="flex items-start gap-3 text-on-surface-variant text-sm leading-relaxed">
+                    <span className="w-5 h-5 rounded-full bg-amber-100 text-surface-tint flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
                       {i + 1}
                     </span>
                     {item}
@@ -543,18 +529,15 @@ export default function Ministries() {
 
       {/* ── CTA ── */}
       <AnimateOnScroll animation="fade-up">
-        <section className="py-16 px-6 bg-amber-700 text-white text-center">
+        <section className="py-16 px-6 bg-surface-tint text-white text-center">
           <div className="max-w-3xl mx-auto">
-            <h2
-              className="text-3xl font-bold mb-4"
-              style={{ fontFamily: "Playfair Display, serif" }}
-            >
+            <h2 className="text-3xl font-bold mb-4 font-headline italic">
               Partner With Word Biblical Ministries
             </h2>
             <p className="text-amber-100 mb-8 max-w-xl mx-auto leading-relaxed">
-              Whether you lead a church, a seminary, or a campus fellowship — WBM
-              exists to serve you with the tools of translation, commentary, and
-              doctrinal defense. Let's build the Kingdom together.
+              Whether you lead a church, a seminary, or a campus fellowship —
+              WBM exists to serve you with the tools of translation, commentary,
+              and doctrinal defense. Let's build the Kingdom together.
             </p>
             <Link
               href="/contact"

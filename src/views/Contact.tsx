@@ -15,12 +15,12 @@ import AnimateOnScroll from "../components/AnimateOnScroll";
 
 const contactDetails = [
   {
-    icon: <MapPin size={22} className="text-amber-600" />,
+    icon: <MapPin size={22} className="text-primary" />,
     title: "Visit Us",
     lines: ["Akure, Ondo State", "Nigeria"],
   },
   {
-    icon: <Mail size={22} className="text-amber-600" />,
+    icon: <Mail size={22} className="text-primary" />,
     title: "Email Us",
     lines: ["wordbiblicalministries@gmail.com", "drkerux@gmail.com"],
   },
@@ -69,16 +69,13 @@ export default function Contact() {
                   animation="fade-up"
                   delay={((i % 4) * 100) as 0 | 100 | 200 | 300}
                 >
-                  <div className="bg-stone-50 border border-stone-200 rounded-sm p-7 text-center hover:border-amber-400 hover:shadow-md transition-all duration-300 h-full flex flex-col justify-center">
+                  <div className="bg-surface-container-low border border-surface-dim rounded-sm p-7 text-center hover:border-primary-fixed hover:shadow-md transition-all duration-300 h-full flex flex-col justify-center">
                     <div className="flex justify-center mb-4">{c.icon}</div>
-                    <h3
-                      className="font-bold text-stone-800 mb-3 text-lg"
-                      style={{ fontFamily: "Playfair Display, serif" }}
-                    >
+                    <h3 className="font-bold text-on-surface mb-3 text-lg font-headline italic">
                       {c.title}
                     </h3>
                     {c.lines.map((l, j) => (
-                      <p key={j} className="text-stone-500 text-sm">
+                      <p key={j} className="text-outline text-sm">
                         {l}
                       </p>
                     ))}
@@ -91,31 +88,25 @@ export default function Contact() {
             <div className="lg:w-2/3">
               <AnimateOnScroll animation="fade-right">
                 <div>
-                  <p className="text-amber-700 text-xs uppercase tracking-widest font-bold mb-3">
+                  <p className="text-surface-tint text-xs uppercase tracking-widest font-bold mb-3">
                     Send a Message
                   </p>
-                  <h2
-                    className="text-3xl font-bold text-stone-800 mb-2"
-                    style={{ fontFamily: "Playfair Display, serif" }}
-                  >
+                  <h2 className="text-3xl font-bold text-on-surface mb-2 font-headline italic">
                     We'd Love to Hear From You
                   </h2>
-                  <div className="h-1 w-12 bg-amber-600 mb-7" />
+                  <div className="h-1 w-12 bg-primary mb-7" />
 
                   {sent ? (
                     <div className="bg-green-50 border border-green-300 text-green-700 rounded-sm p-8 text-center">
                       <div className="flex justify-center mb-4">
                         <CheckCircle size={40} className="text-green-600" />
                       </div>
-                      <h3
-                        className="font-bold text-xl mb-2"
-                        style={{ fontFamily: "Playfair Display, serif" }}
-                      >
+                      <h3 className="font-bold text-xl mb-2 font-headline italic">
                         Message Received!
                       </h3>
                       <p className="text-sm leading-relaxed">
-                        Thank you for reaching out to WBM. We will get back to you
-                        shortly. God bless you!
+                        Thank you for reaching out to WBM. We will get back to
+                        you shortly. God bless you!
                       </p>
                       <button
                         onClick={() => setSent(false)}
@@ -128,7 +119,7 @@ export default function Contact() {
                     <form onSubmit={handleSubmit} className="space-y-5">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
-                          <label className="block text-xs uppercase tracking-widest font-bold text-stone-600 mb-2">
+                          <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant mb-2">
                             Full Name *
                           </label>
                           <input
@@ -136,12 +127,12 @@ export default function Contact() {
                             required
                             value={form.name}
                             onChange={handleChange}
-                            className="w-full border border-stone-300 focus:border-amber-500 focus:outline-none px-4 py-3 text-sm rounded-sm text-stone-800 bg-stone-50"
+                            className="w-full border border-stone-300 focus:border-amber-500 focus:outline-none px-4 py-3 text-sm rounded-sm text-on-surface bg-surface-container-low"
                             placeholder="Your full name"
                           />
                         </div>
                         <div>
-                          <label className="block text-xs uppercase tracking-widest font-bold text-stone-600 mb-2">
+                          <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant mb-2">
                             Email Address *
                           </label>
                           <input
@@ -150,26 +141,26 @@ export default function Contact() {
                             required
                             value={form.email}
                             onChange={handleChange}
-                            className="w-full border border-stone-300 focus:border-amber-500 focus:outline-none px-4 py-3 text-sm rounded-sm text-stone-800 bg-stone-50"
+                            className="w-full border border-stone-300 focus:border-amber-500 focus:outline-none px-4 py-3 text-sm rounded-sm text-on-surface bg-surface-container-low"
                             placeholder="your@email.com"
                           />
                         </div>
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
-                          <label className="block text-xs uppercase tracking-widest font-bold text-stone-600 mb-2">
+                          <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant mb-2">
                             Phone Number
                           </label>
                           <input
                             name="phone"
                             value={form.phone}
                             onChange={handleChange}
-                            className="w-full border border-stone-300 focus:border-amber-500 focus:outline-none px-4 py-3 text-sm rounded-sm text-stone-800 bg-stone-50"
+                            className="w-full border border-stone-300 focus:border-amber-500 focus:outline-none px-4 py-3 text-sm rounded-sm text-on-surface bg-surface-container-low"
                             placeholder="+1 (000) 000-0000"
                           />
                         </div>
                         <div>
-                          <label className="block text-xs uppercase tracking-widest font-bold text-stone-600 mb-2">
+                          <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant mb-2">
                             Subject
                           </label>
                           <select
@@ -177,7 +168,7 @@ export default function Contact() {
                             name="subject"
                             value={form.subject}
                             onChange={handleChange}
-                            className="w-full border border-stone-300 focus:border-amber-500 focus:outline-none px-4 py-3 text-sm rounded-sm text-stone-800 bg-stone-50"
+                            className="w-full border border-stone-300 focus:border-amber-500 focus:outline-none px-4 py-3 text-sm rounded-sm text-on-surface bg-surface-container-low"
                           >
                             <option value="">Select a subject</option>
                             <option>General Inquiry</option>
@@ -190,7 +181,7 @@ export default function Contact() {
                         </div>
                       </div>
                       <div>
-                        <label className="block text-xs uppercase tracking-widest font-bold text-stone-600 mb-2">
+                        <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant mb-2">
                           Your Message *
                         </label>
                         <textarea
@@ -199,13 +190,13 @@ export default function Contact() {
                           rows={6}
                           value={form.message}
                           onChange={handleChange}
-                          className="w-full border border-stone-300 focus:border-amber-500 focus:outline-none px-4 py-3 text-sm rounded-sm text-stone-800 bg-stone-50 resize-none"
+                          className="w-full border border-stone-300 focus:border-amber-500 focus:outline-none px-4 py-3 text-sm rounded-sm text-on-surface bg-surface-container-low resize-none"
                           placeholder="How can we help you?"
                         />
                       </div>
                       <button
                         type="submit"
-                        className="bg-amber-700 hover:bg-amber-600 text-white font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-sm transition-all inline-flex items-center gap-2"
+                        className="bg-surface-tint hover:bg-primary text-white font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-sm transition-all inline-flex items-center gap-2"
                       >
                         Send Message <Send size={16} />
                       </button>
@@ -222,19 +213,16 @@ export default function Contact() {
       <AnimateOnScroll animation="zoom-in">
         <section className="py-16 px-6 bg-stone-900 text-white text-center">
           <div className="flex justify-center mb-6">
-            <Heart size={48} className="text-amber-500" />
+            <Heart size={48} className="text-primary-container" />
           </div>
-          <h2
-            className="text-3xl font-bold mb-4"
-            style={{ fontFamily: "Playfair Display, serif" }}
-          >
+          <h2 className="text-3xl font-bold mb-4 font-headline italic">
             Do You Need Prayer?
           </h2>
-          <p className="text-stone-400 mb-6 max-w-md mx-auto">
+          <p className="text-outline-variant mb-6 max-w-md mx-auto">
             Our prayer team is available to stand with you in faith. Share your
             request and we will pray with and for you.
           </p>
-          <button className="bg-amber-600 hover:bg-amber-500 text-white font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-sm transition-all">
+          <button className="bg-primary hover:bg-primary-container hover:text-on-primary-container text-white font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-sm transition-all">
             Submit a Prayer Request
           </button>
         </section>

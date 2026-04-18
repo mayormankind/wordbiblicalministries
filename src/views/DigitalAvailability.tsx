@@ -11,7 +11,7 @@ import AnimateOnScroll from "../components/AnimateOnScroll";
 
 export default function DigitalAvailability() {
   return (
-    <main className="bg-stone-50">
+    <main className="bg-surface-container-low">
       <PageHero
         tag="Global Access"
         title="Digital Availability of AFINT"
@@ -20,33 +20,32 @@ export default function DigitalAvailability() {
 
       {/* The Big Announcement */}
       <AnimateOnScroll animation="fade-up">
-        <section className="py-24 px-6 bg-white border-b border-stone-200">
+        <section className="py-24 px-6 bg-white border-b border-surface-dim">
           <div className="max-w-4xl mx-auto text-center">
             <Smartphone
-              className="w-16 h-16 mx-auto text-amber-600 mb-8"
+              className="w-16 h-16 mx-auto text-primary mb-8"
               strokeWidth={1.5}
             />
-            <p className="text-amber-700 text-sm uppercase tracking-widest font-bold mb-6">
+            <p className="text-surface-tint text-sm uppercase tracking-widest font-bold mb-6">
               Now Available Worldwide
             </p>
             <h2
-              className="text-3xl md:text-5xl font-bold text-stone-800 mb-8 leading-tight"
-              style={{ fontFamily: "Playfair Display, serif" }}
+              className="text-3xl md:text-5xl font-bold text-on-surface mb-8 leading-tight font-headline italic"
             >
               AFINT on the YouVersion Bible App
             </h2>
             <div className="flex items-center justify-center gap-3 my-8">
               <div className="h-px w-24 bg-amber-400" />
-              <div className="w-2 h-2 bg-amber-600 rotate-45" />
+              <div className="w-2 h-2 bg-primary rotate-45" />
               <div className="h-px w-24 bg-amber-400" />
             </div>
-            <p className="text-stone-600 text-xl leading-relaxed font-medium">
+            <p className="text-on-surface-variant text-xl leading-relaxed font-medium">
               We are pleased to announce that the African International New
               Testament (AFINT) is available on the YouVersion Bible App, making
               it easily accessible to readers around the world for study,
               devotion, and ministry use.
             </p>
-            <p className="text-stone-500 mt-6 text-lg italic">
+            <p className="text-outline mt-6 text-lg italic">
               Two carefully developed editions are currently available:
             </p>
           </div>
@@ -64,24 +63,23 @@ export default function DigitalAvailability() {
                   <Search size={120} />
                 </div>
                 <div className="relative z-10 flex-1">
-                  <p className="text-stone-500 text-xs uppercase tracking-widest font-bold mb-3">
+                  <p className="text-outline text-xs uppercase tracking-widest font-bold mb-3">
                     British English Edition
                   </p>
                   <h3
-                    className="text-2xl lg:text-3xl font-bold text-stone-900 mb-6"
-                    style={{ fontFamily: "Playfair Display, serif" }}
+                    className="text-2xl lg:text-3xl font-bold text-on-background mb-6 font-headline italic"
                   >
                     African International New Testament: <br />
-                    <span className="text-amber-700">Literal Translation</span>{" "}
+                    <span className="text-surface-tint">Literal Translation</span>{" "}
                   </h3>
-                  <div className="space-y-5 text-stone-600 leading-relaxed">
+                  <div className="space-y-5 text-on-surface-variant leading-relaxed">
                     <p>
                       This edition seeks to present a close, word-for-word
                       rendering of the original Greek text, prioritising
                       accuracy, transparency, and fidelity to the structure and
                       wording of Scripture.
                     </p>
-                    <p className="font-medium text-stone-800 bg-stone-50 p-4 border-l-4 border-stone-300">
+                    <p className="font-medium text-on-surface bg-surface-container-low p-4 border-l-4 border-stone-300">
                       It follows British English conventions and is especially
                       suited for careful study, teaching, and readers who desire
                       to engage the biblical text with minimal interpretive
@@ -99,19 +97,18 @@ export default function DigitalAvailability() {
                   <Layers size={120} />
                 </div>
                 <div className="relative z-10 flex-1">
-                  <p className="text-amber-600 text-xs uppercase tracking-widest font-bold mb-3">
+                  <p className="text-primary text-xs uppercase tracking-widest font-bold mb-3">
                     American English Edition
                   </p>
                   <h3
-                    className="text-2xl lg:text-3xl font-bold text-stone-900 mb-6"
-                    style={{ fontFamily: "Playfair Display, serif" }}
+                    className="text-2xl lg:text-3xl font-bold text-on-background mb-6 font-headline italic"
                   >
                     African International New Testament: <br />
-                    <span className="text-amber-700">
+                    <span className="text-surface-tint">
                       Explanatory Paraphrase
                     </span>{" "}
                   </h3>
-                  <div className="space-y-5 text-stone-600 leading-relaxed">
+                  <div className="space-y-5 text-on-surface-variant leading-relaxed">
                     <p>
                       This edition is designed to make the meaning of the
                       biblical text clear and explicit through carefully guided
@@ -119,7 +116,7 @@ export default function DigitalAvailability() {
                       contextual elements within the text itself, following
                       American English conventions.
                     </p>
-                    <p className="font-medium text-amber-900 bg-amber-50 p-4 border-l-4 border-amber-400">
+                    <p className="font-medium text-amber-900 bg-amber-50 p-4 border-l-4 border-primary-fixed">
                       It is particularly helpful for discipleship, devotional
                       reading, and readers seeking deeper understanding without
                       requiring technical tools.
@@ -134,13 +131,12 @@ export default function DigitalAvailability() {
 
       {/* Dual Purpose & Integration */}
       <AnimateOnScroll animation="fade-up">
-        <section className="py-24 px-6 bg-stone-900 text-stone-300">
+        <section className="py-24 px-6 bg-stone-900 text-inverse-on-surface">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
                 <h3
-                  className="text-3xl font-bold text-white mb-6"
-                  style={{ fontFamily: "Playfair Display, serif" }}
+                  className="text-3xl font-bold text-white mb-6 font-headline italic"
                 >
                   A Dual Purpose for a Broad Audience
                 </h3>
@@ -150,20 +146,19 @@ export default function DigitalAvailability() {
                   integrity of the original text while also making its meaning
                   accessible and clear to a broad audience.
                 </p>
-                <div className="flex gap-4 items-center text-amber-500 font-semibold uppercase tracking-widest text-sm mt-8">
+                <div className="flex gap-4 items-center text-primary-container font-semibold uppercase tracking-widest text-sm mt-8">
                   <BookOpen size={20} /> Rigorous Study
                   <span className="w-1.5 h-1.5 bg-stone-600 rounded-full mx-2" />
                   <Share2 size={20} /> Spiritual Growth
                 </div>
               </div>
 
-              <div className="bg-stone-800 p-10 border border-stone-700 rounded-sm relative">
-                <div className="absolute -top-5 -left-5 bg-amber-600 text-white p-3 rounded-sm shadow-lg">
+              <div className="bg-stone-800 p-10 border border-outline-variant rounded-sm relative">
+                <div className="absolute -top-5 -left-5 bg-primary text-white p-3 rounded-sm shadow-lg">
                   <Smartphone size={24} />
                 </div>
                 <h4
-                  className="text-xl font-bold text-white mb-4"
-                  style={{ fontFamily: "Playfair Display, serif" }}
+                  className="text-xl font-bold text-white mb-4 font-headline italic"
                 >
                   Fully Integrated Platform
                 </h4>
@@ -180,11 +175,10 @@ export default function DigitalAvailability() {
 
       {/* Final CTA */}
       <AnimateOnScroll animation="zoom-in">
-        <section className="py-16 px-6 bg-amber-700 text-white text-center">
+        <section className="py-16 px-6 bg-surface-tint text-white text-center">
           <div className="max-w-3xl mx-auto">
             <h2
-              className="text-3xl font-bold mb-4"
-              style={{ fontFamily: "Playfair Display, serif" }}
+              className="text-3xl font-bold mb-4 font-headline italic"
             >
               Start Reading Today
             </h2>
@@ -196,7 +190,7 @@ export default function DigitalAvailability() {
               href="https://www.youversion.com/the-bible-app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-stone-900 hover:bg-stone-100 font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-sm transition-all inline-flex items-center gap-2 shadow-xl"
+              className="bg-white text-on-background hover:bg-stone-100 font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-sm transition-all inline-flex items-center gap-2 shadow-xl"
             >
               Open YouVersion <ArrowRight size={16} />
             </a>

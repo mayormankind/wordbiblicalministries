@@ -26,52 +26,52 @@ import AnimateOnScroll from "../components/AnimateOnScroll";
 // ── Core Values ───────────────────────────────────────────────────────────────
 const values = [
   {
-    icon: <HandHeart size={32} className="text-amber-600" />,
+    icon: <HandHeart size={32} className="text-primary" />,
     title: "Prayer Dependence",
     desc: "We affirm that prayer is the indispensable foundation of all ministry, following the apostolic pattern of Acts 6:4. We labor in the Word only after laboring before God in intercession.",
   },
   {
-    icon: <BookOpen size={32} className="text-amber-600" />,
+    icon: <BookOpen size={32} className="text-primary" />,
     title: "Scriptural Authority",
     desc: "We hold to the authority, sufficiency, inerrancy, infallibility, and clarity of Holy Scripture as the final rule for faith and life.",
   },
   {
-    icon: <PenTool size={32} className="text-amber-600" />,
+    icon: <PenTool size={32} className="text-primary" />,
     title: "Exegetical Integrity",
     desc: "We aim for rigorous, contextually faithful exegesis reflecting the intended meaning of Scripture and honors God's inspiration of the text.",
   },
   {
-    icon: <Handshake size={32} className="text-amber-600" />,
+    icon: <Handshake size={32} className="text-primary" />,
     title: "Faithful Stewardship",
     desc: "We commit to translating, explaining, and presenting God's Word with utmost fidelity, clarity, and care, ensuring it faithfully communicates the truth of Scripture to all readers.",
   },
   {
-    icon: <ShieldCheck size={32} className="text-amber-600" />,
+    icon: <ShieldCheck size={32} className="text-primary" />,
     title: "Doctrinal Fidelity",
     desc: "We defend historic, conservative evangelical theology, standing firm against error and upholding the apostolic gospel.",
   },
   {
-    icon: <Globe size={32} className="text-amber-600" />,
+    icon: <Globe size={32} className="text-primary" />,
     title: "Christ-Centered Mission",
     desc: "Our work exists for the supremacy of Christ in evangelization and discipleship for the fulfillment of seeking to strengthen His Church for the fulfillment of the Great Commission.",
   },
   {
-    icon: <Wrench size={32} className="text-amber-600" />,
+    icon: <Wrench size={32} className="text-primary" />,
     title: "Practical Ministry Application",
     desc: "Our commentaries unite sound scholarship with pastoral usefulness, ensuring biblical truth is applied to real Christian living and discipleship.",
   },
   {
-    icon: <Scale size={32} className="text-amber-600" />,
+    icon: <Scale size={32} className="text-primary" />,
     title: "Ministry Integrity",
     desc: "We conduct all work—translation, writing, and teaching—with humility, honesty, and godliness.",
   },
   {
-    icon: <Church size={32} className="text-amber-600" />,
+    icon: <Church size={32} className="text-primary" />,
     title: "Service to the Church",
     desc: "We exist not for academic prestige but for the strengthening of Christ's church—pastors, theologians, students, campus ministries and everyday believers.",
   },
   {
-    icon: <Sparkles size={32} className="text-amber-600" />,
+    icon: <Sparkles size={32} className="text-primary" />,
     title: "Doxological Orientation",
     desc: "All ministry begins with God, depends on God, and ends in the glory of God.",
   },
@@ -82,8 +82,8 @@ const academicJourney = [
   {
     track: "Academic",
     color: "bg-stone-800",
-    textColor: "text-stone-800",
-    lightBg: "bg-stone-50",
+    textColor: "text-on-surface",
+    lightBg: "bg-surface-container-low",
     borderColor: "border-stone-300",
     items: [
       {
@@ -100,8 +100,8 @@ const academicJourney = [
   },
   {
     track: "Theological",
-    color: "bg-amber-700",
-    textColor: "text-amber-700",
+    color: "bg-surface-tint",
+    textColor: "text-surface-tint",
     lightBg: "bg-amber-50",
     borderColor: "border-amber-300",
     items: [
@@ -169,23 +169,20 @@ export default function AboutWBM() {
       />
 
       {/* ── Vision & Mission ── */}
-      <section className="py-24 px-6 bg-stone-50">
+      <section className="py-24 px-6 bg-surface-container-low">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col gap-10">
             {/* Vision */}
             <AnimateOnScroll animation="fade-right">
               <div className="bg-stone-800 text-white p-10 rounded-sm">
                 <div className="mb-4">
-                  <Telescope className="text-amber-400" size={40} />
+                  <Telescope className="text-primary-fixed" size={40} />
                 </div>
-                <h3
-                  className="text-2xl font-bold mb-4"
-                  style={{ fontFamily: "Playfair Display, serif" }}
-                >
+                <h3 className="text-2xl font-bold mb-4 font-headline italic">
                   Our Vision Statement
                 </h3>
                 <div className="h-0.5 w-12 bg-amber-400 mb-5" />
-                <p className="text-stone-300 leading-relaxed text-lg">
+                <p className="text-inverse-on-surface leading-relaxed text-lg">
                   To glorify God by strengthening the Church of Jesus Christ
                   through prayer-dependent, Scripture-rooted ministry that
                   advances the Great Commission.
@@ -195,14 +192,11 @@ export default function AboutWBM() {
 
             {/* Mission */}
             <AnimateOnScroll animation="fade-left">
-              <div className="bg-amber-700 text-white p-10 rounded-sm">
+              <div className="bg-surface-tint text-white p-10 rounded-sm">
                 <div className="mb-4">
                   <Target className="text-amber-300" size={40} />
                 </div>
-                <h3
-                  className="text-2xl font-bold mb-4"
-                  style={{ fontFamily: "Playfair Display, serif" }}
-                >
+                <h3 className="text-2xl font-bold mb-4 font-headline italic">
                   Our Mission Statement
                 </h3>
                 <div className="h-0.5 w-12 bg-amber-300 mb-5" />
@@ -221,17 +215,14 @@ export default function AboutWBM() {
                       animation="fade-left"
                       delay={(i * 100) as any}
                     >
-                      <div className="border border-amber-500/40 rounded-sm overflow-hidden">
+                      <div className="border border-primary/40 rounded-sm overflow-hidden">
                         <button
                           onClick={() =>
                             setOpenCommitment(openCommitment === i ? null : i)
                           }
                           className="w-full flex items-center gap-4 px-5 py-4 text-left focus:outline-none group"
                         >
-                          <span
-                            className="text-amber-300 font-black text-lg shrink-0 select-none"
-                            style={{ fontFamily: "Playfair Display, serif" }}
-                          >
+                          <span className="text-amber-300 font-black text-lg shrink-0 select-none font-headline italic">
                             {c.number}
                           </span>
                           <span className="text-white font-semibold text-sm flex-1 leading-snug group-hover:text-amber-200 transition-colors">
@@ -271,18 +262,15 @@ export default function AboutWBM() {
         <div className="max-w-6xl mx-auto">
           <AnimateOnScroll animation="fade-up">
             <div className="text-center mb-16">
-              <p className="text-amber-700 text-xs uppercase tracking-widest font-bold mb-3">
+              <p className="text-surface-tint text-xs uppercase tracking-widest font-bold mb-3">
                 What Drives Us
               </p>
-              <h2
-                className="text-3xl md:text-4xl font-bold text-stone-800 mb-4"
-                style={{ fontFamily: "Playfair Display, serif" }}
-              >
+              <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-4 font-headline italic">
                 Our Core Values
               </h2>
               <div className="flex items-center justify-center gap-3 my-5">
                 <div className="h-px w-16 bg-amber-400" />
-                <div className="w-2 h-2 bg-amber-600 rotate-45" />
+                <div className="w-2 h-2 bg-primary rotate-45" />
                 <div className="h-px w-16 bg-amber-400" />
               </div>
             </div>
@@ -295,17 +283,14 @@ export default function AboutWBM() {
                 animation="fade-up"
                 delay={((i % 3) * 100) as any}
               >
-                <div className="bg-stone-50 p-7 rounded-sm border border-stone-200 hover:border-amber-400 hover:shadow-md transition-all duration-300 flex flex-col h-full group">
+                <div className="bg-surface-container-low p-7 rounded-sm border border-surface-dim hover:border-primary-fixed hover:shadow-md transition-all duration-300 flex flex-col h-full group">
                   <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
                     {v.icon}
                   </div>
-                  <h3
-                    className="font-bold text-stone-800 text-lg mb-2 group-hover:text-amber-700 transition-colors"
-                    style={{ fontFamily: "Playfair Display, serif" }}
-                  >
+                  <h3 className="font-bold text-on-surface text-lg mb-2 group-hover:text-surface-tint transition-colors font-headline italic">
                     {v.title}
                   </h3>
-                  <p className="text-stone-500 text-sm leading-relaxed flex-1">
+                  <p className="text-outline text-sm leading-relaxed flex-1">
                     {v.desc}
                   </p>
                 </div>
@@ -320,19 +305,16 @@ export default function AboutWBM() {
         <div className="max-w-5xl mx-auto">
           <AnimateOnScroll animation="fade-up">
             <div className="text-center mb-16">
-              <p className="text-amber-500 text-xs uppercase tracking-widest font-bold mb-3">
+              <p className="text-primary-container text-xs uppercase tracking-widest font-bold mb-3">
                 The Man Behind the Mission
               </p>
-              <h2
-                className="text-3xl md:text-4xl font-bold text-white mb-4"
-                style={{ fontFamily: "Playfair Display, serif" }}
-              >
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-headline italic">
                 About the Founder
               </h2>
               <div className="flex items-center justify-center gap-3 my-5">
-                <div className="h-px w-16 bg-amber-600" />
+                <div className="h-px w-16 bg-primary" />
                 <div className="w-2 h-2 bg-amber-500 rotate-45" />
-                <div className="h-px w-16 bg-amber-600" />
+                <div className="h-px w-16 bg-primary" />
               </div>
             </div>
           </AnimateOnScroll>
@@ -343,18 +325,15 @@ export default function AboutWBM() {
             <AnimateOnScroll animation="fade-right" className="lg:col-span-3">
               <div className="flex flex-col items-center text-center">
                 <div className="w-32 h-32 rounded-full bg-stone-700 flex items-center justify-center mb-5 ring-4 ring-amber-600/40">
-                  <User size={56} className="text-stone-400" />
+                  <User size={56} className="text-outline-variant" />
                 </div>
-                <h3
-                  className="text-xl font-bold text-white mb-1"
-                  style={{ fontFamily: "Playfair Display, serif" }}
-                >
+                <h3 className="text-xl font-bold text-white mb-1 font-headline italic">
                   Michael Adegbola
                 </h3>
-                <p className="text-amber-400 text-xs uppercase tracking-widest font-semibold mb-3">
+                <p className="text-primary-fixed text-xs uppercase tracking-widest font-semibold mb-3">
                   Founder & Director
                 </p>
-                <p className="text-stone-400 text-xs leading-relaxed">
+                <p className="text-outline-variant text-xs leading-relaxed">
                   Scholar · Teacher · Preacher
                 </p>
               </div>
@@ -362,7 +341,7 @@ export default function AboutWBM() {
 
             {/* Bio text */}
             <AnimateOnScroll animation="fade-left" className="lg:col-span-9">
-              <div className="space-y-5 text-stone-300 leading-relaxed">
+              <div className="space-y-5 text-inverse-on-surface leading-relaxed">
                 <p>
                   Michael Adegbola is a scholar, teacher, and preacher whose
                   journey reflects both academic excellence and spiritual
@@ -406,17 +385,14 @@ export default function AboutWBM() {
                   animation={i === 0 ? "fade-right" : "fade-left"}
                   delay={(i * 150) as any}
                 >
-                  <div className="bg-stone-800 border border-stone-700 rounded-sm p-6">
+                  <div className="bg-stone-800 border border-outline-variant rounded-sm p-6">
                     <div className="flex items-center gap-3 mb-5">
                       <div
                         className={`w-8 h-8 rounded-lg ${track.color} flex items-center justify-center`}
                       >
                         <GraduationCap size={16} className="text-white" />
                       </div>
-                      <h4
-                        className="font-bold text-white"
-                        style={{ fontFamily: "Playfair Display, serif" }}
-                      >
+                      <h4 className="font-bold text-white font-headline italic">
                         {track.track} Formation
                       </h4>
                     </div>
@@ -431,10 +407,10 @@ export default function AboutWBM() {
                           >
                             {item.degree}
                           </p>
-                          <p className="text-stone-300 text-sm">
+                          <p className="text-inverse-on-surface text-sm">
                             {item.institution}
                           </p>
-                          <p className="text-stone-500 text-xs mt-0.5">
+                          <p className="text-outline text-xs mt-0.5">
                             {item.detail}
                           </p>
                         </div>

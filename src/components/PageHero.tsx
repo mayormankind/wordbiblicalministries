@@ -12,18 +12,18 @@ export default function PageHero({ title, subtitle, tag, bgClass = 'bg-stone-900
       <div className="absolute inset-0 bg-gradient-to-b from-stone-950/60 to-stone-950/80" />
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         {tag && (
-          <p className="text-amber-400 text-xs uppercase tracking-widest font-bold mb-4">{tag}</p>
+          <p className="text-primary-container text-xs uppercase tracking-widest font-bold mb-4 font-label">{tag}</p>
         )}
-        <h1 className="text-4xl md:text-6xl font-bold mb-5" style={{ fontFamily: 'Playfair Display, serif' }}>
+        <h1 className="text-4xl md:text-6xl font-headline font-bold mb-5 italic text-on-error">
           {title}
         </h1>
         <div className="flex items-center justify-center gap-3 my-5">
-          <div className="h-px w-16 bg-amber-400" />
-          <div className="w-2 h-2 bg-amber-500 rotate-45" />
-          <div className="h-px w-16 bg-amber-400" />
+          <div className="h-px w-16 bg-primary-container" />
+          <div className="w-2 h-2 bg-primary rotate-45" />
+          <div className="h-px w-16 bg-primary-container" />
         </div>
         {subtitle && (
-          <p className="text-stone-300 text-lg max-w-2xl mx-auto leading-relaxed">{subtitle}</p>
+          <p className="text-inverse-on-surface text-lg max-w-2xl mx-auto leading-relaxed">{subtitle}</p>
         )}
       </div>
     </section>
