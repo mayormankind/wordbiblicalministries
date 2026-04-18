@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, BookMarked } from "lucide-react";
 import { FaFacebookF, FaYoutube, FaInstagram } from "react-icons/fa6";
 
 const footerLinks = [
@@ -13,33 +13,49 @@ const footerLinks = [
   { label: "Give", path: "/give" },
 ];
 
+const SELAR_URL = "https://selar.co";
+
 export default function Footer() {
   return (
     <footer className="bg-stone-950 text-stone-300">
-      {/* Top CTA Strip */}
-      <div className="bg-amber-700 py-10 px-4">
+      {/* ── Top CTA Strip ── */}
+      <div className="bg-amber-700 py-12 px-6">
         <div className="max-w-5xl mx-auto text-center">
+          <p className="text-amber-200 text-xs uppercase tracking-widest font-bold mb-3">
+            Partner With Us
+          </p>
           <h3
             className="text-2xl md:text-3xl font-bold text-white mb-3"
             style={{ fontFamily: "Playfair Display, serif" }}
           >
-            Join Us in Worship & Fellowship
+            Support the Work. Own the Word.
           </h3>
-          <p className="text-amber-100 mb-6 text-sm tracking-wide">
-            Be part of a community rooted in the Word, empowered by the Spirit.
+          <p className="text-amber-100 mb-8 text-base leading-relaxed max-w-xl mx-auto">
+            Your giving fuels faithful Bible translation and commentary work.
+            Our publications are also available to purchase — equipping you with
+            tools grounded in the Word.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link
               href="/give"
-              className="border-2 border-white text-white hover:bg-white hover:text-amber-800 font-bold text-xs uppercase tracking-widest px-7 py-3 rounded-sm transition-all"
+              className="bg-white text-amber-800 hover:bg-amber-50 font-bold text-xs uppercase tracking-widest px-7 py-3 rounded-sm transition-all inline-flex items-center gap-2 shadow-md"
             >
               Support the Ministry
             </Link>
+            <a
+              href={SELAR_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-2 border-white text-white hover:bg-white hover:text-amber-800 font-bold text-xs uppercase tracking-widest px-7 py-3 rounded-sm transition-all inline-flex items-center gap-2"
+            >
+              <BookMarked size={14} />
+              Purchase Our Books
+            </a>
           </div>
         </div>
       </div>
 
-      {/* Main Footer */}
+      {/* ── Main Footer Body ── */}
       <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Brand */}
         <div className="lg:col-span-1">
@@ -111,6 +127,56 @@ export default function Footer() {
                 </Link>
               </li>
             ))}
+            {/* Selar book link — surfaces in nav for discoverability */}
+            <li>
+              <a
+                href={SELAR_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-amber-400 hover:text-amber-300 text-sm transition-colors flex items-center gap-2 mt-3 pt-3 border-t border-stone-800"
+              >
+                <BookMarked size={13} className="text-amber-500 shrink-0" />
+                Purchase Our Books
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Publications */}
+        <div>
+          <h4 className="text-white font-bold text-xs uppercase tracking-widest mb-5 border-b border-stone-700 pb-3">
+            Our Publications
+          </h4>
+          <ul className="space-y-4">
+            <li>
+              <p className="text-stone-300 text-sm font-semibold mb-0.5">
+                AFINT
+              </p>
+              <p className="text-stone-500 text-xs leading-relaxed">
+                African International New Testament — Literal Translation &
+                Explanatory Paraphrase
+              </p>
+            </li>
+            <li>
+              <p className="text-stone-300 text-sm font-semibold mb-0.5">
+                WECNT Series
+              </p>
+              <p className="text-stone-500 text-xs leading-relaxed">
+                Word Expositor's Commentary on the New Testament — scholarly
+                exegesis with pastoral application
+              </p>
+            </li>
+            <li className="pt-2">
+              <a
+                href={SELAR_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-500 hover:text-amber-400 uppercase tracking-widest transition-colors"
+              >
+                <BookMarked size={12} />
+                Browse All on Selar
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -121,16 +187,16 @@ export default function Footer() {
           </h4>
           <ul className="space-y-4 text-sm">
             <li className="flex gap-3 items-center">
-              <Mail size={16} className="text-amber-500 shrink-0" />
+              <Mail size={15} className="text-amber-500 shrink-0" />
               <a
                 href="mailto:wordbiblicalministries@gmail.com"
-                className="text-stone-400 hover:text-amber-400 transition-colors"
+                className="text-stone-400 hover:text-amber-400 transition-colors break-all"
               >
                 wordbiblicalministries@gmail.com
               </a>
             </li>
             <li className="flex gap-3 items-center">
-              <Mail size={16} className="text-amber-500 shrink-0" />
+              <Mail size={15} className="text-amber-500 shrink-0" />
               <a
                 href="mailto:drkerux@gmail.com"
                 className="text-stone-400 hover:text-amber-400 transition-colors"
@@ -142,7 +208,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
+      {/* ── Bottom Bar ── */}
       <div className="border-t border-stone-800 px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-stone-500 max-w-7xl mx-auto">
         <p>
           © {new Date().getFullYear()} Word Biblical Ministries (WBM). All

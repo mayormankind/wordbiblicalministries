@@ -85,7 +85,7 @@ export default function Contact() {
             ))}
           </div>
 
-          {/* Form + Map */}
+          {/* Form */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <AnimateOnScroll animation="fade-right">
