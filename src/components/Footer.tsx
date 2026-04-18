@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Mail, BookMarked } from "lucide-react";
 import { FaFacebookF, FaYoutube, FaInstagram } from "react-icons/fa6";
 import Image from "next/image";
+import { FaLinkedin } from "react-icons/fa";
 
 const footerLinks = [
   { label: "Our Theology", path: "/our-theology" },
@@ -14,7 +15,7 @@ const footerLinks = [
   { label: "Give", path: "/give" },
 ];
 
-const SELAR_URL = "https://selar.co";
+const SELAR_URL = "https://selar.com/m/michael-adegbola1209582";
 
 export default function Footer() {
   return (
@@ -79,6 +80,11 @@ export default function Footer() {
                 label: "Instagram",
                 href: "#",
                 icon: <FaInstagram size={16} />,
+              },
+              {
+                label: "LinkedIn",
+                href: "https://www.linkedin.com/in/michael-adegbola-2b3aa7107/",
+                icon: <FaLinkedin size={16} />,
               },
             ].map((s, i) => (
               <a
