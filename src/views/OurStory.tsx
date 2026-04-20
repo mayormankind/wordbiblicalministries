@@ -174,7 +174,7 @@ export default function OurStory() {
                             >
                               {item.year}
                             </span>
-                            <span className={`text-xs ${item.textAccent} font-medium tracking-wider uppercase`}>
+                            <span className={`text-sm ${item.textAccent} font-black tracking-wider uppercase`}>
                               — {item.endYear}
                             </span>
                           </div>
