@@ -346,7 +346,7 @@ export default function OurStory() {
                   </div>
                 </div>
               </div>
-              <div className="relative">
+              {/*<div className="relative">
                 <img
                   alt="Sacred Atmosphere"
                   className="rounded-xl shadow-2xl grayscale brightness-75 hover:grayscale-0 transition-all duration-700"
@@ -359,7 +359,7 @@ export default function OurStory() {
                     robust, Scripture-grounded faith."
                   </p>
                 </div>
-              </div>
+              </div>*/}
             </div>
           </div>
         </AnimateOnScroll>
