@@ -61,7 +61,7 @@ export default function Contact() {
       <section className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-12">
-            {/* Contact Cards */}
+            {/* Contact Cards 
             <div className="lg:w-1/3 flex flex-col gap-6">
               {contactDetails.map((c, i) => (
                 <AnimateOnScroll
@@ -82,7 +82,7 @@ export default function Contact() {
                   </div>
                 </AnimateOnScroll>
               ))}
-            </div>
+            </div>*/}
 
             {/* Form */}
             <div className="lg:w-2/3">
