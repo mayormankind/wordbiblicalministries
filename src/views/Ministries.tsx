@@ -206,7 +206,7 @@ const audiences = [
   },
 ];
 
-// ── Types ──────────────────────────────────────────────────────────────────
+// ── Types
 interface Pillar {
   number: string;
   title: string;
@@ -221,7 +221,7 @@ interface PillarItemProps {
   onToggle: () => void;
 }
 
-// ── Pillar accordion ──────────────────────────────────────────────────────────
+// ── Pillar accordion
 function PillarItem({ pillar, isOpen, onToggle }: PillarItemProps) {
   return (
     <div className="border-b border-surface-dim last:border-b-0">

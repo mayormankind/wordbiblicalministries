@@ -1,33 +1,75 @@
 "use client";
 
-import PageHero from '../components/PageHero';
-import { useState } from 'react';
-import { Heart, Shield, Globe, ChevronRight, CreditCard, Landmark, Mail, Smartphone } from 'lucide-react';
-import AnimateOnScroll from '../components/AnimateOnScroll';
+import PageHero from "../components/PageHero";
+import { useState } from "react";
+import {
+  Heart,
+  Shield,
+  Globe,
+  ChevronRight,
+  CreditCard,
+  Landmark,
+  Mail,
+  Smartphone,
+} from "lucide-react";
+import AnimateOnScroll from "../components/AnimateOnScroll";
 
 const amounts = [25, 50, 100, 250, 500, 1000];
 
 const givingPurposes = [
-  { label: 'General Ministry Fund', desc: 'Supports all WBM operations and programs' },
-  { label: 'Bible Translation (AFINT)', desc: 'Fuels our international translation efforts' },
-  { label: 'WECNT Commentary Project', desc: 'Supports the production of scholarly biblical tools' },
-  { label: 'Theological Education', desc: 'Equips leaders and students with rooted resources' },
-  { label: 'Benevolence Fund', desc: 'Provides support for those in need' },
-  { label: 'Campus Ministries', desc: 'Invests in reaching the next generation of believers' },
+  {
+    label: "General Ministry Fund",
+    desc: "Supports all WBM operations and programs",
+  },
+  {
+    label: "Bible Translation (AFINT)",
+    desc: "Fuels our international translation efforts",
+  },
+  {
+    label: "WECNT Commentary Project",
+    desc: "Supports the production of scholarly biblical tools",
+  },
+  {
+    label: "Theological Education",
+    desc: "Equips leaders and students with rooted resources",
+  },
+  { label: "Benevolence Fund", desc: "Provides support for those in need" },
+  {
+    label: "Campus Ministries",
+    desc: "Invests in reaching the next generation of believers",
+  },
 ];
 
 const methods = [
-  { icon: <CreditCard size={36} className="text-on-surface flex-shrink-0" />, title: 'Online Giving', desc: 'Give securely online using your debit or credit card through our payment portal.' },
-  { icon: <Landmark size={36} className="text-on-surface flex-shrink-0" />, title: 'Bank Transfer', desc: 'Make a direct bank transfer to our official ministry account. Contact us for details.' },
-  { icon: <Mail size={36} className="text-on-surface flex-shrink-0" />, title: 'Mail a Check', desc: 'Send your check payable to "Word Biblical Ministries" to our church address.' },
-  { icon: <Smartphone size={36} className="text-on-surface flex-shrink-0" />, title: 'Mobile Money', desc: 'Give easily via mobile money platforms available in your region.' },
+  {
+    icon: <CreditCard size={36} className="text-on-surface shrink-0" />,
+    title: "Online Giving",
+    desc: "Give securely online using your debit or credit card through our payment portal.",
+  },
+  {
+    icon: <Landmark size={36} className="text-on-surface shrink-0" />,
+    title: "Bank Transfer",
+    desc: "Make a direct bank transfer to our official ministry account. Contact us for details.",
+  },
+  {
+    icon: <Mail size={36} className="text-on-surface shrink-0" />,
+    title: "Mail a Check",
+    desc: 'Send your check payable to "Word Biblical Ministries" to our church address.',
+  },
+  {
+    icon: <Smartphone size={36} className="text-on-surface shrink-0" />,
+    title: "Mobile Money",
+    desc: "Give easily via mobile money platforms available in your region.",
+  },
 ];
 
 export default function Give() {
   const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
-  const [customAmount, setCustomAmount] = useState('');
-  const [frequency, setFrequency] = useState<'once' | 'monthly' | 'annually'>('once');
-  const [purpose, setPurpose] = useState('General Ministry Fund');
+  const [customAmount, setCustomAmount] = useState("");
+  const [frequency, setFrequency] = useState<"once" | "monthly" | "annually">(
+    "once",
+  );
+  const [purpose, setPurpose] = useState("General Ministry Fund");
 
   return (
     <main>
@@ -40,10 +82,14 @@ export default function Give() {
       {/* Scripture */}
       <AnimateOnScroll animation="fade-in">
         <section className="bg-surface-tint py-10 px-6 text-center">
-          <p className="text-amber-50 text-xl italic max-w-3xl mx-auto font-headline italic">
-            "Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver."
+          <p className="text-amber-50 text-xl max-w-3xl mx-auto font-headline italic">
+            "Each of you should give what you have decided in your heart to
+            give, not reluctantly or under compulsion, for God loves a cheerful
+            giver."
           </p>
-          <p className="text-amber-200 text-sm mt-2 uppercase tracking-widest">— 2 Corinthians 9:7</p>
+          <p className="text-amber-200 text-sm mt-2 uppercase tracking-widest">
+            — 2 Corinthians 9:7
+          </p>
         </section>
       </AnimateOnScroll>
 
@@ -51,7 +97,9 @@ export default function Give() {
       <section className="py-20 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
-            <p className="text-surface-tint text-xs uppercase tracking-widest font-bold mb-3">Why Your Gift Matters</p>
+            <p className="text-surface-tint text-xs uppercase tracking-widest font-bold mb-3">
+              Why Your Gift Matters
+            </p>
             <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-4 font-headline italic">
               Every Seed Carries Eternal Significance
             </h2>
@@ -61,20 +109,43 @@ export default function Give() {
               <div className="h-px w-16 bg-amber-400" />
             </div>
             <p className="text-on-surface-variant text-lg max-w-2xl mx-auto leading-relaxed">
-              Your giving enables WBM to preach the Gospel, disciple nations, support missionaries, produce media content, and meet the practical needs of our community. When you give, you are partnering with God's work on the earth.
+              Your giving enables WBM to preach the Gospel, disciple nations,
+              support missionaries, produce media content, and meet the
+              practical needs of our community. When you give, you are
+              partnering with God's work on the earth.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { icon: <Heart size={28} className="text-primary" />, title: 'Impacting the Church', desc: 'Your gift directly empowers pastors, students, and believers through biblically grounded resources and training.' },
-              { icon: <Globe size={28} className="text-primary" />, title: 'Translating the Word', desc: 'Through AFINT, your generosity sends the Gospel to the nations in accurate, readable translations.' },
-              { icon: <Shield size={28} className="text-primary" />, title: 'Faithful Stewardship', desc: 'We are committed to transparent, accountable, and Spirit-led management of every resource entrusted to us.' },
+              {
+                icon: <Heart size={28} className="text-primary" />,
+                title: "Impacting the Church",
+                desc: "Your gift directly empowers pastors, students, and believers through biblically grounded resources and training.",
+              },
+              {
+                icon: <Globe size={28} className="text-primary" />,
+                title: "Translating the Word",
+                desc: "Through AFINT, your generosity sends the Gospel to the nations in accurate, readable translations.",
+              },
+              {
+                icon: <Shield size={28} className="text-primary" />,
+                title: "Faithful Stewardship",
+                desc: "We are committed to transparent, accountable, and Spirit-led management of every resource entrusted to us.",
+              },
             ].map((w, i) => (
-              <AnimateOnScroll key={i} animation="fade-up" delay={i === 0 ? 0 : i === 1 ? 100 : 200}>
+              <AnimateOnScroll
+                key={i}
+                animation="fade-up"
+                delay={i === 0 ? 0 : i === 1 ? 100 : 200}
+              >
                 <div className="text-center p-6 bg-surface-container-low rounded-sm border border-surface-dim hover:border-amber-300 transition-all h-full">
                   <div className="flex justify-center mb-4">{w.icon}</div>
-                  <h3 className="font-bold text-on-surface text-lg mb-2 font-headline italic">{w.title}</h3>
-                  <p className="text-outline text-sm leading-relaxed">{w.desc}</p>
+                  <h3 className="font-bold text-on-surface text-lg mb-2 font-headline italic">
+                    {w.title}
+                  </h3>
+                  <p className="text-outline text-sm leading-relaxed">
+                    {w.desc}
+                  </p>
                 </div>
               </AnimateOnScroll>
             ))}
@@ -87,7 +158,9 @@ export default function Give() {
         <div className="max-w-3xl mx-auto">
           <AnimateOnScroll animation="zoom-in">
             <div className="text-center mb-10">
-              <p className="text-surface-tint text-xs uppercase tracking-widest font-bold mb-3">Make a Gift</p>
+              <p className="text-surface-tint text-xs uppercase tracking-widest font-bold mb-3">
+                Make a Gift
+              </p>
               <h2 className="text-3xl font-bold text-on-surface mb-2 font-headline italic">
                 Give Securely Online
               </h2>
@@ -95,97 +168,114 @@ export default function Give() {
             </div>
 
             <div className="bg-white rounded-sm shadow-lg p-8 md:p-10">
-
-            {/* Frequency */}
-            <div className="mb-8">
-              <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant mb-3">Giving Frequency</label>
-              <div className="flex rounded-sm overflow-hidden border border-surface-dim">
-                {(['once', 'monthly', 'annually'] as const).map((f) => (
-                  <button
-                    key={f}
-                    onClick={() => setFrequency(f)}
-                    className={`flex-1 py-3 text-sm font-bold uppercase tracking-wide transition-all ${
-                      frequency === f ? 'bg-primary text-white' : 'bg-white text-on-surface-variant hover:bg-surface-container-low'
-                    }`}
-                  >
-                    {f === 'once' ? 'One Time' : f}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Amount */}
-            <div className="mb-8">
-              <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant mb-3">Select Amount (USD)</label>
-              <div className="grid grid-cols-3 gap-3 mb-4">
-                {amounts.map((a) => (
-                  <button
-                    key={a}
-                    onClick={() => { setSelectedAmount(a); setCustomAmount(''); }}
-                    className={`py-3 text-sm font-bold rounded-sm border-2 transition-all ${
-                      selectedAmount === a && !customAmount
-                        ? 'border-amber-600 bg-primary text-white'
-                        : 'border-surface-dim text-stone-700 hover:border-primary-fixed'
-                    }`}
-                  >
-                    ${a}
-                  </button>
-                ))}
-              </div>
-              <div className="relative">
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant font-bold">$</span>
-                <input
-                  type="number"
-                  placeholder="Enter custom amount"
-                  value={customAmount}
-                  onChange={(e) => { setCustomAmount(e.target.value); setSelectedAmount(null); }}
-                  className="w-full border-2 border-surface-dim focus:border-amber-500 outline-none pl-8 pr-4 py-3 text-sm rounded-sm text-on-surface"
-                />
-              </div>
-            </div>
-
-            {/* Purpose */}
-            <div className="mb-8">
-              <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant mb-3">Giving Purpose</label>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {givingPurposes.map((p, idx) => (
-                  <AnimateOnScroll
-                    key={p.label}
-                    animation="fade-in"
-                    delay={(idx * 50) as any}
-                  >
-                    <label
-                      className={`flex items-start gap-3 p-4 border-2 rounded-sm cursor-pointer transition-all h-full ${
-                        purpose === p.label
-                          ? "border-amber-600 bg-amber-50"
-                          : "border-surface-dim hover:border-amber-300"
+              {/* Frequency */}
+              <div className="mb-8">
+                <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant mb-3">
+                  Giving Frequency
+                </label>
+                <div className="flex rounded-sm overflow-hidden border border-surface-dim">
+                  {(["once", "monthly", "annually"] as const).map((f) => (
+                    <button
+                      key={f}
+                      onClick={() => setFrequency(f)}
+                      className={`flex-1 py-3 text-sm font-bold uppercase tracking-wide transition-all ${
+                        frequency === f
+                          ? "bg-primary text-white"
+                          : "bg-white text-on-surface-variant hover:bg-surface-container-low"
                       }`}
                     >
-                      <input
-                        type="radio"
-                        name="purpose"
-                        value={p.label}
-                        checked={purpose === p.label}
-                        onChange={() => setPurpose(p.label)}
-                        className="mt-1 accent-amber-600"
-                      />
-                      <div>
-                        <p className="font-bold text-on-surface text-sm">
-                          {p.label}
-                        </p>
-                        <p className="text-outline text-xs">{p.desc}</p>
-                      </div>
-                    </label>
-                  </AnimateOnScroll>
-                ))}
+                      {f === "once" ? "One Time" : f}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
 
-            {/* Proceed Button */}
-            <button className="w-full bg-surface-tint hover:bg-primary text-white font-bold text-sm uppercase tracking-widest py-4 rounded-sm transition-all flex items-center justify-center gap-2">
-              Proceed to Secure Checkout <ChevronRight size={16} />
-            </button>
-            <p className="text-center text-outline-variant text-xs mt-4">🔒 All transactions are secure and encrypted</p>
+              {/* Amount */}
+              <div className="mb-8">
+                <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant mb-3">
+                  Select Amount (USD)
+                </label>
+                <div className="grid grid-cols-3 gap-3 mb-4">
+                  {amounts.map((a) => (
+                    <button
+                      key={a}
+                      onClick={() => {
+                        setSelectedAmount(a);
+                        setCustomAmount("");
+                      }}
+                      className={`py-3 text-sm font-bold rounded-sm border-2 transition-all ${
+                        selectedAmount === a && !customAmount
+                          ? "border-amber-600 bg-primary text-white"
+                          : "border-surface-dim text-stone-700 hover:border-primary-fixed"
+                      }`}
+                    >
+                      ${a}
+                    </button>
+                  ))}
+                </div>
+                <div className="relative">
+                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant font-bold">
+                    $
+                  </span>
+                  <input
+                    type="number"
+                    placeholder="Enter custom amount"
+                    value={customAmount}
+                    onChange={(e) => {
+                      setCustomAmount(e.target.value);
+                      setSelectedAmount(null);
+                    }}
+                    className="w-full border-2 border-surface-dim focus:border-amber-500 outline-none pl-8 pr-4 py-3 text-sm rounded-sm text-on-surface"
+                  />
+                </div>
+              </div>
+
+              {/* Purpose */}
+              <div className="mb-8">
+                <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant mb-3">
+                  Giving Purpose
+                </label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {givingPurposes.map((p, idx) => (
+                    <AnimateOnScroll
+                      key={p.label}
+                      animation="fade-in"
+                      delay={(idx * 50) as any}
+                    >
+                      <label
+                        className={`flex items-start gap-3 p-4 border-2 rounded-sm cursor-pointer transition-all h-full ${
+                          purpose === p.label
+                            ? "border-amber-600 bg-amber-50"
+                            : "border-surface-dim hover:border-amber-300"
+                        }`}
+                      >
+                        <input
+                          type="radio"
+                          name="purpose"
+                          value={p.label}
+                          checked={purpose === p.label}
+                          onChange={() => setPurpose(p.label)}
+                          className="mt-1 accent-amber-600"
+                        />
+                        <div>
+                          <p className="font-bold text-on-surface text-sm">
+                            {p.label}
+                          </p>
+                          <p className="text-outline text-xs">{p.desc}</p>
+                        </div>
+                      </label>
+                    </AnimateOnScroll>
+                  ))}
+                </div>
+              </div>
+
+              {/* Proceed Button */}
+              <button className="w-full bg-surface-tint hover:bg-primary text-white font-bold text-sm uppercase tracking-widest py-4 rounded-sm transition-all flex items-center justify-center gap-2">
+                Proceed to Secure Checkout <ChevronRight size={16} />
+              </button>
+              <p className="text-center text-outline-variant text-xs mt-4">
+                🔒 All transactions are secure and encrypted
+              </p>
             </div>
           </AnimateOnScroll>
         </div>
@@ -196,7 +286,9 @@ export default function Give() {
         <div className="max-w-5xl mx-auto">
           <AnimateOnScroll animation="fade-up">
             <div className="text-center mb-12">
-              <p className="text-surface-tint text-xs uppercase tracking-widest font-bold mb-3">More Ways to Give</p>
+              <p className="text-surface-tint text-xs uppercase tracking-widest font-bold mb-3">
+                More Ways to Give
+              </p>
               <h2 className="text-3xl font-bold text-on-surface mb-4 font-headline italic">
                 Give in the Way That Works for You
               </h2>
@@ -204,11 +296,21 @@ export default function Give() {
           </AnimateOnScroll>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {methods.map((m, i) => (
-              <AnimateOnScroll key={i} animation="fade-up" delay={(i % 4) * 100 as 0 | 100 | 200 | 300}>
+              <AnimateOnScroll
+                key={i}
+                animation="fade-up"
+                delay={((i % 4) * 100) as 0 | 100 | 200 | 300}
+              >
                 <div className="bg-surface-container-low border border-surface-dim rounded-sm p-6 text-center hover:border-primary-fixed transition-all h-full">
-                  <div className="flex justify-center mb-3 text-primary">{m.icon}</div>
-                  <h3 className="font-bold text-on-surface mb-2 font-headline italic">{m.title}</h3>
-                  <p className="text-outline text-sm leading-relaxed">{m.desc}</p>
+                  <div className="flex justify-center mb-3 text-primary">
+                    {m.icon}
+                  </div>
+                  <h3 className="font-bold text-on-surface mb-2 font-headline italic">
+                    {m.title}
+                  </h3>
+                  <p className="text-outline text-sm leading-relaxed">
+                    {m.desc}
+                  </p>
                 </div>
               </AnimateOnScroll>
             ))}
