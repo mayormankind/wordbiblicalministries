@@ -76,7 +76,7 @@ export default function OurStory() {
               into a mission devoted to advancing biblical truth with clarity,
               depth, and spiritual power.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 py-12">
+            {/*<div className="grid grid-cols-1 md:grid-cols-2 gap-12 py-12">
               <div className="bg-surface-container-low p-10 rounded-xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 p-4 opacity-10">
                   <span className="text-8xl" data-icon="auto_stories">
@@ -107,7 +107,7 @@ export default function OurStory() {
                   shaped by competing voices.
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
