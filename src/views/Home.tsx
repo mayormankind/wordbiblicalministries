@@ -241,35 +241,6 @@ export default function Home() {
           </AnimateOnScroll>
         </div>
       </section>
-
-      {/* ─── GIVE CTA ─── */}
-      <section className="py-20 flex items-center justify-center -mx-6 bg-stone-900 border-t-8 border-amber-600 relative overflow-hidden">
-        <div className="absolute top-0 right-0 max-w-full opacity-10 blur-3xl pointer-events-none">
-          <div className="w-96 h-96 bg-primary rounded-full" />
-        </div>
-        <AnimateOnScroll
-          animation="zoom-in"
-          className="px-6 text-white text-center relative z-10 w-full max-w-3xl"
-        >
-          <p className="text-primary-fixed text-xs uppercase tracking-widest font-bold mb-3">
-            Partner With Us
-          </p>
-          <h2 className="text-4xl md:text-5xl font-bold mb-5 font-headline italic">
-            Support the Vision
-          </h2>
-          <p className="text-outline-variant text-lg mx-auto mb-10 leading-relaxed">
-            Your support enables WBM to continue the work of Bible translation,
-            commentary writing, and equipping leaders to proclaim Christ to the
-            nations.
-          </p>
-          <Link
-            href="/give"
-            className="bg-primary hover:bg-primary-container hover:text-on-primary-container hover:-translate-y-1 shadow-lg text-white font-bold text-sm uppercase tracking-widest px-10 py-4 rounded-sm transition-all duration-300 inline-flex items-center gap-2"
-          >
-            Give Today <ChevronRight size={16} />
-          </Link>
-        </AnimateOnScroll>
-      </section>
     </main>
   );
 }
