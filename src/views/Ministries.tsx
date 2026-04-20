@@ -229,12 +229,12 @@ function PillarItem({ pillar, isOpen, onToggle }: PillarItemProps) {
         onClick={onToggle}
         className="w-full flex items-start gap-5 py-6 text-left group focus:outline-none"
       >
-        <span
+        {/*<span
           className="text-xl font-black text-stone-200 shrink-0 leading-none mt-0.5 group-hover:text-amber-200 transition-colors duration-200 select-none font-headline"
           style={{ minWidth: "2.5rem" }}
         >
           {pillar.number}
-        </span>
+        </span>*/}
         <div className="flex-1 min-w-0">
           <h4 className="text-base font-bold text-on-surface group-hover:text-surface-tint transition-colors duration-200 leading-snug font-headline italic">
             {pillar.title}
