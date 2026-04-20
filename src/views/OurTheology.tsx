@@ -436,13 +436,13 @@ function AccordionItem({ section, isOpen, onToggle }: AccordionItemProps) {
         onClick={onToggle}
         className="w-full flex items-start gap-5 py-6 px-0 text-left group focus:outline-none"
       >
-        {/* Section number */}
+        {/* Section number 
         <span
           className="text-2xl font-black text-stone-200 shrink-0 leading-none mt-0.5 group-hover:text-amber-200 transition-colors duration-200 select-none font-headline"
           style={{ minWidth: "2.5rem" }}
         >
           {section.number}
-        </span>
+        </span>*/}
 
         <div className="flex-1 min-w-0">
           <h4 className="text-lg font-bold text-on-surface group-hover:text-surface-tint transition-colors duration-200 leading-snug font-headline italic">
@@ -512,9 +512,9 @@ export default function OurTheology() {
   return (
     <main>
       <PageHero
-        tag="What We Believe"
+        tag=""
         title="Our Theology"
-        subtitle="The doctrinal convictions that form the unshakeable foundation of Word Biblical Ministries — beliefs rooted in Scripture and tested through the ages."
+        subtitle=""
       />
 
       {/* ── Intro ── */}
@@ -533,7 +533,7 @@ export default function OurTheology() {
               <div className="h-px w-16 bg-amber-400" />
             </div>
             <p className="text-on-surface-variant leading-relaxed text-lg">
-              At WBM, theology is not merely academic — it is the living breath
+              At Word Biblical Ministry (WBM), theology is not merely academic — it is the living breath
               of who we are and how we minister. Our doctrinal convictions shape
               our worship, our preaching, our discipleship, and our engagement
               with the world. Below are the core beliefs that define us as a
