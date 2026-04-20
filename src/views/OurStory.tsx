@@ -61,7 +61,7 @@ export default function OurStory() {
       <PageHero
         tag="Our Journey"
         title="Our Story"
-        subtitle="Discover how God has led and shaped this ministry from its inception to the present day."
+        subtitle=""
       />
 
       {/* Narrative Content */}
@@ -153,7 +153,7 @@ export default function OurStory() {
                   >
                     <div className="relative group w-full flex flex-col md:flex-row items-start md:items-center justify-between">
                       {/* Timeline Icon */}
-                      <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 flex items-center justify-center">
+                      <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 flex items-center justify-center rounded-full">
                         <div
                           className={`w-16 h-16 rounded-full flex items-center justify-center shadow-lg border-4 border-white ${item.accent} ring-8 ${item.ringAccent} transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 z-20`}
                         >
