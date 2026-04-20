@@ -649,7 +649,7 @@ export default function OurTheology() {
         </div>
       </section>
 
-      {/* ── Scripture CTA ── */}
+      {/* ── Scripture CTA ── 
       <AnimateOnScroll animation="zoom-in">
         <section className="bg-surface-tint py-16 px-6 text-center">
           <p className="text-amber-100 text-xs uppercase tracking-widest font-bold mb-3">
@@ -662,7 +662,7 @@ export default function OurTheology() {
             — John 17:17
           </p>
         </section>
-      </AnimateOnScroll>
+      </AnimateOnScroll> */}
     </main>
   );
 }
