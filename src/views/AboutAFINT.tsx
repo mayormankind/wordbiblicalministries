@@ -124,7 +124,7 @@ export default function AboutAFINT() {
                 </p>
               </div>
 
-              <p className="text-xs font-semibold uppercase tracking-widest text-outline-variant pb-4 mb-6 border-b border-surface-dim">
+              <p className="text-xs font-semibold uppercase tracking-widest text-on-surface-variant pb-4 mb-6 border-b border-surface-dim">
                 This mission is achieved through
               </p>
 
