@@ -239,7 +239,7 @@ function PillarItem({ pillar, isOpen, onToggle }: PillarItemProps) {
           <h4 className="text-base font-bold text-on-surface group-hover:text-surface-tint transition-colors duration-200 leading-snug font-headline italic">
             {pillar.title}
           </h4>
-          <p className="text-xs text-on-surface-variant mt-0.5">
+          <p className="text-xs text-primary mt-0.5">
             {pillar.subtitle}
           </p>
         </div>
