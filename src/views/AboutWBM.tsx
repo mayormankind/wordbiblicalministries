@@ -271,13 +271,13 @@ export default function AboutWBM() {
             {/* Avatar + name */}
             <AnimateOnScroll animation="fade-right" className="lg:col-span-3">
               <div className="flex flex-col items-center text-center">
-                <div className="w-32 h-32 rounded-full bg-stone-700 flex items-center justify-center mb-5 ring-4 ring-amber-600/40">
+                <div className="w-32 h-32 rounded-full bg-stone-700 flex items-center justify-center mb-5 ring-4 ring-amber-600/40 overflow-hidden">
                   <Image
                     alt="Michael Adegbola"
-                    src="/founder.jpg"
-                    width={100}
-                    height={100}
-                    className="rounded-full"
+                    src="/images/founder.jpg"
+                    width={128}
+                    height={128}
+                    className="rounded-full object-cover"
                   />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-1 font-headline italic">

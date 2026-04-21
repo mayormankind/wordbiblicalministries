@@ -11,7 +11,7 @@ const slides = [
     badge: "Welcome to Word Biblical Ministries",
     title: "Strengthening the Body of Christ",
     subtitle:
-      "A prayer-dependent, Scripture-rooted ministry dedicated to advancing the Great Commission through faithful translation, commentary, and equipping.",
+      "A prayer-dependent, Scripture-rooted ministry that advances the Great Commission through the preaching and teaching of God's Word.",
     link1: { text: "Discover WBM", to: "/about-wbm" },
     link2: { text: "Our Beliefs", to: "/our-theology" },
   },
@@ -31,7 +31,7 @@ const slides = [
     badge: "Theological Education",
     title: "Equipping Leaders for the Nations",
     subtitle:
-      "Combining rigorous academic exegesis with practical application to develop faithful teachers and leaders for tomorrow's church.",
+      "Combining rigorous academic exegesis with practical application to develop faithful teachers and leaders for today's church.",
     link1: { text: "Seminaries", to: "/ministries#institutions" },
     link2: { text: "Campus Ministry", to: "/ministries#campuses" },
   },
