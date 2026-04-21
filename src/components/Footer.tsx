@@ -24,15 +24,15 @@ export default function Footer() {
       <div className="bg-surface-tint py-12 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <p className="text-amber-200 text-xs uppercase tracking-widest font-bold mb-3">
-            Partner With Us
+            Support the Work
           </p>
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 font-headline italic">
-            Support the Work. Own the Word.
+            Partner With Us
           </h3>
           <p className="text-amber-100 mb-8 text-base leading-relaxed max-w-xl mx-auto">
-            Your giving fuels faithful Bible translation and commentary work.
-            Our publications are also available to purchase — equipping you with
-            tools grounded in the Word.
+            Your support ensures that WBM can continue to serve the body of
+            Christ globally with integrity, excellence, and a steadfast
+            commitment to the Great Commission.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link
@@ -142,18 +142,9 @@ export default function Footer() {
           <ul className="space-y-4">
             <li>
               <p className="text-inverse-on-surface text-sm font-semibold mb-0.5">
-                AFINT
-              </p>
-              <p className="text-outline text-xs leading-relaxed">
-                African International New Testament — Literal Translation &
-                Explanatory Paraphrase
-              </p>
-            </li>
-            <li>
-              <p className="text-inverse-on-surface text-sm font-semibold mb-0.5">
                 WECNT Series
               </p>
-              <p className="text-outline text-xs leading-relaxed">
+              <p className="text-white text-xs leading-relaxed">
                 Word Expositor's Commentary on the New Testament — scholarly
                 exegesis with pastoral application
               </p>
@@ -182,7 +173,7 @@ export default function Footer() {
               <Mail size={15} className="text-primary-container shrink-0" />
               <a
                 href="mailto:wordbiblicalministries@gmail.com"
-                className="text-outline-variant hover:text-primary-fixed transition-colors break-all"
+                className="text-white hover:text-primary-fixed transition-colors break-all"
               >
                 wordbiblicalministries@gmail.com
               </a>
@@ -191,7 +182,7 @@ export default function Footer() {
               <Mail size={15} className="text-primary-container shrink-0" />
               <a
                 href="mailto:drkerux@gmail.com"
-                className="text-outline-variant hover:text-primary-fixed transition-colors"
+                className="text-white hover:text-primary-fixed transition-colors"
               >
                 drkerux@gmail.com
               </a>

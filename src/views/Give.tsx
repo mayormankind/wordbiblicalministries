@@ -109,10 +109,7 @@ export default function Give() {
               <div className="h-px w-16 bg-amber-400" />
             </div>
             <p className="text-on-surface-variant text-lg max-w-2xl mx-auto leading-relaxed">
-              Your giving enables WBM to preach the Gospel, disciple nations,
-              support missionaries, produce media content, and meet the
-              practical needs of our community. When you give, you are
-              partnering with God's work on the earth.
+              Your partnership strengthens the ministry of Word Biblical Ministries in several key ways:
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -120,17 +117,22 @@ export default function Give() {
               {
                 icon: <Heart size={28} className="text-primary" />,
                 title: "Impacting the Church",
-                desc: "Your gift directly empowers pastors, students, and believers through biblically grounded resources and training.",
+                desc: "Funding theological initiatives that equip pastors, students, and Christian leaders with biblically resources.",
               },
               {
                 icon: <Globe size={28} className="text-primary" />,
                 title: "Translating the Word",
-                desc: "Through AFINT, your generosity sends the Gospel to the nations in accurate, readable translations.",
+                desc: "Enabling us to expand digital platforms, educational tools, and ministry outreach around the world.",
               },
               {
                 icon: <Shield size={28} className="text-primary" />,
                 title: "Faithful Stewardship",
-                desc: "We are committed to transparent, accountable, and Spirit-led management of every resource entrusted to us.",
+                desc: "Sustaining the operational needs of a ministry committed to prayer, Scripture, and the Great Commission.",
+              },
+              {
+                icon: <Shield size={28} className="text-primary" />,
+                title: "Progressive Strengthening",
+                desc: "Every gift -large or small -helps WBM continue strengthening the Church through Christ-centered and Scripture-rooted ministry.",
               },
             ].map((w, i) => (
               <AnimateOnScroll

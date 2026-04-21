@@ -84,12 +84,9 @@ export default function HeroCarousel() {
             }`}
           >
             <div className="inline-flex items-center gap-2 bg-primary/20 border border-primary/40 text-amber-300 text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-8">
-              <span className="w-1.5 h-1.5 bg-amber-400 rounded-full animate-pulse" />
               {slide.badge}
             </div>
-            <h1
-              className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight font-headline italic"
-            >
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight font-headline italic">
               {slide.title.split(" ").map((word, i) => (
                 <span
                   key={i}

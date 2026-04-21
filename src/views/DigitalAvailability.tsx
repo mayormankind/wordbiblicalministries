@@ -29,9 +29,7 @@ export default function DigitalAvailability() {
             <p className="text-surface-tint text-sm uppercase tracking-widest font-bold mb-6">
               Now Available Worldwide
             </p>
-            <h2
-              className="text-3xl md:text-5xl font-bold text-on-surface mb-8 leading-tight font-headline italic"
-            >
+            <h2 className="text-3xl md:text-5xl font-bold text-on-surface mb-8 leading-tight font-headline italic">
               AFINT on the YouVersion Bible App
             </h2>
             <div className="flex items-center justify-center gap-3 my-8">
@@ -66,11 +64,11 @@ export default function DigitalAvailability() {
                   <p className="text-outline text-xs uppercase tracking-widest font-bold mb-3">
                     British English Edition
                   </p>
-                  <h3
-                    className="text-2xl lg:text-3xl font-bold text-on-background mb-6 font-headline italic"
-                  >
+                  <h3 className="text-2xl lg:text-3xl font-bold text-on-background mb-6 font-headline italic">
                     African International New Testament: <br />
-                    <span className="text-surface-tint">Literal Translation</span>{" "}
+                    <span className="text-surface-tint">
+                      Literal Translation
+                    </span>{" "}
                   </h3>
                   <div className="space-y-5 text-on-surface-variant leading-relaxed">
                     <p>
@@ -100,9 +98,7 @@ export default function DigitalAvailability() {
                   <p className="text-primary text-xs uppercase tracking-widest font-bold mb-3">
                     American English Edition
                   </p>
-                  <h3
-                    className="text-2xl lg:text-3xl font-bold text-on-background mb-6 font-headline italic"
-                  >
+                  <h3 className="text-2xl lg:text-3xl font-bold text-on-background mb-6 font-headline italic">
                     African International New Testament: <br />
                     <span className="text-surface-tint">
                       Explanatory Paraphrase
@@ -129,57 +125,11 @@ export default function DigitalAvailability() {
         </div>
       </section>
 
-      {/* Dual Purpose & Integration */}
-      <AnimateOnScroll animation="fade-up">
-        <section className="py-24 px-6 bg-stone-900 text-inverse-on-surface">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div>
-                <h3
-                  className="text-3xl font-bold text-white mb-6 font-headline italic"
-                >
-                  A Dual Purpose for a Broad Audience
-                </h3>
-                <p className="text-lg leading-relaxed mb-6">
-                  By offering both a literal translation and an explanatory
-                  paraphrase, AFINT serves the dual purpose of preserving the
-                  integrity of the original text while also making its meaning
-                  accessible and clear to a broad audience.
-                </p>
-                <div className="flex gap-4 items-center text-primary-container font-semibold uppercase tracking-widest text-sm mt-8">
-                  <BookOpen size={20} /> Rigorous Study
-                  <span className="w-1.5 h-1.5 bg-stone-600 rounded-full mx-2" />
-                  <Share2 size={20} /> Spiritual Growth
-                </div>
-              </div>
-
-              <div className="bg-stone-800 p-10 border border-outline-variant rounded-sm relative">
-                <div className="absolute -top-5 -left-5 bg-primary text-white p-3 rounded-sm shadow-lg">
-                  <Smartphone size={24} />
-                </div>
-                <h4
-                  className="text-xl font-bold text-white mb-4 font-headline italic"
-                >
-                  Fully Integrated Platform
-                </h4>
-                <p className="leading-relaxed">
-                  Both editions are fully integrated into the YouVersion platform,
-                  allowing users to read, compare, share, and engage Scripture in
-                  a format that supports both rigorous study and spiritual growth.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </AnimateOnScroll>
-
       {/* Final CTA */}
       <AnimateOnScroll animation="zoom-in">
         <section className="py-16 px-6 bg-surface-tint text-white text-center">
           <div className="max-w-3xl mx-auto">
-            <h2
-              className="text-3xl font-bold mb-4 font-headline italic"
-            >
+            <h2 className="text-3xl font-bold mb-4 font-headline italic">
               Start Reading Today
             </h2>
             <p className="text-amber-100 mb-8 text-lg">

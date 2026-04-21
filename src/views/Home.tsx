@@ -79,7 +79,7 @@ export default function Home() {
       {/* ─── SCRIPTURE BANNER ─── */}
       <section className="bg-surface-tint py-10 px-6 overflow-hidden">
         <AnimateOnScroll animation="zoom-in" duration={1000}>
-          <p className="text-center text-amber-50 text-xl md:text-2xl italic max-w-3xl mx-auto font-headline italic">
+          <p className="text-center text-amber-50 text-xl md:text-2xl italic max-w-3xl mx-auto font-headline">
             "For the word of God is living and active, sharper than any
             two-edged sword…"
           </p>

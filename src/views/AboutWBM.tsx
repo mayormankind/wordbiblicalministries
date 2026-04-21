@@ -22,6 +22,7 @@ import {
   GraduationCap,
 } from "lucide-react";
 import AnimateOnScroll from "../components/AnimateOnScroll";
+import Image from "next/image";
 
 // ── Core Values ───────────────────────────────────────────────────────────────
 const values = [
@@ -77,57 +78,6 @@ const values = [
   },
 ];
 
-// ── Founder academic journey ──────────────────────────────────────────────────
-const academicJourney = [
-  {
-    track: "Academic",
-    color: "bg-stone-800",
-    textColor: "text-on-surface",
-    lightBg: "bg-surface-container-low",
-    borderColor: "border-stone-300",
-    items: [
-      {
-        degree: "BSc, Geography",
-        institution: "University of Ibadan, Nigeria",
-        detail: "Specialization in Soil Geomorphology",
-      },
-      {
-        degree: "MSc, Geography",
-        institution: "University of Ibadan, Nigeria",
-        detail: "Rigorous analytical research background",
-      },
-    ],
-  },
-  {
-    track: "Theological",
-    color: "bg-surface-tint",
-    textColor: "text-surface-tint",
-    lightBg: "bg-amber-50",
-    borderColor: "border-amber-300",
-    items: [
-      {
-        degree: "MDiv, Theology",
-        institution: "Nigerian Baptist Theological Seminary, Ogbomosho",
-        detail:
-          "Foundation in biblical interpretation and expository preaching",
-      },
-      {
-        degree: "MTh, Theology",
-        institution: "Nigerian Baptist Theological Seminary, Ogbomosho",
-        detail: "Doctrinal soundness and careful biblical scholarship",
-      },
-    ],
-  },
-];
-
-// ── Leadership placeholders ───────────────────────────────────────────────────
-const leadership = [
-  { name: "Founder & Director", role: "Senior Leadership" },
-  { name: "Associate Director", role: "Ministry Team" },
-  { name: "Director of Ministries", role: "Ministry Leadership" },
-  { name: "Director of AFINT", role: "International Outreach" },
-];
-
 // ── Mission commitments ───────────────────────────────────────────────────────
 const missionCommitments = [
   {
@@ -165,7 +115,7 @@ export default function AboutWBM() {
       <PageHero
         tag="Who We Are"
         title="About WBM"
-        subtitle="Word Biblical Ministries — exalting Christ and strengthening the Church through prayer-dependent, Scripture-rooted ministry."
+        subtitle="Word Biblical Ministries — exalting Christ and strengthening the Church through prayer-dependent and Scripture-rooted ministry."
       />
 
       {/* ── Vision & Mission ── */}
@@ -305,9 +255,6 @@ export default function AboutWBM() {
         <div className="max-w-5xl mx-auto">
           <AnimateOnScroll animation="fade-up">
             <div className="text-center mb-16">
-              <p className="text-primary-container text-xs uppercase tracking-widest font-bold mb-3">
-                The Man Behind the Mission
-              </p>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-headline italic">
                 About the Founder
               </h2>
@@ -325,16 +272,19 @@ export default function AboutWBM() {
             <AnimateOnScroll animation="fade-right" className="lg:col-span-3">
               <div className="flex flex-col items-center text-center">
                 <div className="w-32 h-32 rounded-full bg-stone-700 flex items-center justify-center mb-5 ring-4 ring-amber-600/40">
-                  <User size={56} className="text-outline-variant" />
+                  <Image
+                    alt="Michael Adegbola"
+                    src="/founder.jpg"
+                    width={100}
+                    height={100}
+                    className="rounded-full"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-1 font-headline italic">
                   Michael Adegbola
                 </h3>
                 <p className="text-primary-fixed text-xs uppercase tracking-widest font-semibold mb-3">
                   Founder & Director
-                </p>
-                <p className="text-outline-variant text-xs leading-relaxed">
-                  Scholar · Teacher · Preacher
                 </p>
               </div>
             </AnimateOnScroll>
@@ -375,52 +325,6 @@ export default function AboutWBM() {
               </div>
             </AnimateOnScroll>
           </div>
-
-          {/* Dual academic track */}
-          <AnimateOnScroll animation="fade-up" delay={100}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {academicJourney.map((track, i) => (
-                <AnimateOnScroll
-                  key={i}
-                  animation={i === 0 ? "fade-right" : "fade-left"}
-                  delay={(i * 150) as any}
-                >
-                  <div className="bg-stone-800 border border-outline-variant rounded-sm p-6">
-                    <div className="flex items-center gap-3 mb-5">
-                      <div
-                        className={`w-8 h-8 rounded-lg ${track.color} flex items-center justify-center`}
-                      >
-                        <GraduationCap size={16} className="text-white" />
-                      </div>
-                      <h4 className="font-bold text-white font-headline italic">
-                        {track.track} Formation
-                      </h4>
-                    </div>
-                    <div className="space-y-4">
-                      {track.items.map((item, j) => (
-                        <div
-                          key={j}
-                          className={`border-l-2 ${track.borderColor} pl-4`}
-                        >
-                          <p
-                            className={`font-bold text-sm ${track.textColor} mb-0.5`}
-                          >
-                            {item.degree}
-                          </p>
-                          <p className="text-inverse-on-surface text-sm">
-                            {item.institution}
-                          </p>
-                          <p className="text-outline text-xs mt-0.5">
-                            {item.detail}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </AnimateOnScroll>
-              ))}
-            </div>
-          </AnimateOnScroll>
         </div>
       </section>
     </main>
