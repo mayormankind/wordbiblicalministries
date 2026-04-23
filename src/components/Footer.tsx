@@ -111,7 +111,7 @@ export default function Footer() {
                   href={link.path}
                   className="text-outline-variant hover:text-primary-fixed text-sm transition-colors flex items-center gap-2"
                 >
-                  <span className="text-primary text-xs">›</span>
+                  <span className="text-primary text-sm">›</span>
                   {link.label}
                 </Link>
               </li>

@@ -331,7 +331,7 @@ export default function AboutAFINT() {
                   Clarity Built on the Literal Text
                 </p>
                 <p className="text-on-surface-variant mb-8 text-base leading-relaxed">
-                  xplanatory Paraphrase is not an independent rendering but a
+                  Explanatory Paraphrase is not an independent rendering but a
                   carefully controlled expansion of the Literal Translation. Its
                   purpose is to make the meaning of the text clear, explicit,
                   and accessible, especially where the Greek communicates

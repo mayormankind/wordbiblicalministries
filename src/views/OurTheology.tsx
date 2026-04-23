@@ -436,29 +436,10 @@ function AccordionItem({ section, isOpen, onToggle }: AccordionItemProps) {
         onClick={onToggle}
         className="w-full flex items-start gap-5 py-6 px-0 text-left group focus:outline-none"
       >
-        {/* Section number 
-        <span
-          className="text-2xl font-black text-stone-200 shrink-0 leading-none mt-0.5 group-hover:text-amber-200 transition-colors duration-200 select-none font-headline"
-          style={{ minWidth: "2.5rem" }}
-        >
-          {section.number}
-        </span>*/}
-
         <div className="flex-1 min-w-0">
           <h4 className="text-lg font-bold text-on-surface group-hover:text-surface-tint transition-colors duration-200 leading-snug font-headline italic">
             {section.title}
           </h4>
-          {/* Scripture ref badges */}
-          {/* <div className="flex flex-wrap gap-1.5 mt-2">
-            {section.refs.map((ref, i) => (
-              <span
-                key={i}
-                className="text-xs font-medium text-surface-tint bg-amber-50 border border-amber-100 px-2 py-0.5 rounded-sm"
-              >
-                {ref}
-              </span>
-            ))}
-          </div> */}
         </div>
 
         {/* Chevron */}
@@ -511,11 +492,7 @@ export default function OurTheology() {
 
   return (
     <main>
-      <PageHero
-        tag=""
-        title="Our Theology"
-        subtitle=""
-      />
+      <PageHero tag="" title="Our Theology" subtitle="" />
 
       {/* ── Intro ── */}
       <AnimateOnScroll animation="fade-up">
@@ -533,11 +510,11 @@ export default function OurTheology() {
               <div className="h-px w-16 bg-amber-400" />
             </div>
             <p className="text-on-surface-variant leading-relaxed text-lg">
-              At Word Biblical Ministry (WBM), theology is not merely academic — it is the living breath
-              of who we are and how we minister. Our doctrinal convictions shape
-              our worship, our preaching, our discipleship, and our engagement
-              with the world. Below are the core beliefs that define us as a
-              ministry.
+              At Word Biblical Ministry (WBM), theology is not merely academic —
+              it is the living breath of who we are and how we minister. Our
+              doctrinal convictions shape our worship, our preaching, our
+              discipleship, and our engagement with the world. Below are the
+              core beliefs that define us as a ministry.
             </p>
           </div>
         </section>
@@ -648,21 +625,6 @@ export default function OurTheology() {
           </div>
         </div>
       </section>
-
-      {/* ── Scripture CTA ── 
-      <AnimateOnScroll animation="zoom-in">
-        <section className="bg-surface-tint py-16 px-6 text-center">
-          <p className="text-amber-100 text-xs uppercase tracking-widest font-bold mb-3">
-            Rooted & Grounded
-          </p>
-          <blockquote className="text-white text-2xl md:text-3xl italic max-w-3xl mx-auto mb-3 font-headline italic">
-            "Sanctify them through thy truth: thy word is truth."
-          </blockquote>
-          <p className="text-amber-200 tracking-widest text-sm uppercase">
-            — John 17:17
-          </p>
-        </section>
-      </AnimateOnScroll> */}
     </main>
   );
 }
