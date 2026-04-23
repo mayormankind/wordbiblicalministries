@@ -55,7 +55,7 @@ export default function Footer() {
       </div>
 
       {/* ── Main Footer Body ── */}
-      <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="bg-black max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Brand */}
         <div className="lg:col-span-1">
           {/* Logo */}
@@ -122,12 +122,9 @@ export default function Footer() {
                 href={SELAR_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary-fixed hover:text-amber-300 text-sm transition-colors flex items-center gap-2 mt-3 pt-3 border-t border-stone-800"
+                className="text-primary hover:text-amber-300 text-sm transition-colors flex items-center gap-2 mt-3 pt-3 border-t border-stone-800"
               >
-                <BookMarked
-                  size={13}
-                  className="text-primary-container shrink-0"
-                />
+                <BookMarked size={13} className="text-primary shrink-0" />
                 Purchase Our Books
               </a>
             </li>
@@ -144,7 +141,7 @@ export default function Footer() {
               <p className="text-inverse-on-surface text-sm font-semibold mb-0.5">
                 WECNT Series
               </p>
-              <p className="text-white text-xs leading-relaxed">
+              <p className="text-white text-sm leading-relaxed">
                 Word Expositor's Commentary on the New Testament — scholarly
                 exegesis with pastoral application
               </p>
@@ -154,7 +151,7 @@ export default function Footer() {
                 href={SELAR_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-primary-container hover:text-primary-fixed uppercase tracking-widest transition-colors"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-fixed uppercase tracking-widest transition-colors"
               >
                 <BookMarked size={12} />
                 Browse All on Selar
@@ -170,19 +167,19 @@ export default function Footer() {
           </h4>
           <ul className="space-y-4 text-sm">
             <li className="flex gap-3 items-center">
-              <Mail size={15} className="text-primary-container shrink-0" />
+              <Mail size={15} className="text-primary shrink-0" />
               <a
                 href="mailto:wordbiblicalministries@gmail.com"
-                className="text-white hover:text-primary-fixed transition-colors break-all"
+                className="text-primary hover:text-primary-fixed transition-colors break-all"
               >
                 wordbiblicalministries@gmail.com
               </a>
             </li>
             <li className="flex gap-3 items-center">
-              <Mail size={15} className="text-primary-container shrink-0" />
+              <Mail size={15} className="text-primary shrink-0" />
               <a
                 href="mailto:drkerux@gmail.com"
-                className="text-white hover:text-primary-fixed transition-colors"
+                className="text-primary hover:text-primary-fixed transition-colors"
               >
                 drkerux@gmail.com
               </a>

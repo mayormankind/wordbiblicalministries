@@ -120,23 +120,6 @@ export default function HeroCarousel() {
         ))}
       </div>
 
-      {/* Navigation Buttons */}
-      {/* <button
-        onClick={prevSlide}
-        className="absolute left-6 md:left-12 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/20 border border-white/10 transition-colors text-white/70 hover:text-white"
-        aria-label="Previous Slide"
-      >
-        <ChevronLeft size={24} />
-      </button> */}
-
-      {/* <button
-        onClick={nextSlide}
-        className="absolute right-6 md:right-12 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/20 border border-white/10 transition-colors text-white/70 hover:text-white"
-        aria-label="Next Slide"
-      >
-        <ChevronRight size={24} />
-      </button> */}
-
       {/* SLIDE INDICATORS */}
       <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 flex gap-3">
         {slides.map((_, i) => (

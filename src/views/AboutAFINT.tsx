@@ -265,8 +265,9 @@ export default function AboutAFINT() {
                       size={18}
                     />
                     <span>
-                      <strong>Formal correspondence:</strong> Preserves
-                      grammatical structure and syntactical relationships.
+                      <strong>Formal correspondence to the greek text:</strong>{" "}
+                      The translation preserves grammatical structure and
+                      syntactical relationships as closely as English permits.
                     </span>
                   </li>
                   <li className="flex gap-3">
@@ -275,8 +276,10 @@ export default function AboutAFINT() {
                       size={18}
                     />
                     <span>
-                      <strong>Lexical precision:</strong> Careful attention to
-                      semantic range and conceptual continuity.
+                      <strong>Lexical precision and consistency:</strong> Greek
+                      terms are rendered with careful attention to their
+                      semantic range, often maintaining consistent equivalents
+                      to preserve conceptual continuity
                     </span>
                   </li>
                   <li className="flex gap-3">
@@ -285,8 +288,9 @@ export default function AboutAFINT() {
                       size={18}
                     />
                     <span>
-                      <strong>Minimal expansion:</strong> Focus is on what the
-                      text says.
+                      <strong>Minimal interpretive expansion:</strong> The focus
+                      is on what the text says, not on explaining or resolving
+                      every implication
                     </span>
                   </li>
                   <li className="flex gap-3">
@@ -295,15 +299,20 @@ export default function AboutAFINT() {
                       size={18}
                     />
                     <span>
-                      <strong>Transparency:</strong> Suitable for serious study
-                      and comparison.
+                      <strong>Transparency for study:</strong> Readers can
+                      observe the underlying structure of the Greek, making this
+                      layer suitable for serious study, teaching, and
+                      comparison.
                     </span>
                   </li>
                 </ul>
                 <div className="mt-8 p-4 bg-white border border-surface-dim rounded-md">
                   <p className="text-sm text-on-surface-variant font-semibold italic">
                     Function: Establishes the definitive textual boundary for
-                    meaning, providing the standard of accuracy.
+                    meaning within the AFINT framework. It ensures that the
+                    translation remains anchored in the original language,
+                    providing the standard of accuracy and integrity against
+                    which all interpretation is measured
                   </p>
                 </div>
               </div>
@@ -322,10 +331,11 @@ export default function AboutAFINT() {
                   Clarity Built on the Literal Text
                 </p>
                 <p className="text-on-surface-variant mb-8 text-base leading-relaxed">
-                  Not an independent rendering but a carefully controlled
-                  expansion. Its purpose is to make the meaning of the text
-                  clear, explicit, and accessible, especially where the Greek
-                  communicates densely or implicitly.
+                  xplanatory Paraphrase is not an independent rendering but a
+                  carefully controlled expansion of the Literal Translation. Its
+                  purpose is to make the meaning of the text clear, explicit,
+                  and accessible, especially where the Greek communicates
+                  densely or implicitly.
                 </p>
                 <ul className="space-y-4 text-stone-700 text-sm">
                   <li className="flex gap-3">
@@ -334,8 +344,11 @@ export default function AboutAFINT() {
                       size={18}
                     />
                     <span>
-                      <strong>Derived directly:</strong> Rooted in the wording
-                      established in the AFINT Literal.
+                      <strong>
+                        Derived directly from the literal translation:
+                      </strong>{" "}
+                      Every explanatory addition is rooted in the wording,
+                      structure, and meaning established in the AFINT Literal.
                     </span>
                   </li>
                   <li className="flex gap-3">
@@ -344,8 +357,11 @@ export default function AboutAFINT() {
                       size={18}
                     />
                     <span>
-                      <strong>Explanatory expansions:</strong> Unpacks
-                      compressed expressions and illuminates context.
+                      <strong>Use of explanatory expansions:</strong> These
+                      expansions unpack compressed expressions, clarify implicit
+                      ideas, illuminate historical, cultural, and theological
+                      context, and highlight logical relationships within the
+                      text.
                     </span>
                   </li>
                   <li className="flex gap-3">
@@ -354,8 +370,9 @@ export default function AboutAFINT() {
                       size={18}
                     />
                     <span>
-                      <strong>Exegetical integration:</strong> Incorporates
-                      grammatical and theological insights.
+                      <strong>Exegetical integration:</strong> The paraphrase
+                      incorporates grammatical, lexical, contextual, and
+                      theological insights into a unified presentation.
                     </span>
                   </li>
                   <li className="flex gap-3">
@@ -364,15 +381,19 @@ export default function AboutAFINT() {
                       size={18}
                     />
                     <span>
-                      <strong>Guided clarity:</strong> Provides reasoned and
-                      textually grounded explanation.
+                      <strong>Guided interpretive clarity:</strong> Where the
+                      literal text may allow multiple possibilities, the
+                      paraphrase provides a reasoned and textually grounded
+                      explanation.
                     </span>
                   </li>
                 </ul>
                 <div className="mt-8 p-4 bg-surface-container-low border border-surface-dim rounded-md">
                   <p className="text-sm text-on-surface-variant font-semibold italic">
-                    Function: Articulates clearly what is already present in the
-                    text... extending meaning in an accountable way.
+                    Function: Articulate clearly what is already present in the
+                    text, as established by the Literal Translation. It does not
+                    replace the text but extends its meaning in an accountable
+                    and disciplined way.
                   </p>
                 </div>
               </div>
@@ -431,31 +452,31 @@ export default function AboutAFINT() {
                   Theological & Textual Basis
                 </h3>
                 <p className="mb-4 leading-relaxed">
-                  AFINT intentionally integrates translation and exegesis...
-                  embedding explanation within the translation itself, while
-                  maintaining a clear distinction between the textual base and
-                  the interpretive expansion.
+                  AFINT intentionally integrates translation and exegesis, but
+                  in a structured and disciplined sequence. Unlike traditional
+                  models that separate translation and commentary, AFINT embeds
+                  explanation within the translation itself, while maintaining a
+                  clear distinction between the textual base(literal) and the
+                  interpretive expansion(paraphrase).
                 </p>
                 <p className="mb-8 leading-relaxed">
                   While reflecting an evangelical theological orientation, this
-                  clarity is derived from the text, constrained by evidence, and
-                  expressed as an outworking of exegesis—maintaining theological
-                  transparency under the authority of the text.
+                  clarity is derived from the text as represented in the Literal
+                  Translation, constrained by grammatical and lexical evidence,
+                  and expressed as an outworking of exegesis, not imposed upon
+                  the text. Thus, AFINT maintains theological transparency under
+                  the authority of the text.
                 </p>
 
-                <div className="bg-stone-800 p-6 rounded-lg border border-outline-variant flex items-start gap-4">
-                  <FileText
-                    className="text-primary-container shrink-0 mt-1"
-                    size={24}
-                  />
+                <div className="flex items-start gap-4">
                   <div>
                     <h4 className="text-white font-bold mb-2">Textual Basis</h4>
-                    <p className="text-sm text-outline-variant mb-2">
+                    <p className="text-sm text-white mb-2">
                       The translation draws on the two most authoritative and
                       widely accepted critical editions of the Greek New
                       Testament:
                     </p>
-                    <ul className="text-sm text-inverse-on-surface list-disc ml-4 space-y-1">
+                    <ul className="text-sm text-white list-disc ml-4 space-y-1">
                       <li>Novum Testamentum Graece, 28th Edition (NA28)</li>
                       <li>
                         The Greek New Testament, 5th Revised Edition (UBS5)
@@ -476,18 +497,18 @@ export default function AboutAFINT() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">
               {purposes.map((purpose, idx) => (
                 <AnimateOnScroll
                   key={idx}
                   animation="fade-up"
                   delay={idx * 100}
                 >
-                  <div className="bg-stone-800 border border-outline-variant p-6 rounded-lg hover:border-amber-500 transition-colors duration-200 h-full">
+                  <div className="p-6 rounded-lg transition-colors duration-200 h-full">
                     <h4 className="text-lg font-bold text-white mb-3">
                       {purpose.title}
                     </h4>
-                    <p className="text-sm leading-relaxed text-outline-variant">
+                    <p className="text-sm leading-relaxed text-white">
                       {purpose.desc}
                     </p>
                   </div>
