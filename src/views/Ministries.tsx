@@ -239,9 +239,7 @@ function PillarItem({ pillar, isOpen, onToggle }: PillarItemProps) {
           <h4 className="text-base font-bold text-on-surface group-hover:text-surface-tint transition-colors duration-200 leading-snug font-headline italic">
             {pillar.title}
           </h4>
-          <p className="text-xs text-primary mt-0.5">
-            {pillar.subtitle}
-          </p>
+          <p className="text-xs text-primary mt-0.5">{pillar.subtitle}</p>
         </div>
         <ChevronDown
           size={16}
@@ -528,7 +526,7 @@ export default function Ministries() {
       </section>
 
       {/* ── CTA ── */}
-      <AnimateOnScroll animation="fade-up">
+      {/* <AnimateOnScroll animation="fade-up">
         <section className="py-16 px-6 bg-surface-tint text-white text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-4 font-headline italic">
@@ -547,7 +545,7 @@ export default function Ministries() {
             </Link>
           </div>
         </section>
-      </AnimateOnScroll>
+      </AnimateOnScroll> */}
     </main>
   );
 }
