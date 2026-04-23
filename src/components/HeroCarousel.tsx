@@ -16,8 +16,7 @@ const slides = [
     link2: { text: "Our Beliefs", to: "/our-theology" },
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1507434965515-61970f2bd7c6?auto=format&fit=crop&q=80&w=2000",
+    image: "/images/hero1.jpg",
     badge: "Bible Translation",
     title: "The AFINT Translation Project",
     subtitle:
