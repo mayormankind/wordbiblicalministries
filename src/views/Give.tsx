@@ -130,7 +130,7 @@ export default function Give() {
                 desc: "Sustaining the operational needs of a ministry committed to prayer, Scripture, and the Great Commission.",
               },
               {
-                icon: <Shield size={28} className="text-primary" />,
+                icon: <Heart size={28} className="text-primary" />,
                 title: "Progressive Strengthening",
                 desc: "Every gift -large or small -helps WBM continue strengthening the Church through Christ-centered and Scripture-rooted ministry.",
               },
