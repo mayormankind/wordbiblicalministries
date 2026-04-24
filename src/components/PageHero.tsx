@@ -30,7 +30,7 @@ export default function PageHero({
           <div className="h-px w-16 bg-primary-container" />
         </div>
         {subtitle && (
-          <p className="text-inverse-on-surface text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-white text-lg max-w-2xl mx-auto leading-relaxed">
             {subtitle}
           </p>
         )}

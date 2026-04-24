@@ -41,7 +41,7 @@ const missionPoints: MissionPoint[] = [
   {
     icon: <GraduationCap size={18} />,
     number: "03",
-    title: "African leadership in biblical scholarship",
+    title: "African contribution to biblical scholarship",
     desc: "Amplifying African scholarly contribution to global biblical translation and theology, demonstrating Africa as an active participant in shaping the understanding of Scripture.",
   },
   {

@@ -20,7 +20,7 @@ const slides = [
     badge: "Bible Translation",
     title: "The AFINT Translation Project",
     subtitle:
-      "Producing faithful, precise, and readable English renderings of the Greek New Testament for the global church and discipleship.",
+      "Producing faithful, precise, and readable English renderings of the Greek New Testament for the global church.",
     link1: { text: "About AFINT", to: "/about-afint" },
     link2: { text: "Learn More", to: "/ministries" },
   },

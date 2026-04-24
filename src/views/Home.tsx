@@ -80,8 +80,10 @@ export default function Home() {
       <section className="bg-surface-tint py-10 px-6 overflow-hidden">
         <AnimateOnScroll animation="zoom-in" duration={1000}>
           <p className="text-center text-amber-50 text-xl md:text-2xl italic max-w-3xl mx-auto font-headline">
-            "For the word of God is living and active, sharper than any
-            two-edged sword…"
+            "For the word of God is living and active, and sharper than any
+            two-edged sword, piercing even as far as the division of soul and
+            spirit, of both joints and marrow,* and able to judge* the
+            intentions and thoughts of the heart."
           </p>
           <p className="text-center text-amber-200 text-sm mt-2 tracking-widest uppercase">
             — Hebrews 4:12

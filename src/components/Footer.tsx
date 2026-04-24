@@ -45,7 +45,7 @@ export default function Footer() {
               href={SELAR_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="border-2 border-white text-white hover:bg-white hover:text-amber-800 font-bold text-xs uppercase tracking-widest px-7 py-3 rounded-sm transition-all inline-flex items-center gap-2"
+              className="border-2 border-white text-white hover:bg-white hover:text-amber-800 font-bold text-sm uppercase tracking-widest px-7 py-3 rounded-sm transition-all inline-flex items-center gap-2"
             >
               <BookMarked size={14} />
               Purchase Our Books
@@ -67,14 +67,18 @@ export default function Footer() {
               height={200}
             />
           </Link>
-          <p className="text-outline-variant text-sm leading-relaxed mb-5">
+          <p className="text-outline-variant text-lg leading-relaxed mb-5">
             Anchored in Scripture. Driven by the Spirit. Reaching the Nations
             with the Gospel of Jesus Christ.
           </p>
           {/* Social Icons */}
           <div className="flex gap-3">
             {[
-              { label: "Facebook", href: "#", icon: <FaFacebookF /> },
+              {
+                label: "Facebook",
+                href: "https://www.facebook.com/michael.adeyemiadegbola/",
+                icon: <FaFacebookF />,
+              },
               { label: "YouTube", href: "#", icon: <FaYoutube size={16} /> },
               {
                 label: "Instagram",
@@ -91,7 +95,7 @@ export default function Footer() {
                 key={i}
                 href={s.href}
                 aria-label={s.label}
-                className="w-9 h-9 rounded-sm bg-stone-800 hover:bg-primary flex items-center justify-center text-inverse-on-surface hover:text-white transition-all text-xs"
+                className="w-9 h-9 rounded-sm bg-stone-800 hover:bg-primary flex items-center justify-center text-inverse-on-surface hover:text-white transition-all text-sm"
               >
                 {s.icon}
               </a>
@@ -101,7 +105,7 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div>
-          <h4 className="text-white font-bold text-xs uppercase tracking-widest mb-5 border-b border-outline-variant pb-3">
+          <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-5 border-b border-outline-variant pb-3">
             Quick Links
           </h4>
           <ul className="space-y-2.5">
@@ -109,9 +113,9 @@ export default function Footer() {
               <li key={link.path}>
                 <Link
                   href={link.path}
-                  className="text-outline-variant hover:text-primary-fixed text-sm transition-colors flex items-center gap-2"
+                  className="text-outline-variant hover:text-primary-fixed text-lg transition-colors flex items-center gap-2"
                 >
-                  <span className="text-primary text-sm">›</span>
+                  <span className="text-primary text-lg">›</span>
                   {link.label}
                 </Link>
               </li>
@@ -122,7 +126,7 @@ export default function Footer() {
                 href={SELAR_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:text-amber-300 text-sm transition-colors flex items-center gap-2 mt-3 pt-3 border-t border-stone-800"
+                className="text-primary hover:text-amber-300 text-lg transition-colors flex items-center gap-2 mt-3 pt-3 border-t border-stone-800"
               >
                 <BookMarked size={13} className="text-primary shrink-0" />
                 Purchase Our Books
@@ -133,15 +137,15 @@ export default function Footer() {
 
         {/* Publications */}
         <div>
-          <h4 className="text-white font-bold text-xs uppercase tracking-widest mb-5 border-b border-outline-variant pb-3">
+          <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-5 border-b border-outline-variant pb-3">
             Our Publications
           </h4>
           <ul className="space-y-4">
             <li>
-              <p className="text-inverse-on-surface text-sm font-semibold mb-0.5">
+              <p className="text-inverse-on-surface text-lg font-semibold mb-0.5">
                 WECNT Series
               </p>
-              <p className="text-white text-sm leading-relaxed">
+              <p className="text-white text-lg leading-relaxed">
                 Word Expositor's Commentary on the New Testament — scholarly
                 exegesis with pastoral application
               </p>
@@ -151,7 +155,7 @@ export default function Footer() {
                 href={SELAR_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-fixed uppercase tracking-widest transition-colors"
+                className="inline-flex items-center gap-1.5 text-sm font-bold text-primary hover:text-primary-fixed uppercase tracking-widest transition-colors"
               >
                 <BookMarked size={12} />
                 Browse All on Selar
@@ -162,10 +166,10 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h4 className="text-white font-bold text-xs uppercase tracking-widest mb-5 border-b border-outline-variant pb-3">
+          <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-5 border-b border-outline-variant pb-3">
             Contact Us
           </h4>
-          <ul className="space-y-4 text-sm">
+          <ul className="space-y-4 text-lg md:text-sm">
             <li className="flex gap-3 items-center">
               <Mail size={15} className="text-primary shrink-0" />
               <a
@@ -191,14 +195,22 @@ export default function Footer() {
       {/* ── Bottom Bar ── */}
       <div className="border-t border-stone-800 px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-outline max-w-7xl mx-auto">
         <p>
-          © {new Date().getFullYear()} Word Biblical Ministries (WBM). All
-          rights reserved.
+          © {new Date().getFullYear()} Word Biblical Ministries. All rights
+          reserved.
         </p>
         <p className="flex gap-4">
-          <Link href="#" className="hover:text-primary-fixed transition-colors">
+          <Link
+            href="/client materials/Privacy Policy.pdf"
+            download={"Privacy Policy.pdf"}
+            className="hover:text-primary-fixed transition-colors"
+          >
             Privacy Policy
           </Link>
-          <Link href="#" className="hover:text-primary-fixed transition-colors">
+          <Link
+            href="/client materials/TERMS OF USE.pdf"
+            download={"Terms of Use.pdf"}
+            className="hover:text-primary-fixed transition-colors"
+          >
             Terms of Use
           </Link>
         </p>

@@ -497,9 +497,6 @@ export default function Ministries() {
                 <ChevronRight size={18} />
               </div>
               <div>
-                <p className="text-surface-tint text-xs uppercase tracking-widest font-bold mb-1">
-                  Partnership Benefits
-                </p>
                 <h4 className="text-xl font-bold text-on-surface font-headline italic">
                   How {active?.shortLabel} Can Partner with WBM
                 </h4>
@@ -524,28 +521,6 @@ export default function Ministries() {
           </div>
         </div>
       </section>
-
-      {/* ── CTA ── */}
-      {/* <AnimateOnScroll animation="fade-up">
-        <section className="py-16 px-6 bg-surface-tint text-white text-center">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-4 font-headline italic">
-              Partner With Word Biblical Ministries
-            </h2>
-            <p className="text-amber-100 mb-8 max-w-xl mx-auto leading-relaxed">
-              Whether you lead a church, a seminary, or a campus fellowship —
-              WBM exists to serve you with the tools of translation, commentary,
-              and doctrinal defense. Let's build the Kingdom together.
-            </p>
-            <Link
-              href="/contact"
-              className="bg-white text-amber-800 hover:bg-amber-50 font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-sm transition-all inline-flex items-center gap-2 shadow-lg"
-            >
-              Get in Touch <ChevronRight size={16} />
-            </Link>
-          </div>
-        </section>
-      </AnimateOnScroll> */}
     </main>
   );
 }

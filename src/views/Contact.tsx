@@ -116,7 +116,7 @@ export default function Contact() {
                       </button>
                     </div>
                   ) : (
-                    <form onSubmit={handleSubmit} className="space-y-5">
+                    <form onSubmit={handleSubmit} className="contact-form space-y-5">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
                           <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant mb-2">
@@ -222,9 +222,9 @@ export default function Contact() {
             Our prayer team is available to stand with you in faith. Share your
             request and we will pray with and for you.
           </p>
-          <button className="bg-primary hover:bg-primary-container hover:text-on-primary-container text-white font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-sm transition-all">
+          <a href="#contact-form" className="bg-primary hover:bg-primary-container hover:text-on-primary-container text-white font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-sm transition-all">
             Submit a Prayer Request
-          </button>
+          </a>
         </section>
       </AnimateOnScroll>
     </main>
