@@ -1,16 +1,7 @@
 "use client";
 
 import PageHero from "../components/PageHero";
-import {
-  Heart,
-  Shield,
-  Globe,
-  ChevronRight,
-  CreditCard,
-  Landmark,
-  Mail,
-  Smartphone,
-} from "lucide-react";
+import { Heart, Shield, Globe, ChevronRight, Landmark } from "lucide-react";
 import AnimateOnScroll from "../components/AnimateOnScroll";
 import { countries } from "@/content/countries";
 
@@ -190,19 +181,47 @@ export default function Give() {
           </AnimateOnScroll>
         </div>
       </section>
-
-      <section className="py-20 px-6 bg-surface-container-lowest">
+      {/* Mission & Stewardship */}
+      <section className="py-24 px-6 bg-surface-container-lowest overflow-hidden">
         <div className="max-w-5xl mx-auto">
-          <AnimateOnScroll animation="fade-up">
-            <div className="text-center mb-12">
-              <p className="text-surface-tint text-xs uppercase tracking-widest font-bold mb-3">
-                Other Ways to Give
-              </p>
-              <h2 className="text-3xl font-bold text-on-surface mb-4 font-headline italic">
-                Give in the Way That Works for You
-              </h2>
+          <div className="items-start">
+            <div className="">
+              <AnimateOnScroll animation="fade-right">
+                <h2 className="text-4xl md:text-5xl font-bold text-on-surface mb-8 font-headline italic leading-tight">
+                  Support the Mission of Word Biblical Ministries
+                </h2>
+                <div className="space-y-6 text-on-surface-variant text-lg leading-relaxed">
+                  <p>
+                    Word Biblical Ministries exists to advance faithful biblical
+                    teaching, sound exegesis, and the spread of Scripture
+                    through translation and theological resources for the
+                    Church. Through our work, we aim to strengthen believers,
+                    equip leaders, and contribute to the global understanding of
+                    the New Testament.
+                  </p>
+                  <p>
+                    WBM is fiscally sponsored in the United States by{" "}
+                    <span className="text-on-surface font-semibold text-primary">
+                      Christian Ministry Alliance (Tax ID: 46-3408177)
+                    </span>
+                    , a recognized nonprofit organization. This partnership
+                    enables us to receive donations securely and steward them
+                    with accountability and transparency.
+                  </p>
+                  <p>
+                    By giving, you become a partner in this ministry—helping to
+                    produce resources, expand outreach, and sustain the ongoing
+                    work of biblical scholarship and teaching.
+                  </p>
+                  <div className="pt-6 border-l-2 border-primary pl-6 mt-8">
+                    <p className="font-headline italic text-2xl text-on-surface">
+                      We invite you to prayerfully consider supporting WBM.
+                    </p>
+                  </div>
+                </div>
+              </AnimateOnScroll>
             </div>
-          </AnimateOnScroll>
+          </div>
         </div>
       </section>
       {/* Third Party Giving CTA */}
