@@ -37,33 +37,6 @@ const accountDetails = [
   },
 ];
 
-const methods = [
-  {
-    icon: <CreditCard size={36} className="text-on-surface shrink-0" />,
-    title: "Online Giving",
-    desc: "The fastest and most secure way to give using your debit or credit card through our official portal.",
-    cta: "Give Online",
-    link: "https://fso.christianministryalliance.org/member-profile/word-vision-impact-ministry/",
-  },
-  {
-    icon: <Landmark size={36} className="text-on-surface shrink-0" />,
-    title: "Bank Transfer",
-    desc: "Make a direct bank transfer to our official ministry account. See account details below.",
-    cta: "View Details",
-    scrollTarget: "bank-details",
-  },
-  {
-    icon: <Mail size={36} className="text-on-surface shrink-0" />,
-    title: "Mail a Check",
-    desc: 'Send your check payable to "Word Biblical Ministries" to our official ministry address.',
-  },
-  {
-    icon: <Smartphone size={36} className="text-on-surface shrink-0" />,
-    title: "Mobile Money",
-    desc: "Give easily via mobile money platforms. Please contact us for the specific numbers for your region.",
-  },
-];
-
 export default function Give() {
   return (
     <main>
@@ -230,87 +203,6 @@ export default function Give() {
               </h2>
             </div>
           </AnimateOnScroll>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {methods.map((m, i) => (
-              <AnimateOnScroll
-                key={i}
-                animation="fade-up"
-                delay={((i % 4) * 100) as 0 | 100 | 200 | 300}
-              >
-                <div className="bg-white border border-surface-dim rounded-sm p-6 text-center hover:border-primary-fixed transition-all h-full flex flex-col">
-                  <div className="flex justify-center mb-3 text-primary">
-                    {m.icon}
-                  </div>
-                  <h3 className="font-bold text-on-surface mb-2 font-headline italic">
-                    {m.title}
-                  </h3>
-                  <p className="text-outline text-sm leading-relaxed mb-4 grow">
-                    {m.desc}
-                  </p>
-                  {(m as any).cta && (
-                    <div className="mt-auto">
-                      {(m as any).link ? (
-                        <a
-                          href={(m as any).link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-xs font-bold uppercase tracking-widest text-primary hover:text-amber-600 transition-colors flex items-center justify-center gap-1"
-                        >
-                          {(m as any).cta} <ChevronRight size={14} />
-                        </a>
-                      ) : (
-                        <button
-                          onClick={() => {
-                            if ((m as any).scrollTarget) {
-                              document
-                                .getElementById((m as any).scrollTarget)
-                                ?.scrollIntoView({ behavior: "smooth" });
-                            }
-                          }}
-                          className="text-xs font-bold uppercase tracking-widest text-primary hover:text-amber-600 transition-colors flex items-center justify-center gap-1"
-                        >
-                          {(m as any).cta} <ChevronRight size={14} />
-                        </button>
-                      )}
-                    </div>
-                  )}
-                </div>
-              </AnimateOnScroll>
-            ))}
-          </div>
-
-          {/* Bank Details Section */}
-          <div id="bank-details" className="pt-10 border-t border-surface-dim">
-            <AnimateOnScroll animation="fade-up">
-              <div className="max-w-2xl mx-auto bg-white border border-surface-dim rounded-sm overflow-hidden shadow-sm">
-                <div className="bg-surface-tint py-4 px-6 text-white text-center">
-                  <h3 className="font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-2">
-                    <Landmark size={18} /> Direct Bank Transfer Details
-                  </h3>
-                </div>
-                <div className="p-8">
-                  <p className="text-sm text-outline-variant mb-6 text-center italic">
-                    Please use your full name as the transaction reference.
-                  </p>
-                  <div className="space-y-4">
-                    {accountDetails.map((detail) => (
-                      <div
-                        key={detail.label}
-                        className="flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b border-surface-dim last:border-0"
-                      >
-                        <span className="text-xs uppercase tracking-wider font-bold text-outline-variant mb-1 sm:mb-0">
-                          {detail.label}
-                        </span>
-                        <span className="font-mono text-sm text-on-surface font-bold bg-surface-container-low px-3 py-1 rounded-sm">
-                          {detail.value}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </AnimateOnScroll>
-          </div>
         </div>
       </section>
       {/* Third Party Giving CTA */}
@@ -339,18 +231,6 @@ export default function Give() {
                 >
                   Give Securely Now <ChevronRight size={18} />
                 </a>
-              </div>
-
-              <div className="mt-8 flex items-center justify-center gap-6 text-outline-variant">
-                <div className="flex items-center gap-2 text-xs">
-                  <Shield size={14} /> Encrypted
-                </div>
-                <div className="flex items-center gap-2 text-xs">
-                  <Heart size={14} /> Tax Deductible
-                </div>
-                <div className="flex items-center gap-2 text-xs">
-                  <Globe size={14} /> Global Impact
-                </div>
               </div>
             </div>
           </AnimateOnScroll>
