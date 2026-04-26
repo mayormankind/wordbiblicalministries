@@ -12,6 +12,8 @@ import {
   Heart,
 } from "lucide-react";
 import AnimateOnScroll from "../components/AnimateOnScroll";
+import { countries } from "@/content/countries";
+import Link from "next/link";
 
 const contactDetails = [
   {
@@ -61,29 +63,6 @@ export default function Contact() {
       <section className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-12">
-            {/* Contact Cards 
-            <div className="lg:w-1/3 flex flex-col gap-6">
-              {contactDetails.map((c, i) => (
-                <AnimateOnScroll
-                  key={i}
-                  animation="fade-up"
-                  delay={((i % 4) * 100) as 0 | 100 | 200 | 300}
-                >
-                  <div className="bg-surface-container-low border border-surface-dim rounded-sm p-7 text-center hover:border-primary-fixed hover:shadow-md transition-all duration-300 h-full flex flex-col justify-center">
-                    <div className="flex justify-center mb-4">{c.icon}</div>
-                    <h3 className="font-bold text-on-surface mb-3 text-lg font-headline italic">
-                      {c.title}
-                    </h3>
-                    {c.lines.map((l, j) => (
-                      <p key={j} className="text-outline text-sm">
-                        {l}
-                      </p>
-                    ))}
-                  </div>
-                </AnimateOnScroll>
-              ))}
-            </div>*/}
-
             {/* Form */}
             <div className="lg:w-2/3">
               <AnimateOnScroll animation="fade-right">
@@ -116,7 +95,11 @@ export default function Contact() {
                       </button>
                     </div>
                   ) : (
-                    <form onSubmit={handleSubmit} className="contact-form space-y-5">
+                    <form
+                      id="contact"
+                      onSubmit={handleSubmit}
+                      className="space-y-5"
+                    >
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
                           <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant mb-2">
@@ -158,6 +141,22 @@ export default function Contact() {
                             className="w-full border border-stone-300 focus:border-amber-500 focus:outline-none px-4 py-3 text-sm rounded-sm text-on-surface bg-surface-container-low"
                             placeholder="+1 (000) 000-0000"
                           />
+                        </div>
+                        <div className="space-y-2 md:col-span-2">
+                          <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant">
+                            Your Country
+                          </label>
+                          <select
+                            title="countries"
+                            className="w-full border border-stone-300 focus:border-amber-500 focus:outline-none px-4 py-3 text-sm rounded-sm bg-surface-container-low appearance-none cursor-pointer"
+                          >
+                            <option value="">Select your country</option>
+                            {countries.map((c) => (
+                              <option key={c} value={c}>
+                                {c}
+                              </option>
+                            ))}
+                          </select>
                         </div>
                         <div>
                           <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant mb-2">
@@ -222,9 +221,12 @@ export default function Contact() {
             Our prayer team is available to stand with you in faith. Share your
             request and we will pray with and for you.
           </p>
-          <a href="#contact-form" className="bg-primary hover:bg-primary-container hover:text-on-primary-container text-white font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-sm transition-all">
+          <Link
+            href="#contact"
+            className="bg-primary hover:bg-primary-container hover:text-on-primary-container text-white font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-sm transition-all"
+          >
             Submit a Prayer Request
-          </a>
+          </Link>
         </section>
       </AnimateOnScroll>
     </main>
