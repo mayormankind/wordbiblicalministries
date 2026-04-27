@@ -209,7 +209,7 @@ export default function AboutAFINT() {
                 <p className="mb-4 leading-relaxed font-semibold text-white">
                   The AFINT is not an Africanized version of Scripture but an
                   academically rigorous work produced under the leadership of
-                  African theologians and exegetes.
+                  African biblical exegetes and theologians.
                 </p>
                 <p className="leading-relaxed text-amber-50">
                   Its goal is to serve the global Church, enriching biblical
