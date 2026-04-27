@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { Mail, BookMarked } from "lucide-react";
-import { FaFacebookF, FaYoutube, FaInstagram } from "react-icons/fa6";
+import { FaFacebookF } from "react-icons/fa6";
 import Image from "next/image";
-import { FaLinkedin } from "react-icons/fa";
 
 const footerLinks = [
   { label: "Our Theology", path: "/our-theology" },
@@ -76,13 +75,8 @@ export default function Footer() {
             {[
               {
                 label: "Facebook",
-                href: "https://www.facebook.com/michael.adeyemiadegbola/",
+                href: "https://www.facebook.com/share/1P3pERWSjZ/",
                 icon: <FaFacebookF />,
-              },
-              {
-                label: "LinkedIn",
-                href: "https://www.linkedin.com/in/michael-adegbola-2b3aa7107/",
-                icon: <FaLinkedin size={16} />,
               },
             ].map((s, i) => (
               <a
