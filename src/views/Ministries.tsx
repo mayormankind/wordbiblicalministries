@@ -17,7 +17,6 @@ import AnimateOnScroll from "../components/AnimateOnScroll";
 const audiences = [
   {
     id: "churches",
-    icon: <Church size={22} />,
     label: "Christian Churches",
     shortLabel: "Churches",
     tagline:
@@ -80,7 +79,6 @@ const audiences = [
   },
   {
     id: "institutions",
-    icon: <GraduationCap size={22} />,
     label: "Theological Institutions",
     shortLabel: "Seminaries",
     tagline:
@@ -143,7 +141,6 @@ const audiences = [
   },
   {
     id: "campuses",
-    icon: <GraduationCap size={22} />,
     label: "Campus Fellowships",
     shortLabel: "Campuses",
     tagline:
@@ -438,15 +435,6 @@ export default function Ministries() {
                       : "border-transparent text-outline-variant hover:text-stone-700 hover:border-stone-300"
                   }`}
                 >
-                  <span
-                    className={`${
-                      activeAudience === a.id
-                        ? "text-primary"
-                        : "text-outline-variant"
-                    } transition-colors`}
-                  >
-                    {a.icon}
-                  </span>
                   <span className="md:hidden">{a.shortLabel}</span>
                   <span className="hidden md:inline">{a.label}</span>
                 </button>
