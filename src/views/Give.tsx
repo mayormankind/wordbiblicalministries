@@ -107,7 +107,7 @@ export default function Give() {
             reluctance or under coercion, for God loves a cheerful giver."
           </p>
           <p className="text-amber-200 text-sm mt-2 uppercase tracking-widest">
-            — 2 Corinthians 9:7 (AFINT-LT)
+            — 2 Corinthians 9:7 (AFINTLIT)
           </p>
         </section>
       </AnimateOnScroll>
