@@ -79,12 +79,6 @@ export default function Footer() {
                 href: "https://www.facebook.com/michael.adeyemiadegbola/",
                 icon: <FaFacebookF />,
               },
-              { label: "YouTube", href: "#", icon: <FaYoutube size={16} /> },
-              {
-                label: "Instagram",
-                href: "#",
-                icon: <FaInstagram size={16} />,
-              },
               {
                 label: "LinkedIn",
                 href: "https://www.linkedin.com/in/michael-adegbola-2b3aa7107/",

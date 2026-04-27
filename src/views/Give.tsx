@@ -2,8 +2,11 @@
 
 import PageHero from "../components/PageHero";
 import { Heart, Shield, Globe, ChevronRight, Landmark } from "lucide-react";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import AnimateOnScroll from "../components/AnimateOnScroll";
 import { countries } from "@/content/countries";
+import { CheckCircle, Send } from "lucide-react";
 
 const accountDetails = [
   {
@@ -29,6 +32,65 @@ const accountDetails = [
 ];
 
 export default function Give() {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    country: "",
+    message: "",
+  });
+  const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSending(true);
+
+    try {
+      const templateParams = {
+        name: form.name,
+        email: form.email,
+        country: form.country,
+        message: form.message,
+      };
+
+      // 1. Send to Admin
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_GIVE_ADMIN!,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+
+      // 2. Send Confirmation to Visitor
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_GIVE_VISITOR!,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+
+      setSent(true);
+      setForm({
+        name: "",
+        email: "",
+        country: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("FAILED to send message:", error);
+      alert("Something went wrong. Please try again later.");
+    } finally {
+      setSending(false);
+    }
+  };
   return (
     <main>
       <PageHero
@@ -124,60 +186,101 @@ export default function Give() {
               </p>
             </div>
 
-            <form className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-surface-container-lowest p-8 rounded-sm border border-surface-dim shadow-sm">
-              <div className="space-y-2">
-                <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  placeholder="John Doe"
-                  className="w-full border border-surface-dim focus:border-primary outline-none px-4 py-3 text-sm rounded-sm bg-white"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  placeholder="john@example.com"
-                  className="w-full border border-surface-dim focus:border-primary outline-none px-4 py-3 text-sm rounded-sm bg-white"
-                />
-              </div>
-              <div className="space-y-2 md:col-span-2">
-                <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant">
-                  Your Country
-                </label>
-                <select
-                  title="countries"
-                  className="w-full border border-surface-dim focus:border-primary outline-none px-4 py-3 text-sm rounded-sm bg-white appearance-none cursor-pointer"
+            {sent ? (
+              <div className="bg-green-50 border border-green-300 text-green-700 rounded-sm p-8 text-center max-w-3xl mx-auto">
+                <div className="flex justify-center mb-4">
+                  <CheckCircle size={40} className="text-green-600" />
+                </div>
+                <h3 className="font-bold text-xl mb-2 font-headline italic">
+                  Thank You for Your Interest!
+                </h3>
+                <p className="text-sm leading-relaxed">
+                  We have received your message and our team will be in touch
+                  shortly to discuss our partnership. God bless you!
+                </p>
+                <button
+                  onClick={() => setSent(false)}
+                  className="mt-5 text-xs uppercase tracking-widest font-bold text-green-700 underline hover:text-green-600"
                 >
-                  <option value="">Select your country</option>
-                  {countries.map((c) => (
-                    <option key={c} value={c}>
-                      {c}
-                    </option>
-                  ))}
-                </select>
+                  Send Another Message
+                </button>
               </div>
-              <div className="space-y-2 md:col-span-2">
-                <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant">
-                  Message (Optional)
-                </label>
-                <textarea
-                  rows={4}
-                  placeholder="Tell us about your heart for this ministry..."
-                  className="w-full border border-surface-dim focus:border-primary outline-none px-4 py-3 text-sm rounded-sm bg-white resize-none"
-                />
-              </div>
-              <button
-                type="button"
-                className="md:col-span-2 bg-on-surface hover:bg-primary text-white font-bold text-sm uppercase tracking-widest py-4 rounded-sm transition-all"
+            ) : (
+              <form
+                onSubmit={handleSubmit}
+                className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-surface-container-lowest p-8 rounded-sm border border-surface-dim shadow-sm"
               >
-                Send Message
-              </button>
-            </form>
+                <div className="space-y-2">
+                  <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant">
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    value={form.name}
+                    onChange={handleChange}
+                    placeholder="John Doe"
+                    className="w-full border border-surface-dim focus:border-primary outline-none px-4 py-3 text-sm rounded-sm bg-white"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    value={form.email}
+                    onChange={handleChange}
+                    placeholder="john@example.com"
+                    className="w-full border border-surface-dim focus:border-primary outline-none px-4 py-3 text-sm rounded-sm bg-white"
+                  />
+                </div>
+                <div className="space-y-2 md:col-span-2">
+                  <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant">
+                    Your Country
+                  </label>
+                  <select
+                    title="countries"
+                    name="country"
+                    required
+                    value={form.country}
+                    onChange={handleChange}
+                    className="w-full border border-surface-dim focus:border-primary outline-none px-4 py-3 text-sm rounded-sm bg-white appearance-none cursor-pointer"
+                  >
+                    <option value="">Select your country</option>
+                    {countries.map((c) => (
+                      <option key={c} value={c}>
+                        {c}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className="space-y-2 md:col-span-2">
+                  <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant">
+                    Message (Optional)
+                  </label>
+                  <textarea
+                    rows={4}
+                    name="message"
+                    value={form.message}
+                    onChange={handleChange}
+                    placeholder="Tell us about your heart for this ministry..."
+                    className="w-full border border-surface-dim focus:border-primary outline-none px-4 py-3 text-sm rounded-sm bg-white resize-none"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  disabled={sending}
+                  className="md:col-span-2 bg-on-surface hover:bg-primary text-white font-bold text-sm uppercase tracking-widest py-4 rounded-sm transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {sending ? "Sending..." : "Send Message"}
+                  {!sending && <Send size={16} />}
+                </button>
+              </form>
+            )}
           </AnimateOnScroll>
         </div>
       </section>

@@ -9,7 +9,7 @@ import {
   Church,
   Globe,
   Sparkles,
-  BookHeart,
+  Book,
   Compass,
 } from "lucide-react";
 
@@ -51,18 +51,14 @@ const timeline = [
     ringAccent: "ring-amber-500/30",
     textAccent: "text-surface-tint",
     borderAccent: "border-amber-500",
-    icon: <BookHeart size={24} className="text-white" />,
+    icon: <Book size={24} className="text-white" />,
   },
 ];
 
 export default function OurStory() {
   return (
     <main>
-      <PageHero
-        tag="Our Journey"
-        title="Our Story"
-        subtitle=""
-      />
+      <PageHero tag="Our Journey" title="Our Story" subtitle="" />
 
       {/* Narrative Content */}
       <section className="py-24 bg-surface-container-lowest">
@@ -174,7 +170,9 @@ export default function OurStory() {
                             >
                               {item.year}
                             </span>
-                            <span className={`text-sm ${item.textAccent} font-black tracking-wider uppercase`}>
+                            <span
+                              className={`text-sm ${item.textAccent} font-black tracking-wider uppercase`}
+                            >
                               — {item.endYear}
                             </span>
                           </div>

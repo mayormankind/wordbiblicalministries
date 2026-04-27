@@ -2,6 +2,7 @@
 
 import PageHero from "../components/PageHero";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import {
   Mail,
   Phone,
@@ -33,10 +34,12 @@ export default function Contact() {
     name: "",
     email: "",
     phone: "",
+    country: "",
     subject: "",
     message: "",
   });
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -46,9 +49,51 @@ export default function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    setSending(true);
+
+    try {
+      const templateParams = {
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        country: form.country,
+        subject: form.subject,
+        message: form.message,
+      };
+
+      // 1. Send to Admin
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_CONTACT_ADMIN!,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+
+      // 2. Send Confirmation to Visitor
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_CONTACT_VISITOR!,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+
+      setSent(true);
+      setForm({
+        name: "",
+        email: "",
+        phone: "",
+        country: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("FAILED to send message:", error);
+      alert("Something went wrong. Please try again later or contact us directly via email.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -148,6 +193,10 @@ export default function Contact() {
                           </label>
                           <select
                             title="countries"
+                            name="country"
+                            value={form.country}
+                            onChange={handleChange}
+                            required
                             className="w-full border border-stone-300 focus:border-amber-500 focus:outline-none px-4 py-3 text-sm rounded-sm bg-surface-container-low appearance-none cursor-pointer"
                           >
                             <option value="">Select your country</option>
@@ -195,9 +244,10 @@ export default function Contact() {
                       </div>
                       <button
                         type="submit"
-                        className="bg-surface-tint hover:bg-primary text-white font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-sm transition-all inline-flex items-center gap-2"
+                        disabled={sending}
+                        className="bg-surface-tint hover:bg-primary text-white font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-sm transition-all inline-flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                       >
-                        Send Message <Send size={16} />
+                        {sending ? "Sending..." : "Send Message"} <Send size={16} />
                       </button>
                     </form>
                   )}
