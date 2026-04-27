@@ -86,7 +86,7 @@ export default function Home() {
             intentions and thoughts of the heart."
           </p>
           <p className="text-center text-amber-200 text-sm mt-2 tracking-widest uppercase">
-            — Hebrews 4:12
+            — Hebrews 4:12 (AFINT-LT)
           </p>
         </AnimateOnScroll>
       </section>

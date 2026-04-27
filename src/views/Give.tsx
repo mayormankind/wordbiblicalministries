@@ -66,7 +66,7 @@ export default function Give() {
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_GIVE_ADMIN!,
         templateParams,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
       );
 
       // 2. Send Confirmation to Visitor
@@ -74,7 +74,7 @@ export default function Give() {
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_GIVE_VISITOR!,
         templateParams,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
       );
 
       setSent(true);
@@ -107,7 +107,7 @@ export default function Give() {
             reluctance or under coercion, for God loves a cheerful giver."
           </p>
           <p className="text-amber-200 text-sm mt-2 uppercase tracking-widest">
-            — 2 Corinthians 9:7
+            — 2 Corinthians 9:7 (AFINT-LT)
           </p>
         </section>
       </AnimateOnScroll>
