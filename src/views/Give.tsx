@@ -260,7 +260,7 @@ export default function Give() {
                 </div>
                 <div className="space-y-2 md:col-span-2">
                   <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant">
-                    Message (Optional)
+                    Message
                   </label>
                   <textarea
                     rows={4}
