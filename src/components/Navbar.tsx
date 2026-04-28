@@ -62,8 +62,8 @@ export default function Navbar() {
             <Image
               src="/images/wbm-logo-footer.png"
               alt="WBM Logo"
-              width={200}
-              height={200}
+              width={70}
+              height={70}
             />
           </Link>
 
