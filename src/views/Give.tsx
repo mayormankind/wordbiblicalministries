@@ -35,6 +35,7 @@ export default function Give() {
   const [form, setForm] = useState({
     name: "",
     email: "",
+    phone: "",
     country: "",
     message: "",
   });
@@ -57,14 +58,16 @@ export default function Give() {
       const templateParams = {
         name: form.name,
         email: form.email,
+        phone: form.phone,
         country: form.country,
+        subject: "Give/ Partnership",
         message: form.message,
       };
 
       //Send to Admin
       await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_GIVE_ADMIN!,
+        process.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_CONTACT_ADMIN!,
         templateParams,
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
       );
@@ -73,6 +76,7 @@ export default function Give() {
       setForm({
         name: "",
         email: "",
+        phone: "",
         country: "",
         message: "",
       });
@@ -230,6 +234,19 @@ export default function Give() {
                     className="w-full border border-surface-dim focus:border-primary outline-none px-4 py-3 text-sm rounded-sm bg-white"
                   />
                 </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                          <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant mb-2">
+                            Phone Number
+                          </label>
+                          <input
+                            name="phone"
+                            value={form.phone}
+                            onChange={handleChange}
+                            className="w-full border border-stone-300 focus:border-amber-500 focus:outline-none px-4 py-3 text-sm rounded-sm text-on-surface bg-surface-container-low"
+                            placeholder="+1 (000) 000-0000"
+                          />
+                        </div>
                 <div className="space-y-2 md:col-span-2">
                   <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant">
                     Your Country
