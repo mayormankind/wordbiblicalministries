@@ -63,7 +63,7 @@ export default function Contact() {
         message: form.message,
       };
 
-      // 1. Send to Admin
+      // Send to Admin
       await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_CONTACT_ADMIN!,
