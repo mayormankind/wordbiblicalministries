@@ -67,7 +67,7 @@ export default function Give() {
       //Send to Admin
       await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_CONTACT_ADMIN!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_CONTACT_ADMIN!,
         templateParams,
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
       );
