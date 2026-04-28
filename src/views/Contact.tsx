@@ -68,15 +68,7 @@ export default function Contact() {
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_CONTACT_ADMIN!,
         templateParams,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-      );
-
-      // 2. Send Confirmation to Visitor
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_CONTACT_VISITOR!,
-        templateParams,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
       );
 
       setSent(true);
@@ -90,7 +82,9 @@ export default function Contact() {
       });
     } catch (error) {
       console.error("FAILED to send message:", error);
-      alert("Something went wrong. Please try again later or contact us directly via email.");
+      alert(
+        "Something went wrong. Please try again later or contact us directly via email.",
+      );
     } finally {
       setSending(false);
     }
@@ -247,7 +241,8 @@ export default function Contact() {
                         disabled={sending}
                         className="bg-surface-tint hover:bg-primary text-white font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-sm transition-all inline-flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                       >
-                        {sending ? "Sending..." : "Send Message"} <Send size={16} />
+                        {sending ? "Sending..." : "Send Message"}{" "}
+                        <Send size={16} />
                       </button>
                     </form>
                   )}
