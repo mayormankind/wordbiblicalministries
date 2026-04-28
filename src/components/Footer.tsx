@@ -62,8 +62,8 @@ export default function Footer() {
             <Image
               src="/images/wbm-logo-footer.png"
               alt="WBM Logo"
-              width={120}
-              height={120}
+              width={200}
+              height={200}
             />
           </Link>
           <p className="text-outline-variant text-lg leading-relaxed mb-5">
