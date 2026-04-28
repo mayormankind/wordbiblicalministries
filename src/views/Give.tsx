@@ -234,10 +234,9 @@ export default function Give() {
                     className="w-full border border-surface-dim focus:border-primary outline-none px-4 py-3 text-sm rounded-sm bg-white"
                   />
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <div>
-                          <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant mb-2">
-                            Phone Number
+                <div>
+                  <label className="block text-xs uppercase tracking-widest font-bold text-on-surface-variant mb-2">
+                     Phone Number
                           </label>
                           <input
                             name="phone"
