@@ -208,7 +208,7 @@ export default function AboutAFINT() {
                 </p>
                 <p className="mb-4 leading-relaxed font-semibold text-white">
                   The AFINT is not an Africanized version of Scripture but an
-                  academically rigorous work produced under the leadership of
+                  academically rigorous work produced under the leadership of an
                   African biblical exegetes and theologians.
                 </p>
                 <p className="leading-relaxed text-amber-50">
