@@ -456,8 +456,8 @@ export default function AboutAFINT() {
                   in a structured and disciplined sequence. Unlike traditional
                   models that separate translation and commentary, AFINT embeds
                   explanation within the translation itself, while maintaining a
-                  clear distinction between the textual base(literal) and the
-                  interpretive expansion(paraphrase).
+                  clear distinction between the textual base (literal) and the
+                  explanatory expansion (paraphrase).
                 </p>
                 <p className="mb-8 leading-relaxed">
                   While reflecting an evangelical theological orientation, this
