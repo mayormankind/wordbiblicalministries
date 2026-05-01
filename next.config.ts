@@ -6,6 +6,24 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.resolve(__dirname),
   },
+  images: {
+    // Bypass private-IP restriction for the local Strapi dev server.
+    // In production this is false so remotePatterns applies normally.
+    unoptimized: process.env.NODE_ENV === "development",
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "1337",
+        pathname: "/uploads/**",
+      },
+      {
+        protocol: "https",
+        hostname: "*.strapi.io",
+        pathname: "/**",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
