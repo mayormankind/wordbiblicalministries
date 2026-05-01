@@ -2,7 +2,13 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { Calendar, User, Clock, MessageSquare } from "lucide-react";
-import { fetchPosts, fetchPostBySlug, getStrapiImageUrl, estimateReadTime, blocksToPlainText } from "@/lib/strapi";
+import {
+  fetchPosts,
+  fetchPostBySlug,
+  getStrapiImageUrl,
+  estimateReadTime,
+  blocksToPlainText,
+} from "@/lib/strapi";
 import { getAllPosts, getPostBySlug } from "@/content/blog";
 import StrapiBlocksRenderer from "@/components/StrapiBlocksRenderer";
 import CommentForm from "@/components/CommentForm";
@@ -22,12 +28,12 @@ export async function generateStaticParams() {
   ]);
 
   const slugs = new Set<string>();
-  
+
   // Filter out any null or non-string slugs
   strapiPosts.forEach((p) => {
     if (typeof p.slug === "string" && p.slug) slugs.add(p.slug);
   });
-  
+
   staticPosts.forEach((p) => {
     if (typeof p.slug === "string" && p.slug) slugs.add(p.slug);
   });
@@ -39,14 +45,18 @@ export async function generateStaticParams() {
 // Metadata
 // ---------------------------------------------------------------------------
 
-export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
 
   const strapiPost = await fetchPostBySlug(slug);
   if (strapiPost) {
     return {
       title: strapiPost.title,
-      description: strapiPost.excerpt ?? blocksToPlainText(strapiPost.content).slice(0, 160),
+      description:
+        strapiPost.excerpt ??
+        blocksToPlainText(strapiPost.content).slice(0, 160),
     };
   }
 
@@ -57,7 +67,6 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
   return { title: "Post Not Found" };
 }
-
 
 // Page
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
@@ -80,11 +89,30 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const approvedComments =
       strapiPost.comments?.filter((c) => c.approvalStatus === "approved") ?? [];
 
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: strapiPost.title,
+      description:
+        strapiPost.excerpt ||
+        blocksToPlainText(strapiPost.content).slice(0, 160),
+      image: imgUrl,
+      datePublished: strapiPost.publishedAt,
+      author: {
+        "@type": "Person",
+        name: strapiPost.author || "Word Biblical Ministries",
+      },
+    };
+
     return (
       <main className="bg-white">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {/* ── Hero ── */}
         <section className="bg-stone-950 text-white px-6 pt-40 pb-20 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[linear-gradient(135deg,_rgba(28,25,23,0.98),_rgba(12,10,9,0.95))]" />
+          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(28,25,23,0.98),rgba(12,10,9,0.95))]" />
           <div className="relative z-10 max-w-3xl mx-auto">
             <div className="flex flex-wrap gap-4 text-xs uppercase tracking-widest font-semibold text-primary-fixed mb-5">
               {date && (
@@ -114,7 +142,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
         {/* ── Cover image ── */}
         {imgUrl && (
-          <div className="relative w-full aspect-[21/9] overflow-hidden">
+          <div className="relative w-full aspect-21/9 overflow-hidden">
             <Image
               src={imgUrl}
               alt={strapiPost.coverImage?.alternativeText ?? strapiPost.title}
@@ -152,16 +180,20 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <section className="mt-16 pt-10 border-t border-surface-dim">
                 <h2 className="text-2xl font-bold text-on-background mb-8 flex items-center gap-2">
                   <MessageSquare size={20} className="text-surface-tint" />
-                  {approvedComments.length} Comment{approvedComments.length !== 1 ? "s" : ""}
+                  {approvedComments.length} Comment
+                  {approvedComments.length !== 1 ? "s" : ""}
                 </h2>
                 <div className="space-y-8">
                   {approvedComments.map((comment) => {
                     const commentDate = comment.publishedAt
-                      ? new Date(comment.publishedAt).toLocaleDateString("en-GB", {
-                          day: "numeric",
-                          month: "long",
-                          year: "numeric",
-                        })
+                      ? new Date(comment.publishedAt).toLocaleDateString(
+                          "en-GB",
+                          {
+                            day: "numeric",
+                            month: "long",
+                            year: "numeric",
+                          },
+                        )
                       : null;
 
                     const commentText = comment.message
@@ -182,7 +214,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                               {comment.name}
                             </p>
                             {commentDate && (
-                              <p className="text-xs text-on-surface-variant">{commentDate}</p>
+                              <p className="text-xs text-on-surface-variant">
+                                {commentDate}
+                              </p>
                             )}
                           </div>
                         </div>
@@ -215,7 +249,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <p className="text-primary-fixed text-xs uppercase tracking-widest font-bold mb-4">
             {staticPost.category}
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">{staticPost.title}</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            {staticPost.title}
+          </h1>
           <div className="flex flex-wrap gap-4 text-sm text-inverse-on-surface">
             <span>{staticPost.author}</span>
             <span>{staticPost.publishedAt}</span>

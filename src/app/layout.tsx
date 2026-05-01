@@ -42,8 +42,27 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Word Biblical Ministries",
+    "url": "https://wordbiblicalministries.vercel.app",
+    "logo": "https://wordbiblicalministries.vercel.app/images/wbm-logo-footer1.png",
+    "description": "Word Biblical Ministries strengthens the Church through prayer, faithful Bible translation, theological education, and Scripture-rooted ministry.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "NG"
+    }
+  };
+
   return (
     <html lang="en" data-scroll-behavior="smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-screen bg-white text-on-background antialiased">
         <div className="min-h-screen flex flex-col">
           <Navbar />
