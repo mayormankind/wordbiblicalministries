@@ -23,7 +23,7 @@ export default async function BlogPage() {
     <main className="bg-surface-container-low">
       {/* ── Hero ── */}
       <section className="relative px-6 pt-40 pb-24 text-white bg-stone-950 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(217,119,6,0.32),_transparent_35%),linear-gradient(135deg,_rgba(28,25,23,1),_rgba(12,10,9,1))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(217,119,6,0.32),transparent_35%),linear-gradient(135deg,rgba(28,25,23,1),rgba(12,10,9,1))]" />
         <div className="relative z-10 max-w-5xl mx-auto text-center">
           <p className="text-primary-fixed text-xs uppercase tracking-widest font-bold mb-4">
             Ministry Journal
@@ -61,7 +61,7 @@ export default async function BlogPage() {
                     className="bg-white border border-surface-dim rounded-sm overflow-hidden shadow-sm hover:shadow-md transition-shadow group"
                   >
                     {imgUrl && (
-                      <div className="relative w-full aspect-[16/6] overflow-hidden">
+                      <div className="relative w-full aspect-16/6 overflow-hidden">
                         <Image
                           src={imgUrl}
                           alt={post.coverImage?.alternativeText ?? post.title}
@@ -118,8 +118,12 @@ export default async function BlogPage() {
                 >
                   <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-widest font-semibold mb-4">
                     <span className="text-surface-tint">{post.category}</span>
-                    <span className="text-outline-variant">{post.publishedAt}</span>
-                    <span className="text-outline-variant">{post.readTime}</span>
+                    <span className="text-outline-variant">
+                      {post.publishedAt}
+                    </span>
+                    <span className="text-outline-variant">
+                      {post.readTime}
+                    </span>
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-on-background mb-3">
                     {post.title}
@@ -141,7 +145,9 @@ export default async function BlogPage() {
           {/* CMS badge */}
           <p className="mt-12 text-center text-xs text-on-surface-variant opacity-60 uppercase tracking-widest">
             <BookOpen size={12} className="inline mr-1" />
-            {useCms ? "Content powered by Strapi CMS" : "Static content — connect Strapi CMS to manage posts"}
+            {useCms
+              ? "Content powered by Strapi CMS"
+              : "Static content — connect Strapi CMS to manage posts"}
           </p>
         </div>
       </section>
