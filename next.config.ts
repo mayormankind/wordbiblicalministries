@@ -22,6 +22,11 @@ const nextConfig: NextConfig = {
         hostname: "*.strapi.io",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "wbm-cms.onrender.com",
+        pathname: "/uploads/**",
+      },
     ],
   },
 };
