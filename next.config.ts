@@ -27,6 +27,11 @@ const nextConfig: NextConfig = {
         hostname: "wbm-cms.onrender.com",
         pathname: "/uploads/**",
       },
+      {
+        protocol: "https",
+        hostname: "utxvznvakhqaiwjqismx.supabase.co",
+        pathname: "/storage/v1/object/public/**",
+      },
     ],
   },
 };
