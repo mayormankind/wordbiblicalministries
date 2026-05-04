@@ -129,8 +129,10 @@ async function strapiGet<T>(
   path: string,
   options?: RequestInit
 ): Promise<T | null> {
+  const url = `${STRAPI_URL}/api${path}`;
   try {
-    const res = await fetch(`${STRAPI_URL}/api${path}`, {
+    console.log(`[Strapi] Fetching: ${url}`);
+    const res = await fetch(url, {
       headers: buildHeaders(),
       next: { revalidate: 60 }, // ISR — revalidate every 60 s
       ...options,
@@ -138,10 +140,14 @@ async function strapiGet<T>(
 
     if (!res.ok) {
       console.error(`[Strapi] GET ${path} → ${res.status} ${res.statusText}`);
+      const errorBody = await res.json().catch(() => null);
+      if (errorBody) console.error(`[Strapi] Error details:`, JSON.stringify(errorBody));
       return null;
     }
 
-    return (await res.json()) as T;
+    const data = await res.json();
+    console.log(`[Strapi] GET ${path} success, received ${Array.isArray(data.data) ? data.data.length : '1'} items`);
+    return data as T;
   } catch (err) {
     console.error(`[Strapi] GET ${path} failed:`, err);
     return null;
@@ -157,11 +163,21 @@ async function strapiGet<T>(
  * Returns an empty array when the CMS is unreachable.
  */
 export async function fetchPosts(): Promise<StrapiPost[]> {
+  console.log("[Strapi] Calling fetchPosts...");
+  // Using Strapi v5 array syntax for sorting and population
   const res = await strapiGet<StrapiListResponse<StrapiPost>>(
-    "/posts?populate[0]=coverImage&sort=publishedAt:desc&pagination[pageSize]=100"
+    "/posts?populate[0]=coverImage&sort[0]=publishedAt:desc&pagination[pageSize]=100"
   );
+  
+  if (!res?.data) {
+    console.warn("[Strapi] No data returned from /posts");
+    return [];
+  }
+
   // Filter out any drafts or posts missing a slug
-  return (res?.data ?? []).filter((p) => typeof p.slug === "string" && p.slug);
+  const posts = res.data.filter((p) => typeof p.slug === "string" && p.slug);
+  console.log(`[Strapi] Returning ${posts.length} valid posts`);
+  return posts;
 }
 
 /**
