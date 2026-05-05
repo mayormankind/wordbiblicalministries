@@ -26,13 +26,14 @@ export default async function BlogPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(217,119,6,0.32),transparent_35%),linear-gradient(135deg,rgba(28,25,23,1),rgba(12,10,9,1))]" />
         <div className="relative z-10 max-w-5xl mx-auto text-center">
           <p className="text-primary-fixed text-xs uppercase tracking-widest font-bold mb-4">
-            Ministry Blog
+            Ministry Blogs
           </p>
           <h1 className="text-4xl md:text-6xl font-bold mb-5">
             Insights for the Church, the Seminary, and the Campus
           </h1>
           <p className="text-inverse-on-surface text-lg max-w-3xl mx-auto leading-relaxed">
-            Scripture-rooted reflections and biblical articles
+            Scripture-rooted reflections, biblical articles and ministry updates
+            from Word Biblical Ministries.
           </p>
         </div>
       </section>
