@@ -1,3 +1,4 @@
+//app/robots.ts
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
@@ -7,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/api/',
     },
-    sitemap: 'https://wordbiblicalministries.vercel.app/sitemap.xml',
+    sitemap: 'https://www.wordbiblicalministries.org/sitemap.xml',
   };
 }
