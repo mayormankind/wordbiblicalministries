@@ -26,14 +26,13 @@ export default async function BlogPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(217,119,6,0.32),transparent_35%),linear-gradient(135deg,rgba(28,25,23,1),rgba(12,10,9,1))]" />
         <div className="relative z-10 max-w-5xl mx-auto text-center">
           <p className="text-primary-fixed text-xs uppercase tracking-widest font-bold mb-4">
-            Ministry Journal
+            Ministry Blog
           </p>
           <h1 className="text-4xl md:text-6xl font-bold mb-5">
-            Insights for the Church, the Classroom, and the Campus
+            Insights for the Church, the Seminary, and the Campus
           </h1>
           <p className="text-inverse-on-surface text-lg max-w-3xl mx-auto leading-relaxed">
-            Scripture-rooted reflections, theological articles, and ministry
-            updates from Word Biblical Ministries.
+            Scripture-rooted reflections and biblical articles
           </p>
         </div>
       </section>
@@ -79,7 +78,7 @@ export default async function BlogPage() {
                         )}
                         {post.author && (
                           <span className="inline-flex items-center gap-1.5 text-surface-tint">
-                            <User size={12} /> {post.author}
+                            <User size={12} /> {post.author.name}
                           </span>
                         )}
                         <span className="inline-flex items-center gap-1.5">
@@ -109,36 +108,21 @@ export default async function BlogPage() {
               })}
             </div>
           ) : (
-            /* ── Static fallback posts ── */
-            <div className="grid gap-8">
-              {getAllPosts().map((post) => (
-                <article
-                  key={post.slug}
-                  className="bg-white border border-surface-dim rounded-sm p-8 shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-widest font-semibold mb-4">
-                    <span className="text-surface-tint">{post.category}</span>
-                    <span className="text-outline-variant">
-                      {post.publishedAt}
-                    </span>
-                    <span className="text-outline-variant">
-                      {post.readTime}
-                    </span>
-                  </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-on-background mb-3">
-                    {post.title}
-                  </h2>
-                  <p className="text-on-surface-variant leading-relaxed mb-6">
-                    {post.excerpt}
-                  </p>
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="inline-flex items-center gap-2 text-surface-tint hover:text-primary font-bold text-sm uppercase tracking-widest"
-                  >
-                    Read Article <ArrowRight size={16} />
-                  </Link>
-                </article>
-              ))}
+            /* ── Empty State ── */
+            <div className="text-center py-32 bg-white border border-surface-dim rounded-sm shadow-sm">
+              <div className="bg-surface-container-low w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <BookOpen
+                  size={32}
+                  className="text-surface-variant opacity-40"
+                />
+              </div>
+              <h3 className="text-2xl font-bold text-on-background mb-3">
+                No blog created here
+              </h3>
+              <p className="text-on-surface-variant max-w-md mx-auto leading-relaxed">
+                We haven&apos;t published any articles yet. Please check back
+                soon for ministry reflections and updates.
+              </p>
             </div>
           )}
 

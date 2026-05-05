@@ -89,9 +89,17 @@ export interface StrapiPost {
   content: BlockNode[] | null;
   coverImage: StrapiMedia | null;
   videoUrl: string | null;
-  author: string | null;
+  author: StrapiAuthor | null;
   publishedAt: string | null;
   comments?: StrapiComment[];
+}
+
+export interface StrapiAuthor {
+  id: number;
+  documentId: string;
+  name: string;
+  email?: string;
+  avatar?: StrapiMedia | null;
 }
 
 export interface StrapiMedia {
@@ -166,7 +174,7 @@ export async function fetchPosts(): Promise<StrapiPost[]> {
   console.log("[Strapi] Calling fetchPosts...");
   // Using Strapi v5 array syntax for sorting and population
   const res = await strapiGet<StrapiListResponse<StrapiPost>>(
-    "/posts?populate[0]=coverImage&sort[0]=publishedAt:desc&pagination[pageSize]=100"
+    "/posts?populate[0]=coverImage&populate[1]=author&sort[0]=publishedAt:desc&pagination[pageSize]=100"
   );
   
   if (!res?.data) {
@@ -186,7 +194,7 @@ export async function fetchPosts(): Promise<StrapiPost[]> {
  */
 export async function fetchPostBySlug(slug: string): Promise<StrapiPost | null> {
   const res = await strapiGet<StrapiListResponse<StrapiPost>>(
-    `/posts?filters[slug][$eq]=${encodeURIComponent(slug)}&populate[0]=coverImage&populate[1]=comments&pagination[pageSize]=1`
+    `/posts?filters[slug][$eq]=${encodeURIComponent(slug)}&populate[0]=coverImage&populate[1]=comments&populate[2]=author&pagination[pageSize]=1`
   );
   return res?.data?.[0] ?? null;
 }
