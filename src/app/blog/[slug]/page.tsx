@@ -100,7 +100,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       datePublished: strapiPost.publishedAt,
       author: {
         "@type": "Person",
-        name: strapiPost.author || "Word Biblical Ministries",
+        name: strapiPost.author?.name || "Word Biblical Ministries",
       },
     };
 
@@ -122,7 +122,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               )}
               {strapiPost.author && (
                 <span className="inline-flex items-center gap-1.5 text-amber-400">
-                  <User size={12} /> {strapiPost.author}
+                  <User size={12} /> {strapiPost.author.name}
                 </span>
               )}
               <span className="inline-flex items-center gap-1.5 text-stone-400">
