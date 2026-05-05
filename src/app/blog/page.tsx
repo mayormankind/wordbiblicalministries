@@ -117,7 +117,7 @@ export default async function BlogPage() {
                 />
               </div>
               <h3 className="text-2xl font-bold text-on-background mb-3">
-                No blog created here
+                No blog created yet!
               </h3>
               <p className="text-on-surface-variant max-w-md mx-auto leading-relaxed">
                 We haven&apos;t published any articles yet. Please check back
@@ -125,14 +125,6 @@ export default async function BlogPage() {
               </p>
             </div>
           )}
-
-          {/* CMS badge */}
-          <p className="mt-12 text-center text-xs text-on-surface-variant opacity-60 uppercase tracking-widest">
-            <BookOpen size={12} className="inline mr-1" />
-            {useCms
-              ? "Content powered by Strapi CMS"
-              : "Static content — connect Strapi CMS to manage posts"}
-          </p>
         </div>
       </section>
     </main>
