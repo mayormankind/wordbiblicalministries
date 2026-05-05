@@ -32,7 +32,7 @@ export default async function BlogPage() {
             Insights for the Church, the Seminary, and the Campus
           </h1>
           <p className="text-inverse-on-surface text-lg max-w-3xl mx-auto leading-relaxed">
-            Scripture-rooted reflections, biblical articles and ministry updates
+            Scripture-rooted reflections, biblical articles, and ministry updates
             from Word Biblical Ministries.
           </p>
         </div>
