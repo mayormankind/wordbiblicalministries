@@ -130,7 +130,7 @@ export default function Give() {
               {
                 icon: <Heart size={28} className="text-primary" />,
                 title: "Impacting the Church",
-                desc: "Funding theological initiatives that equip pastors, students, and Christian leaders with biblically resources.",
+                desc: "Funding theological initiatives that equip pastors, students, and Christian leaders.",
               },
               {
                 icon: <Globe size={28} className="text-primary" />,
