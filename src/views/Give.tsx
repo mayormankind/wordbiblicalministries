@@ -2,7 +2,7 @@
 
 import PageHero from "../components/PageHero";
 import { Heart, Shield, Globe, ChevronRight, Landmark } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import AnimateOnScroll from "../components/AnimateOnScroll";
 import { countries } from "@/content/countries";
@@ -41,6 +41,19 @@ export default function Give() {
   });
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.id = 'embed_js';
+    script.src = 'https://apps.christianministryalliance.org/html/common/themes/embeddedArreva.js?d244RkM3MTkzbE5tdHpVVk1tK1M5Vi9ZTlBTejdML0dmRzNaZVdXMG5SRnV4M1NsOUk3M2M5SUh3VEpwaGdReGQ5WHl6TlNDY3hOU0lFSkpzUVc0Zjc1N1drZEFhL1Y2NThTYXlxRndQdFlBQmpzTVVOeVRXbU5FRmdFS3dUMHY=';
+    document.body.appendChild(script);
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -353,15 +366,14 @@ export default function Give() {
               </p>
 
               <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-                <a
-                  href="https://fso.christianministryalliance.org/member-profile/word-vision-impact-ministry/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => document.getElementById('arreva-div')?.scrollIntoView({ behavior: 'smooth' })}
                   className="w-full md:w-auto bg-surface-tint hover:bg-primary text-white font-bold text-sm uppercase tracking-widest py-5 px-12 rounded-sm transition-all flex items-center justify-center gap-3 shadow-lg hover:shadow-primary/20"
                 >
                   Give Securely Now <ChevronRight size={18} />
-                </a>
+                </button>
               </div>
+              <div id="arreva-div" className="mt-8"></div>
             </div>
           </AnimateOnScroll>
         </div>
