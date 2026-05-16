@@ -265,7 +265,7 @@ export default function AboutAFINT() {
                       size={18}
                     />
                     <span>
-                      <strong>Formal correspondence to the greek text:</strong>{" "}
+                      <strong>Formal correspondence to the Greek text:</strong>{" "}
                       The translation preserves grammatical structure and
                       syntactical relationships as closely as English permits.
                     </span>
